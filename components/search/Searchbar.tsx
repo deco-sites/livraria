@@ -76,7 +76,7 @@ export type Props = EditableProps & {
 };
 
 function Searchbar({
-  placeholder = "What are you looking for?",
+  placeholder = "Digite aqui o que procura :)",
   action = "/s",
   name = "q",
   query,
@@ -107,31 +107,17 @@ function Searchbar({
     : products;
 
   return (
-    <div class="flex flex-col p-4 md:(py-6 px-20)">
-      <div class="flex gap-4">
+    <div class="flex flex-col w-full">
+      <div class="flex gap-4 justify-center">
         <form
           id="searchbar"
           action={action}
-          class="flex-grow flex gap-3 px-3 py-2 border border-default"
+          class="flex-grow flex gap-3 border border-default bg-white md: max-w-[480px] h-[30px] rounded"
         >
-          <Button
-            variant="icon"
-            aria-label="Search"
-            htmlFor="searchbar"
-            tabIndex={-1}
-          >
-            <Icon
-              class="text-subdued"
-              id="MagnifyingGlass"
-              width={20}
-              height={20}
-              strokeWidth={0.01}
-            />
-          </Button>
           <input
             ref={searchInputRef}
             id="search-input"
-            class="flex-grow outline-none placeholder-shown:sibling:hidden"
+            class="flex-grow outline-none placeholder-shown:sibling:hidden pl-3 rounded"
             name={name}
             defaultValue={query}
             onInput={(e) => {
@@ -144,6 +130,7 @@ function Searchbar({
             aria-controls="search-suggestion"
             autocomplete="off"
           />
+
           <button
             type="button"
             aria-label="Clean search"
@@ -157,8 +144,24 @@ function Searchbar({
               setSearch("");
             }}
           >
-            <Text variant="caption" tone="default">limpar</Text>
+            <Text variant="caption" tone="default">x</Text>
           </button>
+
+          <Button
+            variant="icon"
+            aria-label="Search"
+            htmlFor="searchbar"
+            tabIndex={-1}
+            class="h-[30px]"
+          >
+            <Icon
+              class="text-subdued"
+              id="MagnifyingGlass"
+              width={20}
+              height={20}
+              strokeWidth={0.01}
+            />
+          </Button>
         </form>
         {variant === "desktop" && <CloseButton />}
       </div>
