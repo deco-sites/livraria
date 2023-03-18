@@ -34,21 +34,21 @@ const options: Omit<Options, "selfURL"> = {
   theme: {
     extend: {
       colors: {
-        "default": "#FFFFFF",
+        "default": "rgb(242, 242, 242);",
         "header": "#FFFFFF",
-        "badge": "#8C3D3D", // shopping cart tem isso tambem
-        "footer": "#003232",
+        "badge": "rgb(166, 30, 7)", // shopping cart tem isso tambem
+        "footer": "rgb(242, 242, 242)",
         "interactive": "#161616",
         "interactive-inverse": "#FFFFFF",
         "hover": "rgba(0, 0, 0, 0.04)",
         "hover-inverse": "rgba(255, 255, 255, 0.4)",
       },
       textColor: {
-        "default": "#161616",
+        "default": "#858585",
         "default-inverse": "#FFFFFF",
         "subdued": "#66736C",
         "subdued-inverse": "#C6C6C6",
-        "price": "#8C3D3D",
+        "price": "rgb(166, 30, 7)",
         "section-title": "#161616",
         "positive": "#1A7346",
         "critical": "#B44125",
@@ -111,7 +111,7 @@ const options: Omit<Options, "selfURL"> = {
       },
     },
     fontFamily: {
-      sans: ["Albert Sans", "sans-serif"],
+      sans: ["Open Sans", "sans-serif"],
       serif: ["inherit", "serif"],
     },
     screens: {
