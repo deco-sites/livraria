@@ -1010,10 +1010,20 @@ const manifest: DecoManifest = {
             "type": "string",
             "title": "Products",
           },
+          "viewMoreLink": {
+            "type": "string",
+            "title": "View More Link",
+          },
+          "viewMoreText": {
+            "type": "string",
+            "title": "View More Text",
+          },
         },
         "required": [
           "title",
           "products",
+          "viewMoreLink",
+          "viewMoreText",
         ],
       },
       "outputSchema": null,
