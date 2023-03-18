@@ -6,16 +6,10 @@ import Icon from "$store/components/ui/Icon.tsx";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
 
+import NotFound from "../search/NotFound.tsx";
+
 export interface Props {
   page: LoaderReturnType<ProductListingPage | null>;
-}
-
-function NotFound() {
-  return (
-    <div class="w-full flex justify-center items-center py-10">
-      <Text>Not Found!</Text>
-    </div>
-  );
 }
 
 function Gallery({ page }: { page: ProductListingPage }) {
@@ -49,7 +43,7 @@ function Gallery({ page }: { page: ProductListingPage }) {
 }
 
 function ProductGallery({ page }: Props) {
-  if (!page) {
+  if (!page || !page?.products || !page?.products?.length) {
     return <NotFound />;
   }
 
