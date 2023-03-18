@@ -14,8 +14,9 @@ import * as $$0 from "./islands/AddToCartButton.tsx";
 import * as $$1 from "./islands/HeaderButton.tsx";
 import * as $$2 from "./islands/HeaderModals.tsx";
 import * as $$3 from "./islands/HeaderSearchMenu.tsx";
-import * as $$4 from "./islands/SearchControls.tsx";
-import * as $$5 from "./islands/SliderJS.tsx";
+import * as $$4 from "./islands/ProductShelf.tsx";
+import * as $$5 from "./islands/SearchControls.tsx";
+import * as $$6 from "./islands/SliderJS.tsx";
 import * as $$$0 from "./sections/BannerGrid.tsx";
 import * as $$$1 from "./sections/Carousel.tsx";
 import * as $$$2 from "./sections/CookieConsent.tsx";
@@ -67,8 +68,9 @@ const manifest: DecoManifest = {
     "./islands/HeaderButton.tsx": $$1,
     "./islands/HeaderModals.tsx": $$2,
     "./islands/HeaderSearchMenu.tsx": $$3,
-    "./islands/SearchControls.tsx": $$4,
-    "./islands/SliderJS.tsx": $$5,
+    "./islands/ProductShelf.tsx": $$4,
+    "./islands/SearchControls.tsx": $$5,
+    "./islands/SliderJS.tsx": $$6,
   },
   sections: {
     "./sections/BannerGrid.tsx": $$$0,
@@ -940,17 +942,10 @@ const manifest: DecoManifest = {
             "title": "Title",
           },
           "products": {
-            "$id": "1f15a836acd2ecbefef6eaf34ebcff98e39811f3",
+            "$id": "4745e1202484ea61e4cdd1a83ec4c56d9e4dce67",
             "format": "live-function",
             "type": "string",
             "title": "Products",
-          },
-          "itemsPerPage": {
-            "type": [
-              "number",
-              "null",
-            ],
-            "title": "Items Per Page",
           },
         },
         "required": [
