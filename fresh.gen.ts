@@ -6,10 +6,12 @@ import config from "./deno.json" assert { type: "json" };
 import { context } from "$live/live.ts";
 import { DecoManifest } from "$live/types.ts";
 import * as $0 from "./routes/[...catchall].tsx";
-import * as $1 from "./routes/_app.tsx";
-import * as $2 from "./routes/_middleware.ts";
-import * as $3 from "./routes/api/[...catchall].tsx";
-import * as $4 from "./routes/index.tsx";
+import * as $1 from "./routes/_404.tsx";
+import * as $2 from "./routes/_500.tsx";
+import * as $3 from "./routes/_app.tsx";
+import * as $4 from "./routes/_middleware.ts";
+import * as $5 from "./routes/api/[...catchall].tsx";
+import * as $6 from "./routes/index.tsx";
 import * as $$0 from "./islands/AddToCartButton.tsx";
 import * as $$1 from "./islands/HeaderButton.tsx";
 import * as $$2 from "./islands/HeaderModals.tsx";
@@ -60,10 +62,12 @@ import * as $$$$17 from "deco-sites/std/functions/vtexSuggestions.ts";
 const manifest: DecoManifest = {
   routes: {
     "./routes/[...catchall].tsx": $0,
-    "./routes/_app.tsx": $1,
-    "./routes/_middleware.ts": $2,
-    "./routes/api/[...catchall].tsx": $3,
-    "./routes/index.tsx": $4,
+    "./routes/_404.tsx": $1,
+    "./routes/_500.tsx": $2,
+    "./routes/_app.tsx": $3,
+    "./routes/_middleware.ts": $4,
+    "./routes/api/[...catchall].tsx": $5,
+    "./routes/index.tsx": $6,
   },
   islands: {
     "./islands/AddToCartButton.tsx": $$0,
@@ -908,9 +912,7 @@ const manifest: DecoManifest = {
             "description": "vtex config used for search autocompletion;",
           },
         },
-        "required": [
-          "alerts",
-        ],
+        "required": [],
       },
       "outputSchema": null,
     },
