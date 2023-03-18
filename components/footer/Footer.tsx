@@ -1,9 +1,9 @@
+import Container from "$store/components/ui/Container.tsx";
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 import Text from "$store/components/ui/Text.tsx";
-import Container from "$store/components/ui/Container.tsx";
 
-import Newsletter from "./Newsletter.tsx";
 import type { ComponentChildren } from "preact";
+import Newsletter from "./Newsletter.tsx";
 
 export type IconItem = { icon: AvailableIcons };
 export type StringItem = {
@@ -149,7 +149,7 @@ function Footer({ sections = [] }: Props) {
                   aria-label="Instagram logo"
                 >
                   <Icon
-                    class="text-default-inverse"
+                    class="text-default"
                     width={32}
                     height={32}
                     id="Instagram"
@@ -165,7 +165,7 @@ function Footer({ sections = [] }: Props) {
                   aria-label="Discord logo"
                 >
                   <Icon
-                    class="text-default-inverse"
+                    class="text-default"
                     width={32}
                     height={32}
                     id="Discord"
