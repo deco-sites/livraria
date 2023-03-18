@@ -55,7 +55,10 @@ function Controls({ page }: { page: ProductListingPage }) {
 }
 
 function SearchControls({ page }: Props) {
-  if (!page || !page.filters || page.filters.length === 0) {
+  if (
+    !page || !page?.products || !page?.products?.length || !page.filters ||
+    page.filters.length === 0
+  ) {
     return <NotFound />;
   }
 

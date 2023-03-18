@@ -3,8 +3,10 @@ import ProductCard from "$store/components/product/ProductCard.tsx";
 import Container from "$store/components/ui/Container.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import Text from "$store/components/ui/Text.tsx";
+import Arrows from "$store/components/ui/Arrows.tsx";
+import SliderControllerJS from "$store/islands/SliderJS.tsx";
 import type { Product } from "deco-sites/std/commerce/types.ts";
-import { useEffect, useState } from "preact/hooks";
+import { useEffect, useId, useState } from "preact/hooks";
 
 export interface Props {
   title: string;
@@ -12,6 +14,12 @@ export interface Props {
 }
 
 function ProductShelf({ title, products }: Props) {
+  const id = useId();
+
+  if (!products || products.length === 0) {
+    return null;
+  }
+
   const [jsonLd, setJsonLd] = useState("");
 
   useEffect(() => {
@@ -44,26 +52,31 @@ function ProductShelf({ title, products }: Props) {
   }, [products]);
 
   return (
-    <Container class="flex flex-col items-center gap-10 py-10">
+    <Container
+      id={id}
+      class="grid grid-cols-[48px_1fr_48px] grid-rows-[48px_1fr_48px_1fr] py-10 px-0 sm:px-5"
+    >
       {title && (
-        <h2>
+        <h2 class="text-center row-start-1 col-span-full">
           <Text variant="heading-2">{title}</Text>
         </h2>
       )}
-      <Slider class="gap-6">
-        {products?.map((product, index) => {
-          const ml = index === 0 ? "ml-6 sm:ml-0" : "";
-          const mr = index === products.length - 1 ? "mr-6 sm:mr-0" : "";
 
-          return (
-            <div
-              class={`min-w-[220px] max-w-[220px] sm:min-w-[287px] sm:max-w-[287px] ${ml} ${mr}`}
-            >
-              <ProductCard key={index} product={product} />
-            </div>
-          );
-        })}
+      <Slider
+        class="col-span-full row-span-full scrollbar-none gap-6"
+        snap="snap-center sm:snap-start block first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0"
+      >
+        {products?.map((product) => (
+          <div class="min-w-[270px] max-w-[270px] sm:min-w-[292px] sm:max-w-[292px]">
+            <ProductCard product={product} />
+          </div>
+        ))}
       </Slider>
+
+      <Arrows />
+
+      <SliderControllerJS rootId={id} />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLd }}

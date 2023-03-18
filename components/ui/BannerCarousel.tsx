@@ -2,6 +2,7 @@ import Button from "$store/components/ui/Button.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import Text from "$store/components/ui/Text.tsx";
+import Arrows from "$store/components/ui/Arrows.tsx";
 import SliderControllerJS from "$store/islands/SliderJS.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
@@ -38,6 +39,12 @@ export interface Props {
    * @description time (in seconds) to start the carousel autoplay
    */
   interval?: number;
+  /** @description When navigation arrows should be rendered. */
+  showNavigationArrows?: "mobileOnly" | "desktopOnly" | "always" | "never";
+  /** @description When pagination dots should be rendered. */
+  showPaginationDots?: "mobileOnly" | "desktopOnly" | "always" | "never";
+  /** @description Show dots with progressive status about current timeout. */
+  showProgressiveDots?: boolean;
 }
 
 function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
@@ -92,7 +99,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
   );
 }
 
-function Dots({ images, interval = 0 }: Props) {
+function ProgressiveDots({ images, interval = 0 }: Props) {
   return (
     <>
       <style
@@ -141,45 +148,46 @@ function Dots({ images, interval = 0 }: Props) {
   );
 }
 
-function Controls() {
+function Dots({ images }: Props) {
   return (
     <>
-      <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
-        <Button
-          class="h-12 w-12"
-          variant="icon"
-          data-slide="prev"
-          aria-label="Previous item"
-        >
-          <Icon
-            class="text-default-inverse"
-            size={20}
-            id="ChevronLeft"
-            strokeWidth={3}
-          />
-        </Button>
-      </div>
-      <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
-        <Button
-          class="h-12 w-12"
-          variant="icon"
-          data-slide="next"
-          aria-label="Next item"
-        >
-          <Icon
-            class="text-default-inverse"
-            size={20}
-            id="ChevronRight"
-            strokeWidth={3}
-          />
-        </Button>
-      </div>
+      <ol class="flex items-center justify-center col-span-full gap-2.5 z-10 row-start-4">
+        {images?.map((_, index) => (
+          <li class="h-auto">
+            <button
+              data-dot={index}
+              aria-label={`go to slider item ${index}`}
+              class="w-2.5 h-2.5 border-black border-1 border-solid rounded-[20px] focus:outline-none group bg-white opacity-25 disabled:opacity-75 transition-opacity"
+            />
+          </li>
+        ))}
+      </ol>
     </>
   );
 }
 
-function BannerCarousel({ images, preload, interval }: Props) {
+function BannerCarousel(
+  {
+    images,
+    preload,
+    interval,
+    showNavigationArrows = "always",
+    showPaginationDots = "always",
+    showProgressiveDots = false,
+  }: Props,
+) {
   const id = useId();
+
+  // const shouldShowArrows = Boolean((showNavigationArrows === 'always' ||
+  //     (showNavigationArrows === 'mobileOnly' && isMobile) ||
+  //     (showNavigationArrows === 'desktopOnly' && !isMobile)))
+
+  // const isMobile
+  // ||
+  // (showPaginationDots === "mobileOnly" && isMobile) ||
+  // (showPaginationDots === "desktopOnly" && !isMobile),
+
+  const shouldShowPaginationDots = showPaginationDots === "always";
 
   return (
     <div
@@ -192,9 +200,12 @@ function BannerCarousel({ images, preload, interval }: Props) {
         ))}
       </Slider>
 
-      <Controls />
+      {showNavigationArrows && <Arrows />}
 
-      <Dots images={images} interval={interval} />
+      {shouldShowPaginationDots &&
+        (showProgressiveDots
+          ? <ProgressiveDots images={images} interval={interval} />
+          : <Dots images={images} interval={interval} />)}
 
       <SliderControllerJS rootId={id} interval={interval && interval * 1e3} />
     </div>
