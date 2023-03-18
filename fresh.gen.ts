@@ -15,8 +15,9 @@ import * as $$1 from "./islands/HeaderButton.tsx";
 import * as $$2 from "./islands/HeaderModals.tsx";
 import * as $$3 from "./islands/HeaderSearchMenu.tsx";
 import * as $$4 from "./islands/ProductShelf.tsx";
-import * as $$5 from "./islands/SearchControls.tsx";
-import * as $$6 from "./islands/SliderJS.tsx";
+import * as $$5 from "./islands/ProductSpecTable.tsx";
+import * as $$6 from "./islands/SearchControls.tsx";
+import * as $$7 from "./islands/SliderJS.tsx";
 import * as $$$0 from "./sections/BannerGrid.tsx";
 import * as $$$1 from "./sections/Carousel.tsx";
 import * as $$$2 from "./sections/CookieConsent.tsx";
@@ -28,14 +29,15 @@ import * as $$$7 from "./sections/Highlights.tsx";
 import * as $$$8 from "./sections/ProductDetails.tsx";
 import * as $$$9 from "./sections/ProductGallery.tsx";
 import * as $$$10 from "./sections/ProductShelf.tsx";
-import * as $$$11 from "./sections/SearchControls.tsx";
-import * as $$$12 from "./sections/WhatsApp.tsx";
-import * as $$$13 from "deco-sites/std/sections/SEO.tsx";
-import * as $$$14 from "deco-sites/std/sections/SEOPDP.tsx";
-import * as $$$15 from "deco-sites/std/sections/SEOPLP.tsx";
-import * as $$$16 from "deco-sites/std/sections/configOCC.global.tsx";
-import * as $$$17 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as $$$18 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$11 from "./sections/ProductSpecTable.tsx";
+import * as $$$12 from "./sections/SearchControls.tsx";
+import * as $$$13 from "./sections/WhatsApp.tsx";
+import * as $$$14 from "deco-sites/std/sections/SEO.tsx";
+import * as $$$15 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as $$$16 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as $$$17 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as $$$18 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as $$$19 from "deco-sites/std/sections/configVTEX.global.tsx";
 import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$1 from "$live/functions/MatchDate.ts";
 import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
@@ -69,8 +71,9 @@ const manifest: DecoManifest = {
     "./islands/HeaderModals.tsx": $$2,
     "./islands/HeaderSearchMenu.tsx": $$3,
     "./islands/ProductShelf.tsx": $$4,
-    "./islands/SearchControls.tsx": $$5,
-    "./islands/SliderJS.tsx": $$6,
+    "./islands/ProductSpecTable.tsx": $$5,
+    "./islands/SearchControls.tsx": $$6,
+    "./islands/SliderJS.tsx": $$7,
   },
   sections: {
     "./sections/BannerGrid.tsx": $$$0,
@@ -84,14 +87,15 @@ const manifest: DecoManifest = {
     "./sections/ProductDetails.tsx": $$$8,
     "./sections/ProductGallery.tsx": $$$9,
     "./sections/ProductShelf.tsx": $$$10,
-    "./sections/SearchControls.tsx": $$$11,
-    "./sections/WhatsApp.tsx": $$$12,
-    "deco-sites/std/sections/SEO.tsx": $$$13,
-    "deco-sites/std/sections/SEOPDP.tsx": $$$14,
-    "deco-sites/std/sections/SEOPLP.tsx": $$$15,
-    "deco-sites/std/sections/configOCC.global.tsx": $$$16,
-    "deco-sites/std/sections/configShopify.global.tsx": $$$17,
-    "deco-sites/std/sections/configVTEX.global.tsx": $$$18,
+    "./sections/ProductSpecTable.tsx": $$$11,
+    "./sections/SearchControls.tsx": $$$12,
+    "./sections/WhatsApp.tsx": $$$13,
+    "deco-sites/std/sections/SEO.tsx": $$$14,
+    "deco-sites/std/sections/SEOPDP.tsx": $$$15,
+    "deco-sites/std/sections/SEOPLP.tsx": $$$16,
+    "deco-sites/std/sections/configOCC.global.tsx": $$$17,
+    "deco-sites/std/sections/configShopify.global.tsx": $$$18,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$19,
   },
   functions: {
     "$live/functions/EffectSelectPage.ts": $$$$0,
@@ -1024,6 +1028,24 @@ const manifest: DecoManifest = {
           "products",
           "viewMoreLink",
           "viewMoreText",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/ProductSpecTable.tsx": {
+      "inputSchema": {
+        "title": " Product Spec Table",
+        "type": "object",
+        "properties": {
+          "page": {
+            "$id": "78c64adae4b16df19c6019918cf3380bc0a3ea85",
+            "format": "live-function",
+            "type": "string",
+            "title": "Page",
+          },
+        },
+        "required": [
+          "page",
         ],
       },
       "outputSchema": null,

@@ -56,7 +56,7 @@ function ProductShelf({ title, products, viewMoreLink, viewMoreText }: Props) {
   return (
     <Container
       id={id}
-      class="grid grid-cols-[48px_1fr_48px] grid-rows-[48px_1fr_48px_1fr] py-10 px-0 sm:px-5"
+      class="py-10 px-0 sm:px-5"
     >
       {title && (
         <h2 class="text-center row-start-1 col-span-full">
@@ -64,12 +64,12 @@ function ProductShelf({ title, products, viewMoreLink, viewMoreText }: Props) {
         </h2>
       )}
       {viewMoreLink && (
-        <link
-          class="row-start-4 col-span-full text-center"
+        <a
+          class="block row-start-1 col-span-full text-center"
           href={viewMoreLink}
         >
-          {viewMoreText ? viewMoreText : null}
-        </link>
+          <Text variant="heading-3">{viewMoreText ? viewMoreText : null}</Text>
+        </a>
       )}
 
       <Slider
