@@ -34,7 +34,7 @@ const options: Omit<Options, "selfURL"> = {
   theme: {
     extend: {
       colors: {
-        "default": "#FFFFFF",
+        "default": "rgb(242, 242, 242);",
         "header": "#FFFFFF",
         "badge": "#af0102", // shopping cart tem isso tambem
         "footer": "#f2f2f2",
@@ -111,7 +111,7 @@ const options: Omit<Options, "selfURL"> = {
       },
     },
     fontFamily: {
-      sans: ["Albert Sans", "sans-serif"],
+      sans: ["Open Sans", "sans-serif"],
       serif: ["inherit", "serif"],
     },
     screens: {
