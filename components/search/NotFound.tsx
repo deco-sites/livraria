@@ -15,7 +15,7 @@ function NotFound() {
         />
       </div>
 
-      <div class="w-full p-[25px] lg:w-2/5 lg:ml-5 p-0 flex flex-col justify-center items-start">
+      <div class="w-full p-[25px] lg:w-2/5 lg:ml-5 lg:p-0 flex flex-col justify-center items-start">
         <Text class="text-body text-black mb-[10px]">
           Olá! <span class="text-notfound-title">Não encontramos</span>{" "}
           o que você procura.
