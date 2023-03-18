@@ -52,6 +52,8 @@ const options: Omit<Options, "selfURL"> = {
         "section-title": "#858585",
         "positive": "#1A7346",
         "critical": "#B44125",
+        "notfound-title": "#AF0100",
+        "whatsapp": "#25D366",
       },
       borderColor: {
         "default": "#D4DBD7",
@@ -108,6 +110,7 @@ const options: Omit<Options, "selfURL"> = {
         default: "0px 1px 4px 0px #0000001F",
         md: "0px 1px 5px 0px #00000024",
         lg: "0px 4px 10px 0px #0000001F",
+        notfound: "0px 3px 10px -5px rgb(0, 0, 0)",
       },
     },
     fontFamily: {
