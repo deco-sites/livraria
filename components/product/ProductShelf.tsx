@@ -1,9 +1,9 @@
 import type { LoaderReturnType } from "$live/types.ts";
 import ProductCard from "$store/components/product/ProductCard.tsx";
+import Arrows from "$store/components/ui/Arrows.tsx";
 import Container from "$store/components/ui/Container.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import Text from "$store/components/ui/Text.tsx";
-import Arrows from "$store/components/ui/Arrows.tsx";
 import SliderControllerJS from "$store/islands/SliderJS.tsx";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 import { useEffect, useId, useState } from "preact/hooks";
@@ -11,9 +11,11 @@ import { useEffect, useId, useState } from "preact/hooks";
 export interface Props {
   title: string;
   products: LoaderReturnType<Product[]>;
+  viewMoreLink: string;
+  viewMoreText: string;
 }
 
-function ProductShelf({ title, products }: Props) {
+function ProductShelf({ title, products, viewMoreLink, viewMoreText }: Props) {
   const id = useId();
 
   if (!products || products.length === 0) {
@@ -54,12 +56,20 @@ function ProductShelf({ title, products }: Props) {
   return (
     <Container
       id={id}
-      class="grid grid-cols-[48px_1fr_48px] grid-rows-[48px_1fr_48px_1fr] py-10 px-0 sm:px-5"
+      class="py-10 px-0 sm:px-5"
     >
       {title && (
         <h2 class="text-center row-start-1 col-span-full">
           <Text variant="heading-2">{title}</Text>
         </h2>
+      )}
+      {viewMoreLink && (
+        <a
+          class="block row-start-1 col-span-full text-center"
+          href={viewMoreLink}
+        >
+          <Text variant="heading-3">{viewMoreText ? viewMoreText : null}</Text>
+        </a>
       )}
 
       <Slider
