@@ -1,6 +1,6 @@
-import Container from "../ui/Container.tsx";
-import Icon from "../ui/Icon.tsx";
-import Text from "../ui/Text.tsx";
+import Container from "$store/components/ui/Container.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
+import Text from "$store/components/ui/Text.tsx";
 
 function NotFound() {
   return (

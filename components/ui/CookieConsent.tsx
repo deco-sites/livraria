@@ -29,6 +29,7 @@ window.addEventListener('scroll', callback, { once: true });
 
 function CookieConsent() {
   const id = useId();
+  console.log("🚀 ~ file: CookieConsent.tsx:32 ~ CookieConsent ~ id:", id);
 
   return (
     <>
@@ -38,19 +39,22 @@ function CookieConsent() {
       >
         <Container class="px-4 py-4 rounded border border-default flex flex-col sm:flex-row gap-4 items-start sm:items-center shadow bg-default">
           <Text class="flex-grow" variant="caption">
-            Utilizamos cookies em nosso site para melhorar seu desempenho,
-            segurança e personalizar conteúdo e anúncios.
+            Nós utilizamos cookies para melhorar sua experiência e fornecer
+            anúncios personalizados. Ao continuar, entendemos que você está
+            ciente e de acordo com nossa Política de Privacidade.
           </Text>
 
           <a href="https://www.deco.cx">
             <Text class="underline" variant="caption">
-              Nossa política de privacidade
+              Li e aceito a Política de Privacidade.
             </Text>
           </a>
 
           <div class="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
-            <Button data-button-cc-accept variant="primary">Aceitar</Button>
-            <Button data-button-cc-close variant="secondary">Fechar</Button>
+            <Button data-button-cc-accept variant="primary">
+              Aceitar e Fechar
+            </Button>
+            {/* <Button data-button-cc-close variant="secondary">Fechar</Button> */}
           </div>
         </Container>
       </div>
