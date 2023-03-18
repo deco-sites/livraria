@@ -10,23 +10,11 @@ import { formatPrice } from "$store/sdk/format.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 
+import NotFound from "../search/NotFound.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
-}
-
-function NotFound() {
-  return (
-    <div class="w-full flex justify-center items-center py-28">
-      <div class="flex flex-col items-center justify-center gap-6">
-        <Text variant="heading-2">Página não encontrada</Text>
-        <a href="/">
-          <Button>Voltar à página inicial</Button>
-        </a>
-      </div>
-    </div>
-  );
 }
 
 function Details({ page }: { page: ProductDetailsPage }) {

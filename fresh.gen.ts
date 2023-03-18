@@ -296,6 +296,61 @@ const manifest: DecoManifest = {
             "title": "Autoplay interval",
             "description": "time (in seconds) to start the carousel autoplay",
           },
+          "showNavigationArrows": {
+            "type": "string",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "mobileOnly",
+              },
+              {
+                "type": "string",
+                "const": "desktopOnly",
+              },
+              {
+                "type": "string",
+                "const": "always",
+              },
+              {
+                "type": "string",
+                "const": "never",
+              },
+            ],
+            "title": "Show Navigation Arrows",
+            "description": "When navigation arrows should be rendered.",
+          },
+          "showPaginationDots": {
+            "type": "string",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "mobileOnly",
+              },
+              {
+                "type": "string",
+                "const": "desktopOnly",
+              },
+              {
+                "type": "string",
+                "const": "always",
+              },
+              {
+                "type": "string",
+                "const": "never",
+              },
+            ],
+            "title": "Show Pagination Dots",
+            "description": "When pagination dots should be rendered.",
+          },
+          "showProgressiveDots": {
+            "type": [
+              "boolean",
+              "null",
+            ],
+            "title": "Show Progressive Dots",
+            "description":
+              "Show dots with progressive status about current timeout.",
+          },
         },
         "required": [],
       },
@@ -450,6 +505,10 @@ const manifest: DecoManifest = {
                     {
                       "type": "string",
                       "const": "WhatsApp",
+                    },
+                    {
+                      "type": "string",
+                      "const": "NotFound",
                     },
                   ],
                   "title": "Icon",
@@ -653,6 +712,10 @@ const manifest: DecoManifest = {
                               {
                                 "type": "string",
                                 "const": "WhatsApp",
+                              },
+                              {
+                                "type": "string",
+                                "const": "NotFound",
                               },
                             ],
                             "title": "Icon",
