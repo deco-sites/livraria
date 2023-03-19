@@ -5,13 +5,14 @@ import type { LoaderReturnType } from "$live/types.ts";
 import type { Product, Suggestion } from "deco-sites/std/commerce/types.ts";
 import type { ClientConfigVTEX } from "deco-sites/std/functions/vtexConfig.ts";
 
-import Alert from "./Alert.tsx";
+import Alert, { AlertProps } from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
 import { headerHeight } from "./constants.ts";
 
 export interface NavItem {
   label: string;
   href: string;
+  highlight?: boolean;
   children?: Array<{
     label: string;
     href: string;
@@ -27,7 +28,9 @@ export interface NavItem {
 }
 
 export interface Props {
-  alerts: string[];
+  /** @title Alerts */
+  alert?: AlertProps;
+
   /** @title Search Bar */
   searchbar?: SearchbarProps;
   /**
@@ -55,7 +58,7 @@ export interface Props {
 
 function Header(
   {
-    alerts,
+    alert,
     searchbar: _searchbar,
     products,
     navItems = [],
@@ -67,7 +70,12 @@ function Header(
   return (
     <header class={`h-[${headerHeight}]`}>
       <div class="bg-default fixed w-full z-50">
-        <Alert alerts={alerts} />
+        <Alert
+          alert={alert?.alert}
+          links={alert?.links}
+          alertStore={alert?.alertStore}
+          storelink={alert?.storelink}
+        />
         <Navbar items={navItems} searchbar={searchbar} />
       </div>
 

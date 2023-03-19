@@ -5,21 +5,27 @@ import { headerHeight } from "./constants.ts";
 export interface INavItem {
   label: string;
   href: string;
+  highlight?: boolean;
   children?: INavItem[];
   image?: { src?: string; alt?: string };
 }
 
 function NavItem({ item }: { item: INavItem }) {
-  const { href, label, children, image } = item;
+  const { href, label, children, image, highlight = false } = item;
 
   return (
-    <li class="group flex items-center">
-      <a href={href} class="px-4 py-3">
+    <li
+      class={`group flex items-center justify-center ${
+        highlight ? "bg-badge" : ""
+      }`}
+    >
+      <a href={href} class="px-[20px] py-[10px] ">
         <Text
-          class="group-hover:border-black border-solid border-b border-white"
+          class={` text-menu-desktop  ${highlight ? "text-white" : ""}`}
           variant="menu"
         >
           {label}
+          {highlight}
         </Text>
       </a>
 
@@ -27,7 +33,7 @@ function NavItem({ item }: { item: INavItem }) {
         (
           <div
             class={`fixed invisible hover:visible group-hover:visible bg-default z-50 flex items-start justify-center gap-6 border-t-1 border-b-2 border-default w-screen mt-[${headerHeight}]`}
-            style={{ top: "0px", left: "0px" }}
+            style={{ top: "9px", left: "0px" }}
           >
             {image?.src && (
               <Image

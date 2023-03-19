@@ -514,6 +514,26 @@ const manifest: DecoManifest = {
                       "type": "string",
                       "const": "NotFound",
                     },
+                    {
+                      "type": "string",
+                      "const": "InstagramHeader",
+                    },
+                    {
+                      "type": "string",
+                      "const": "FacebookHeader",
+                    },
+                    {
+                      "type": "string",
+                      "const": "WhatsappHeader",
+                    },
+                    {
+                      "type": "string",
+                      "const": "MyStores",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Wishlist",
+                    },
                   ],
                   "title": "Icon",
                   "description": "Image src",
@@ -721,6 +741,26 @@ const manifest: DecoManifest = {
                                 "type": "string",
                                 "const": "NotFound",
                               },
+                              {
+                                "type": "string",
+                                "const": "InstagramHeader",
+                              },
+                              {
+                                "type": "string",
+                                "const": "FacebookHeader",
+                              },
+                              {
+                                "type": "string",
+                                "const": "WhatsappHeader",
+                              },
+                              {
+                                "type": "string",
+                                "const": "MyStores",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Wishlist",
+                              },
                             ],
                             "title": "Icon",
                           },
@@ -752,12 +792,106 @@ const manifest: DecoManifest = {
         "title": " Header",
         "type": "object",
         "properties": {
-          "alerts": {
-            "type": "array",
-            "items": {
-              "type": "string",
-            },
+          "alert": {
             "title": "Alerts",
+            "type": "object",
+            "properties": {
+              "links": {
+                "type": "array",
+                "items": {
+                  "title": "IconLink",
+                  "type": "object",
+                  "properties": {
+                    "icon": {
+                      "type": "string",
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "const": "FacebookHeader",
+                        },
+                        {
+                          "type": "string",
+                          "const": "InstagramHeader",
+                        },
+                        {
+                          "type": "string",
+                          "const": "WhatsappHeader",
+                        },
+                        {
+                          "type": "string",
+                          "const": "MyStores",
+                        },
+                      ],
+                      "title": "Icon",
+                    },
+                    "link": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Link",
+                    },
+                  },
+                  "required": [],
+                },
+                "title": "Links",
+              },
+              "alert": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Alert",
+              },
+              "storelink": {
+                "type": "array",
+                "items": {
+                  "title": "IconLink",
+                  "type": "object",
+                  "properties": {
+                    "icon": {
+                      "type": "string",
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "const": "FacebookHeader",
+                        },
+                        {
+                          "type": "string",
+                          "const": "InstagramHeader",
+                        },
+                        {
+                          "type": "string",
+                          "const": "WhatsappHeader",
+                        },
+                        {
+                          "type": "string",
+                          "const": "MyStores",
+                        },
+                      ],
+                      "title": "Icon",
+                    },
+                    "link": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Link",
+                    },
+                  },
+                  "required": [],
+                },
+                "title": "Storelink",
+              },
+              "alertStore": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Alert Store",
+              },
+            },
+            "required": [],
           },
           "searchbar": {
             "title": "Search Bar",
@@ -815,6 +949,13 @@ const manifest: DecoManifest = {
                 "href": {
                   "type": "string",
                   "title": "Href",
+                },
+                "highlight": {
+                  "type": [
+                    "boolean",
+                    "null",
+                  ],
+                  "title": "Highlight",
                 },
                 "children": {
                   "title": "Children",
@@ -908,9 +1049,7 @@ const manifest: DecoManifest = {
             "description": "vtex config used for search autocompletion;",
           },
         },
-        "required": [
-          "alerts",
-        ],
+        "required": [],
       },
       "outputSchema": null,
     },
