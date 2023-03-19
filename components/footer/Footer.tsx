@@ -5,16 +5,21 @@ import Text from "$store/components/ui/Text.tsx";
 import type { ComponentChildren } from "preact";
 import Newsletter from "./Newsletter.tsx";
 
-export type IconItem = { icon: AvailableIcons };
 export type StringItem = {
-  label: string;
-  href: string;
+  label?: string;
+  href?: string;
+};
+
+export type IconItem = {
+  label?: string;
+  href?: string;
+  icon?: AvailableIcons;
 };
 
 export type Item = StringItem | IconItem;
 
 export type Section = {
-  label: string;
+  label?: string;
   children: Item[];
 };
 
@@ -27,18 +32,22 @@ function SectionItem({ item }: { item: Item }) {
     <Text variant="caption" tone="default-inverse">
       {isIcon(item)
         ? (
-          <div class="border-default border-1 py-1.5 px-2.5">
+          <a href={item?.href}>
             <Icon
-              id={item.icon}
+              id={item?.icon}
               width={25}
               height={20}
               strokeWidth={0.01}
             />
-          </div>
+
+            <span>
+              {item?.label}
+            </span>
+          </a>
         )
         : (
-          <a href={item.href}>
-            {item.label}
+          <a href={item?.href}>
+            {item?.label}
           </a>
         )}
     </Text>
@@ -131,7 +140,7 @@ function Footer({ sections = [] }: Props) {
               <Text variant="body" tone="default-inverse">
                 <details>
                   <summary>
-                    {section.label}
+                    {section?.label}
                   </summary>
 
                   <ul

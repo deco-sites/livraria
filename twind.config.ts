@@ -39,6 +39,7 @@ const options: Omit<Options, "selfURL"> = {
         "badge": "#af0102", // shopping cart tem isso tambem
         "footer": "#f2f2f2",
         "newsletter": "rgb(175, 1, 0)",
+        "cookie": "#90052c",
         "interactive": "#858585",
         "interactive-inverse": "#FFFFFF",
         "hover": "rgba(0, 0, 0, 0.04)",

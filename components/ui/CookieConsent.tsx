@@ -46,8 +46,8 @@ function CookieConsent() {
             </Text>
           </Text>
 
-          <div class="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
-            <Button data-button-cc-accept variant="primary">
+          <div class="flex flex-col sm:flex-row justify-center items-center w-full sm:w-auto">
+            <Button data-button-cc-accept variant="cookie">
               Aceitar e Fechar
             </Button>
             {/* <Button data-button-cc-close variant="secondary">Fechar</Button> */}

@@ -594,7 +594,10 @@ const manifest: DecoManifest = {
               "type": "object",
               "properties": {
                 "label": {
-                  "type": "string",
+                  "type": [
+                    "string",
+                    "null",
+                  ],
                   "title": "Label",
                 },
                 "children": {
@@ -607,23 +610,40 @@ const manifest: DecoManifest = {
                         "type": "object",
                         "properties": {
                           "label": {
-                            "type": "string",
+                            "type": [
+                              "string",
+                              "null",
+                            ],
                             "title": "Label",
                           },
                           "href": {
-                            "type": "string",
+                            "type": [
+                              "string",
+                              "null",
+                            ],
                             "title": "Href",
                           },
                         },
-                        "required": [
-                          "label",
-                          "href",
-                        ],
+                        "required": [],
                       },
                       {
                         "title": "IconItem",
                         "type": "object",
                         "properties": {
+                          "label": {
+                            "type": [
+                              "string",
+                              "null",
+                            ],
+                            "title": "Label",
+                          },
+                          "href": {
+                            "type": [
+                              "string",
+                              "null",
+                            ],
+                            "title": "Href",
+                          },
                           "icon": {
                             "type": "string",
                             "anyOf": [
@@ -795,9 +815,7 @@ const manifest: DecoManifest = {
                             "title": "Icon",
                           },
                         },
-                        "required": [
-                          "icon",
-                        ],
+                        "required": [],
                       },
                     ],
                     "title": "Item",
@@ -806,7 +824,6 @@ const manifest: DecoManifest = {
                 },
               },
               "required": [
-                "label",
                 "children",
               ],
             },
