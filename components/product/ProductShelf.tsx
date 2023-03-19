@@ -56,7 +56,7 @@ function ProductShelf({ title, products, viewMoreLink, viewMoreText }: Props) {
   return (
     <Container
       id={id}
-      class="py-10 px-0 sm:px-5"
+      class="py-10 px-0 sm:mb-10 sm:px-5 bg-white rounded-[0.25rem] p-8 shadow-section relative"
     >
       {title && (
         <h2 class="text-center row-start-1 col-span-full">
@@ -73,7 +73,7 @@ function ProductShelf({ title, products, viewMoreLink, viewMoreText }: Props) {
       )}
 
       <Slider
-        class="col-span-full row-span-full scrollbar-none gap-6"
+        class="col-span-full row-span-full scrollbar-none gap-6 "
         snap="snap-center sm:snap-start block first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0"
       >
         {products?.map((product) => (

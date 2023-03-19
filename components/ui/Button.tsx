@@ -47,6 +47,9 @@ const Button = forwardRef<HTMLButtonElement, Props>(({
       disabled={disabled || loading}
       type={type}
       ref={ref}
+      aria-busy={loading}
+      aria-disabled={disabled}
+      aria-label={props["aria-label"] || children}
     >
       {loading === true ? <Spinner size={24} /> : children}
     </Component>
