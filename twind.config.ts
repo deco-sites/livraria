@@ -114,6 +114,7 @@ const options: Omit<Options, "selfURL"> = {
         },
       },
       boxShadow: {
+        section: "rgb(0, 0, 0) 0px 3px 10px -5px;",
         sm: "0px 1px 3px 0px #00000014",
         default: "0px 1px 4px 0px #0000001F",
         md: "0px 1px 5px 0px #00000024",

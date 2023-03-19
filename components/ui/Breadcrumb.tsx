@@ -60,7 +60,7 @@ function Breadcrumb({ itemListElement = [] }: Props) {
 
   return (
     <>
-      <ul class="flex flex-row gap-2 items-center w-full">
+      <ul class="flex flex-row gap-2 items-center w-full bg-interactive-inverse p-8 m-0 sm:mb-4">
         <Item name="Home" item="/" />
         {itemListElement.map((item) => (
           <>

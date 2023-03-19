@@ -1,8 +1,7 @@
+import Arrows from "$store/components/ui/Arrows.tsx";
 import Button from "$store/components/ui/Button.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import Text from "$store/components/ui/Text.tsx";
-import Arrows from "$store/components/ui/Arrows.tsx";
 import SliderControllerJS from "$store/islands/SliderJS.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
@@ -56,13 +55,14 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
   } = image;
 
   return (
-    <div class="relative h-[600px] min-w-[100vw] overflow-y-hidden">
+    <div class="relative h-[255px] min-w-[100vw] overflow-y-hidden">
       <a href={action?.href ?? "#"} aria-label={action?.label}>
         <Picture class="w-full" preload={lcp}>
           <Source
             media="(max-width: 767px)"
             fetchPriority={lcp ? "high" : "auto"}
             src={mobile}
+            alt={mobile}
             width={414}
             height={128}
           />
@@ -70,6 +70,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
             media="(min-width: 768px)"
             fetchPriority={lcp ? "high" : "auto"}
             src={desktop}
+            alt={desktop}
             width={1920}
             height={255}
           />
@@ -77,7 +78,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
             class="object-cover w-full sm:h-full"
             loading={lcp ? "eager" : "lazy"}
             src={desktop}
-            alt={alt}
+            alt={desktop}
           />
         </Picture>
         {action && (

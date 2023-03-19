@@ -1,12 +1,11 @@
-import Container from "$store/components/ui/Container.tsx";
-import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
-import Text from "$store/components/ui/Text.tsx";
+import Newsletter from "$store/components/footer/Newsletter.tsx";
 import PaymentSystems from "$store/components/footer/PaymentSystems.tsx";
 import SecuritySystems from "$store/components/footer/SecuritySystems.tsx";
-import Newsletter from "$store/components/footer/Newsletter.tsx";
 import SocialNetworks from "$store/components/footer/SocialNetworks.tsx";
-import type { ComponentChildren } from "preact";
+import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
+import Text from "$store/components/ui/Text.tsx";
 import type { HTML } from "deco-sites/std/components/types.ts";
+import type { ComponentChildren } from "preact";
 
 export type StringItem = {
   label?: string;
@@ -117,7 +116,7 @@ function Footer({ sections = [] }: Props) {
 
       <FooterContainer class="p-2.5">
         {/* Desktop view */}
-        <ul class="hidden sm:flex flex-row gap-20 sm:grid grid-cols-[25%_25%_25%_25%] divide-x-1">
+        <ul class="hidden sm:flex flex-row gap-20 sm:grid grid-cols-[1fr_1fr_1fr_1fr] divide-x-1">
           {sections.map((section, index) => (
             <li
               class={`pt-5 pb-10 flex flex-col justify-between h-full ${
