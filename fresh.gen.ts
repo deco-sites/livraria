@@ -32,14 +32,15 @@ import * as $$$8 from "./sections/ProductDetails.tsx";
 import * as $$$9 from "./sections/ProductGallery.tsx";
 import * as $$$10 from "./sections/ProductShelf.tsx";
 import * as $$$11 from "./sections/ProductSpecTable.tsx";
-import * as $$$12 from "./sections/SearchControls.tsx";
-import * as $$$13 from "./sections/WhatsApp.tsx";
-import * as $$$14 from "deco-sites/std/sections/SEO.tsx";
-import * as $$$15 from "deco-sites/std/sections/SEOPDP.tsx";
-import * as $$$16 from "deco-sites/std/sections/SEOPLP.tsx";
-import * as $$$17 from "deco-sites/std/sections/configOCC.global.tsx";
-import * as $$$18 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as $$$19 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$12 from "./sections/RichText.tsx";
+import * as $$$13 from "./sections/SearchControls.tsx";
+import * as $$$14 from "./sections/WhatsApp.tsx";
+import * as $$$15 from "deco-sites/std/sections/SEO.tsx";
+import * as $$$16 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as $$$17 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as $$$18 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as $$$19 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as $$$20 from "deco-sites/std/sections/configVTEX.global.tsx";
 import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$1 from "$live/functions/MatchDate.ts";
 import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
@@ -92,14 +93,15 @@ const manifest: DecoManifest = {
     "./sections/ProductGallery.tsx": $$$9,
     "./sections/ProductShelf.tsx": $$$10,
     "./sections/ProductSpecTable.tsx": $$$11,
-    "./sections/SearchControls.tsx": $$$12,
-    "./sections/WhatsApp.tsx": $$$13,
-    "deco-sites/std/sections/SEO.tsx": $$$14,
-    "deco-sites/std/sections/SEOPDP.tsx": $$$15,
-    "deco-sites/std/sections/SEOPLP.tsx": $$$16,
-    "deco-sites/std/sections/configOCC.global.tsx": $$$17,
-    "deco-sites/std/sections/configShopify.global.tsx": $$$18,
-    "deco-sites/std/sections/configVTEX.global.tsx": $$$19,
+    "./sections/RichText.tsx": $$$12,
+    "./sections/SearchControls.tsx": $$$13,
+    "./sections/WhatsApp.tsx": $$$14,
+    "deco-sites/std/sections/SEO.tsx": $$$15,
+    "deco-sites/std/sections/SEOPDP.tsx": $$$16,
+    "deco-sites/std/sections/SEOPLP.tsx": $$$17,
+    "deco-sites/std/sections/configOCC.global.tsx": $$$18,
+    "deco-sites/std/sections/configShopify.global.tsx": $$$19,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$20,
   },
   functions: {
     "$live/functions/EffectSelectPage.ts": $$$$0,
@@ -518,6 +520,14 @@ const manifest: DecoManifest = {
                       "type": "string",
                       "const": "NotFound",
                     },
+                    {
+                      "type": "string",
+                      "const": "Mail",
+                    },
+                    {
+                      "type": "string",
+                      "const": "DoubleRightArrow",
+                    },
                   ],
                   "title": "Icon",
                   "description": "Image src",
@@ -724,6 +734,14 @@ const manifest: DecoManifest = {
                               {
                                 "type": "string",
                                 "const": "NotFound",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Mail",
+                              },
+                              {
+                                "type": "string",
+                                "const": "DoubleRightArrow",
                               },
                             ],
                             "title": "Icon",
@@ -1049,6 +1067,25 @@ const manifest: DecoManifest = {
         "required": [
           "page",
         ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/RichText.tsx": {
+      "inputSchema": {
+        "title": " Rich Text",
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Texto",
+            "description":
+              "Texto em linguagem Markdown a ser mostrado (confira o seguinte guia caso tenha dúvidas de como funciona o Markdown: https://www.markdownguide.org/cheat-sheet/)",
+          },
+        },
+        "required": [],
       },
       "outputSchema": null,
     },

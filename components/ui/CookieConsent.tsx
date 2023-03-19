@@ -1,6 +1,5 @@
 import Text from "$store/components/ui/Text.tsx";
 import Button from "$store/components/ui/Button.tsx";
-import Container from "$store/components/ui/Container.tsx";
 import { useId } from "preact/hooks";
 
 const script = (id: string) => `
@@ -29,26 +28,23 @@ window.addEventListener('scroll', callback, { once: true });
 
 function CookieConsent() {
   const id = useId();
-  console.log("🚀 ~ file: CookieConsent.tsx:32 ~ CookieConsent ~ id:", id);
 
   return (
     <>
       <div
         id={id}
-        class="transform-gpu translate-y-[200%] transition fixed bottom-0 sm:bottom-4 w-screen z-50"
+        class="transform-gpu transition fixed bottom-0 w-screen z-50"
       >
-        <Container class="px-4 py-4 rounded border border-default flex flex-col sm:flex-row gap-4 items-start sm:items-center shadow bg-default">
+        <div class="px-[50px] py-[15px] border border-default flex flex-col sm:flex-row gap-4 items-start shadow-cookie bg-white grid grid-cols-[80%_20%]">
           <Text class="flex-grow" variant="caption">
             Nós utilizamos cookies para melhorar sua experiência e fornecer
             anúncios personalizados. Ao continuar, entendemos que você está
-            ciente e de acordo com nossa Política de Privacidade.
-          </Text>
-
-          <a href="https://www.deco.cx">
+            ciente e de acordo com nossa Política de Privacidade.{"  "}
             <Text class="underline" variant="caption">
-              Li e aceito a Política de Privacidade.
+              Li e aceito a{" "}
+              <a href="/" class="underline">Política de Privacidade.</a>
             </Text>
-          </a>
+          </Text>
 
           <div class="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
             <Button data-button-cc-accept variant="primary">
@@ -56,7 +52,7 @@ function CookieConsent() {
             </Button>
             {/* <Button data-button-cc-close variant="secondary">Fechar</Button> */}
           </div>
-        </Container>
+        </div>
       </div>
       <script type="module" dangerouslySetInnerHTML={{ __html: script(id) }} />
     </>

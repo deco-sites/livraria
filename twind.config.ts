@@ -38,6 +38,7 @@ const options: Omit<Options, "selfURL"> = {
         "header": "#FFFFFF",
         "badge": "#af0102", // shopping cart tem isso tambem
         "footer": "#f2f2f2",
+        "newsletter": "rgb(175, 1, 0)",
         "interactive": "#858585",
         "interactive-inverse": "#FFFFFF",
         "hover": "rgba(0, 0, 0, 0.04)",
@@ -54,6 +55,7 @@ const options: Omit<Options, "selfURL"> = {
         "critical": "#B44125",
         "notfound-title": "#AF0100",
         "whatsapp": "#25D366",
+        "copyright": "#797676",
       },
       borderColor: {
         "default": "#D4DBD7",
@@ -111,6 +113,7 @@ const options: Omit<Options, "selfURL"> = {
         md: "0px 1px 5px 0px #00000024",
         lg: "0px 4px 10px 0px #0000001F",
         notfound: "0px 3px 10px -5px rgb(0, 0, 0)",
+        cookie: "0px 1px 5px 0px rgba(0, 0, 0, 0.7)",
       },
     },
     fontFamily: {
