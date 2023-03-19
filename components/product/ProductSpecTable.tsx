@@ -14,17 +14,17 @@ function SpecTable({ page }: { page: ProductDetailsPage }) {
   // console.log("specifications", specifications);
 
   return (
-    <Container class="py-0 sm:py-10">
+    <Container class="py-0 sm:py-10 sm:mb-10 bg-white rounded-[0.25rem] p-8 shadow-section">
       <table class="table-auto w-full">
         <tbody>
           {specifications &&
             specifications.map(({ name, value }) => {
               return (
-                <tr>
-                  <td class="px-2 py-2 border border-gray-200">
+                <tr class="even:bg-interactive-inverse odd:bg-gray-100 border-0">
+                  <td class="px-2 py-2">
                     {name}
                   </td>
-                  <td class="px-2 py-2 border border-gray-200">
+                  <td class="px-2 py-2">
                     {value}
                   </td>
                 </tr>
@@ -41,7 +41,7 @@ function ProductSpecTable({ page }: Props) {
   if (page) {
     return <SpecTable page={page} />;
   }
-  return <>cu</>;
+  return <></>;
 }
 
 export default ProductSpecTable;

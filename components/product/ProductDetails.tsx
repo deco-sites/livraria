@@ -11,6 +11,7 @@ import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 import Image from "deco-sites/std/components/Image.tsx";
 
 import NotFound from "../search/NotFound.tsx";
+import ContainerFull from "../ui/ContainerFull.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 
 export interface Props {
@@ -23,7 +24,6 @@ function Details({ page }: { page: ProductDetailsPage }) {
     product,
   } = page;
   const {
-    description,
     productID,
     offers,
     image: images,
@@ -34,91 +34,83 @@ function Details({ page }: { page: ProductDetailsPage }) {
   const [front, back] = images ?? [];
 
   return (
-    <Container class="py-0 sm:py-10">
-      <div class="flex flex-col gap-4 sm:flex-row sm:gap-10">
-        {/* Image Gallery */}
-        <div class="flex flex-row overflow-auto snap-x snap-mandatory scroll-smooth sm:gap-2">
-          {[front, back ?? front].map((img, index) => (
-            <Image
-              style={{ aspectRatio: "360 / 500" }}
-              class="snap-center min-w-[100vw] sm:min-w-0 sm:w-auto sm:h-[600px]"
-              sizes="(max-width: 640px) 100vw, 30vw"
-              src={img.url!}
-              alt={img.alternateName}
-              width={360}
-              height={500}
-              // Preload LCP image for better web vitals
-              preload={index === 0}
-              loading={index === 0 ? "eager" : "lazy"}
-            />
-          ))}
-        </div>
-        {/* Product Info */}
-        <div class="flex-auto px-4 sm:px-0">
-          {/* Breadcrumb */}
-          <Breadcrumb
-            itemListElement={breadcrumbList?.itemListElement.slice(0, -1)}
-          />
-          {/* Code and name */}
-          <div class="mt-4 sm:mt-8">
-            <div>
-              <Text tone="subdued" variant="caption">
-                Cod. {gtin}
-              </Text>
-            </div>
-            <h1>
-              <Text variant="heading-3">{name}</Text>
-            </h1>
-          </div>
-          {/* Prices */}
-          <div class="mt-4">
-            <div class="flex flex-row gap-2 items-center">
-              <Text
-                class="line-through"
-                tone="subdued"
-                variant="list-price"
-              >
-                {formatPrice(listPrice, offers!.priceCurrency!)}
-              </Text>
-              <Text tone="price" variant="heading-3">
-                {formatPrice(price, offers!.priceCurrency!)}
-              </Text>
-            </div>
-            <Text tone="subdued" variant="caption">
-              {installments}
-            </Text>
-          </div>
-          {/* Sku Selector */}
-          <div class="mt-4 sm:mt-6">
-            <ProductSelector product={product} />
-          </div>
-          {/* Add to Cart and Favorites button */}
-          <div class="mt-4 sm:mt-10 flex flex-col gap-2">
-            {seller && (
-              <AddToCartButton
-                skuId={productID}
-                sellerId={seller}
+    <ContainerFull class="p-0 m-0 ml-auto mr-auto">
+      {/* Breadcrumb */}
+      <Breadcrumb
+        itemListElement={breadcrumbList?.itemListElement.slice(0, -1)}
+      />
+      {/* Product Details */}
+      <Container class="py-0 sm:pb-10 sm:mb-10">
+        {/* Code and name */}
+        <div class="flex flex-col gap-4 sm:flex-row sm:gap-10 bg-white rounded-[0.25rem] p-8 shadow-section">
+          {/* Image Gallery */}
+          <div class="flex flex-row overflow-auto snap-x snap-mandatory scroll-smooth sm:gap-2">
+            {[front, back ?? front].map((img, index) => (
+              <Image
+                style={{ aspectRatio: "290 / 420" }}
+                class="snap-center min-w-[100vw] sm:min-w-0 sm:w-auto sm:h-[420px]"
+                sizes="(max-width: 640px) 100vw, 30vw"
+                src={img.url!}
+                alt={img.alternateName}
+                width={290}
+                height={420}
+                // Preload LCP image for better web vitals
+                preload={index === 0}
+                loading={index === 0 ? "eager" : "lazy"}
               />
-            )}
-            <Button variant="secondary">
-              <Icon id="Heart" width={20} height={20} strokeWidth={2} />{" "}
-              Favoritar
-            </Button>
+            ))}
           </div>
-          {/* Description card */}
-          <div class="mt-4 sm:mt-6">
-            <Text variant="caption">
-              {description && (
-                <details>
-                  <summary class="cursor-pointer">Descrição</summary>
-                  <div class="ml-2 mt-2">{description}</div>
-                </details>
+          {/* Product Info */}
+          <div class="flex-auto px-4 sm:px-0">
+            <div class="mt-4 sm:mt-8">
+              <div>
+                <Text tone="subdued" variant="caption">
+                  Cod. {gtin}
+                </Text>
+              </div>
+              <h1>
+                <Text variant="heading-3">{name}</Text>
+              </h1>
+            </div>
+            {/* Prices */}
+            <div class="mt-4">
+              <div class="flex flex-row gap-2 items-center">
+                <Text
+                  class="line-through"
+                  tone="subdued"
+                  variant="list-price"
+                >
+                  {formatPrice(listPrice, offers!.priceCurrency!)}
+                </Text>
+                <Text tone="price" variant="heading-3">
+                  {formatPrice(price, offers!.priceCurrency!)}
+                </Text>
+              </div>
+              <Text tone="subdued" variant="caption">
+                {installments}
+              </Text>
+            </div>
+            {/* Sku Selector */}
+            <div class="mt-4 sm:mt-6">
+              <ProductSelector product={product} />
+            </div>
+            {/* Add to Cart and Favorites button */}
+            <div class="mt-4 sm:mt-10 flex flex-col gap-2">
+              {seller && (
+                <AddToCartButton
+                  skuId={productID}
+                  sellerId={seller}
+                />
               )}
-            </Text>
+              <Button variant="secondary">
+                <Icon id="Heart" width={20} height={20} strokeWidth={2} />{" "}
+                Favoritar
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </ContainerFull>
   );
 }
 

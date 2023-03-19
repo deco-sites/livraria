@@ -4,7 +4,7 @@ import Icon from "$store/components/ui/Icon.tsx";
 function Arrows() {
   return (
     <>
-      <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
+      <div class="flex items-center justify-center z-10 col-start-1 row-start-2 absolute top-1/2 left-0">
         <Button
           class="h-12 w-12"
           variant="icon"
@@ -19,7 +19,7 @@ function Arrows() {
           />
         </Button>
       </div>
-      <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
+      <div class="flex items-center justify-center z-10 col-start-3 row-start-2 absolute top-1/2 right-0">
         <Button
           class="h-12 w-12"
           variant="icon"
