@@ -34,7 +34,19 @@ export type AvailableIcons =
   | "Trash"
   | "FilterList"
   | "WhatsApp"
-  | "NotFound";
+  | "NotFound"
+  | "Mail"
+  | "DoubleRightArrow"
+  | "RightArrow"
+  | "InstagramHeader"
+  | "FacebookHeader"
+  | "WhatsappHeader"
+  | "MyStores"
+  | "Wishlist"
+  | "HeartFooter"
+  | "PhoneFooter"
+  | "WhatsappFooter"
+  | "MailFooter";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**
@@ -42,7 +54,7 @@ interface Props extends JSX.SVGAttributes<SVGSVGElement> {
    *
    * Example: <Icon id="Bell" />
    */
-  id: AvailableIcons;
+  id?: AvailableIcons | string;
   size?: number;
 }
 

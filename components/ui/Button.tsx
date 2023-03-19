@@ -19,6 +19,8 @@ const variants = {
     "h-[36px] px-3 rounded bg-interactive-inverse font-button text-button border-default hover:bg-hover active:bg-interactive active:text-interactive-inverse disabled:border-default disabled:text-subdued disabled:bg-interactive-inverse focus:outline-none",
   tertiary:
     "h-[36px] px-3 rounded bg-interactive-inverse font-button text-button border-transparent hover:bg-hover active:border-interactive disabled:border-transparent disabled:text-subdued focus:outline-none",
+  cookie:
+    "h-[36px] px-3 bg-cookie font-body text-button text-white border-transparent uppercase hover:bg-cookie active:border-interactive disabled:border-transparent disabled:text-subdued focus:outline-none",
   icon:
     "h-[36px] px-2 rounded-full bg-transparent text-default border-transparent hover:bg-hover active:border-interactive disabled:text-subdued disabled:bg-interactive-inverse focus:outline-none",
 };

@@ -53,7 +53,7 @@ function Breadcrumb({ itemListElement = [] }: Props) {
       "breadcrumbJsonLd",
       JSON.stringify(breadcrumbJsonLd),
     );
-    console.log("breadcrumbJsonLd", breadcrumbJsonLd);
+    // console.log("breadcrumbJsonLd", breadcrumbJsonLd);
 
     setJsonLd(JSON.stringify(breadcrumbJsonLd));
   }, [itemListElement]);

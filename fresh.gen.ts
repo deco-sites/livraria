@@ -6,10 +6,12 @@ import config from "./deno.json" assert { type: "json" };
 import { context } from "$live/live.ts";
 import { DecoManifest } from "$live/types.ts";
 import * as $0 from "./routes/[...catchall].tsx";
-import * as $1 from "./routes/_app.tsx";
-import * as $2 from "./routes/_middleware.ts";
-import * as $3 from "./routes/api/[...catchall].tsx";
-import * as $4 from "./routes/index.tsx";
+import * as $1 from "./routes/_404.tsx";
+import * as $2 from "./routes/_500.tsx";
+import * as $3 from "./routes/_app.tsx";
+import * as $4 from "./routes/_middleware.ts";
+import * as $5 from "./routes/api/[...catchall].tsx";
+import * as $6 from "./routes/index.tsx";
 import * as $$0 from "./islands/AddToCartButton.tsx";
 import * as $$1 from "./islands/HeaderButton.tsx";
 import * as $$2 from "./islands/HeaderModals.tsx";
@@ -30,14 +32,15 @@ import * as $$$8 from "./sections/ProductDetails.tsx";
 import * as $$$9 from "./sections/ProductGallery.tsx";
 import * as $$$10 from "./sections/ProductShelf.tsx";
 import * as $$$11 from "./sections/ProductSpecTable.tsx";
-import * as $$$12 from "./sections/SearchControls.tsx";
-import * as $$$13 from "./sections/WhatsApp.tsx";
-import * as $$$14 from "deco-sites/std/sections/SEO.tsx";
-import * as $$$15 from "deco-sites/std/sections/SEOPDP.tsx";
-import * as $$$16 from "deco-sites/std/sections/SEOPLP.tsx";
-import * as $$$17 from "deco-sites/std/sections/configOCC.global.tsx";
-import * as $$$18 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as $$$19 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$12 from "./sections/RichText.tsx";
+import * as $$$13 from "./sections/SearchControls.tsx";
+import * as $$$14 from "./sections/WhatsApp.tsx";
+import * as $$$15 from "deco-sites/std/sections/SEO.tsx";
+import * as $$$16 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as $$$17 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as $$$18 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as $$$19 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as $$$20 from "deco-sites/std/sections/configVTEX.global.tsx";
 import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$1 from "$live/functions/MatchDate.ts";
 import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
@@ -60,10 +63,12 @@ import * as $$$$17 from "deco-sites/std/functions/vtexSuggestions.ts";
 const manifest: DecoManifest = {
   routes: {
     "./routes/[...catchall].tsx": $0,
-    "./routes/_app.tsx": $1,
-    "./routes/_middleware.ts": $2,
-    "./routes/api/[...catchall].tsx": $3,
-    "./routes/index.tsx": $4,
+    "./routes/_404.tsx": $1,
+    "./routes/_500.tsx": $2,
+    "./routes/_app.tsx": $3,
+    "./routes/_middleware.ts": $4,
+    "./routes/api/[...catchall].tsx": $5,
+    "./routes/index.tsx": $6,
   },
   islands: {
     "./islands/AddToCartButton.tsx": $$0,
@@ -88,14 +93,15 @@ const manifest: DecoManifest = {
     "./sections/ProductGallery.tsx": $$$9,
     "./sections/ProductShelf.tsx": $$$10,
     "./sections/ProductSpecTable.tsx": $$$11,
-    "./sections/SearchControls.tsx": $$$12,
-    "./sections/WhatsApp.tsx": $$$13,
-    "deco-sites/std/sections/SEO.tsx": $$$14,
-    "deco-sites/std/sections/SEOPDP.tsx": $$$15,
-    "deco-sites/std/sections/SEOPLP.tsx": $$$16,
-    "deco-sites/std/sections/configOCC.global.tsx": $$$17,
-    "deco-sites/std/sections/configShopify.global.tsx": $$$18,
-    "deco-sites/std/sections/configVTEX.global.tsx": $$$19,
+    "./sections/RichText.tsx": $$$12,
+    "./sections/SearchControls.tsx": $$$13,
+    "./sections/WhatsApp.tsx": $$$14,
+    "deco-sites/std/sections/SEO.tsx": $$$15,
+    "deco-sites/std/sections/SEOPDP.tsx": $$$16,
+    "deco-sites/std/sections/SEOPLP.tsx": $$$17,
+    "deco-sites/std/sections/configOCC.global.tsx": $$$18,
+    "deco-sites/std/sections/configShopify.global.tsx": $$$19,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$20,
   },
   functions: {
     "$live/functions/EffectSelectPage.ts": $$$$0,
@@ -514,6 +520,54 @@ const manifest: DecoManifest = {
                       "type": "string",
                       "const": "NotFound",
                     },
+                    {
+                      "type": "string",
+                      "const": "Mail",
+                    },
+                    {
+                      "type": "string",
+                      "const": "DoubleRightArrow",
+                    },
+                    {
+                      "type": "string",
+                      "const": "RightArrow",
+                    },
+                    {
+                      "type": "string",
+                      "const": "InstagramHeader",
+                    },
+                    {
+                      "type": "string",
+                      "const": "FacebookHeader",
+                    },
+                    {
+                      "type": "string",
+                      "const": "WhatsappHeader",
+                    },
+                    {
+                      "type": "string",
+                      "const": "MyStores",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Wishlist",
+                    },
+                    {
+                      "type": "string",
+                      "const": "HeartFooter",
+                    },
+                    {
+                      "type": "string",
+                      "const": "PhoneFooter",
+                    },
+                    {
+                      "type": "string",
+                      "const": "WhatsappFooter",
+                    },
+                    {
+                      "type": "string",
+                      "const": "MailFooter",
+                    },
                   ],
                   "title": "Icon",
                   "description": "Image src",
@@ -556,7 +610,10 @@ const manifest: DecoManifest = {
               "type": "object",
               "properties": {
                 "label": {
-                  "type": "string",
+                  "type": [
+                    "string",
+                    "null",
+                  ],
                   "title": "Label",
                 },
                 "children": {
@@ -569,23 +626,38 @@ const manifest: DecoManifest = {
                         "type": "object",
                         "properties": {
                           "label": {
-                            "type": "string",
+                            "type": [
+                              "string",
+                              "null",
+                            ],
                             "title": "Label",
                           },
                           "href": {
-                            "type": "string",
+                            "type": [
+                              "string",
+                              "null",
+                            ],
                             "title": "Href",
                           },
                         },
-                        "required": [
-                          "label",
-                          "href",
-                        ],
+                        "required": [],
                       },
                       {
                         "title": "IconItem",
                         "type": "object",
                         "properties": {
+                          "label": {
+                            "format": "html",
+                            "type": "string",
+                            "title": "Label",
+                          },
+                          "href": {
+                            "type": [
+                              "string",
+                              "null",
+                            ],
+                            "title": "Href",
+                          },
                           "icon": {
                             "type": "string",
                             "anyOf": [
@@ -721,22 +793,100 @@ const manifest: DecoManifest = {
                                 "type": "string",
                                 "const": "NotFound",
                               },
+                              {
+                                "type": "string",
+                                "const": "Mail",
+                              },
+                              {
+                                "type": "string",
+                                "const": "DoubleRightArrow",
+                              },
+                              {
+                                "type": "string",
+                                "const": "RightArrow",
+                              },
+                              {
+                                "type": "string",
+                                "const": "InstagramHeader",
+                              },
+                              {
+                                "type": "string",
+                                "const": "FacebookHeader",
+                              },
+                              {
+                                "type": "string",
+                                "const": "WhatsappHeader",
+                              },
+                              {
+                                "type": "string",
+                                "const": "MyStores",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Wishlist",
+                              },
+                              {
+                                "type": "string",
+                                "const": "HeartFooter",
+                              },
+                              {
+                                "type": "string",
+                                "const": "PhoneFooter",
+                              },
+                              {
+                                "type": "string",
+                                "const": "WhatsappFooter",
+                              },
+                              {
+                                "type": "string",
+                                "const": "MailFooter",
+                              },
                             ],
                             "title": "Icon",
                           },
                         },
-                        "required": [
-                          "icon",
-                        ],
+                        "required": [],
+                      },
+                      {
+                        "title": "AdvancedItem",
+                        "type": "object",
+                        "properties": {
+                          "text": {
+                            "format": "html",
+                            "type": "string",
+                            "title": "Text",
+                          },
+                        },
+                        "required": [],
                       },
                     ],
                     "title": "Item",
                   },
                   "title": "Children",
                 },
+                "showPaymentSystems": {
+                  "type": [
+                    "boolean",
+                    "null",
+                  ],
+                  "title": "Show Payment Systems",
+                },
+                "showSecuritySystems": {
+                  "type": [
+                    "boolean",
+                    "null",
+                  ],
+                  "title": "Show Security Systems",
+                },
+                "showSocialNetworks": {
+                  "type": [
+                    "boolean",
+                    "null",
+                  ],
+                  "title": "Show Social Networks",
+                },
               },
               "required": [
-                "label",
                 "children",
               ],
             },
@@ -752,12 +902,106 @@ const manifest: DecoManifest = {
         "title": " Header",
         "type": "object",
         "properties": {
-          "alerts": {
-            "type": "array",
-            "items": {
-              "type": "string",
-            },
+          "alert": {
             "title": "Alerts",
+            "type": "object",
+            "properties": {
+              "links": {
+                "type": "array",
+                "items": {
+                  "title": "IconLink",
+                  "type": "object",
+                  "properties": {
+                    "icon": {
+                      "type": "string",
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "const": "FacebookHeader",
+                        },
+                        {
+                          "type": "string",
+                          "const": "InstagramHeader",
+                        },
+                        {
+                          "type": "string",
+                          "const": "WhatsappHeader",
+                        },
+                        {
+                          "type": "string",
+                          "const": "MyStores",
+                        },
+                      ],
+                      "title": "Icon",
+                    },
+                    "link": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Link",
+                    },
+                  },
+                  "required": [],
+                },
+                "title": "Links",
+              },
+              "alert": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Alert",
+              },
+              "storelink": {
+                "type": "array",
+                "items": {
+                  "title": "IconLink",
+                  "type": "object",
+                  "properties": {
+                    "icon": {
+                      "type": "string",
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "const": "FacebookHeader",
+                        },
+                        {
+                          "type": "string",
+                          "const": "InstagramHeader",
+                        },
+                        {
+                          "type": "string",
+                          "const": "WhatsappHeader",
+                        },
+                        {
+                          "type": "string",
+                          "const": "MyStores",
+                        },
+                      ],
+                      "title": "Icon",
+                    },
+                    "link": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Link",
+                    },
+                  },
+                  "required": [],
+                },
+                "title": "Storelink",
+              },
+              "alertStore": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Alert Store",
+              },
+            },
+            "required": [],
           },
           "searchbar": {
             "title": "Search Bar",
@@ -815,6 +1059,13 @@ const manifest: DecoManifest = {
                 "href": {
                   "type": "string",
                   "title": "Href",
+                },
+                "highlight": {
+                  "type": [
+                    "boolean",
+                    "null",
+                  ],
+                  "title": "Highlight",
                 },
                 "children": {
                   "title": "Children",
@@ -908,9 +1159,7 @@ const manifest: DecoManifest = {
             "description": "vtex config used for search autocompletion;",
           },
         },
-        "required": [
-          "alerts",
-        ],
+        "required": [],
       },
       "outputSchema": null,
     },
@@ -1047,6 +1296,25 @@ const manifest: DecoManifest = {
         "required": [
           "page",
         ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/RichText.tsx": {
+      "inputSchema": {
+        "title": " Rich Text",
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Texto",
+            "description":
+              "Texto em linguagem Markdown a ser mostrado (confira o seguinte guia caso tenha dúvidas de como funciona o Markdown: https://www.markdownguide.org/cheat-sheet/)",
+          },
+        },
+        "required": [],
       },
       "outputSchema": null,
     },

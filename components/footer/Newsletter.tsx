@@ -1,27 +1,58 @@
 import Text from "$store/components/ui/Text.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
 
 function Newsletter() {
   return (
-    <div class="flex flex-col sm:flex-row items-center gap-6 sm:gap-20">
-      <div class="flex flex-col gap-2 max-w-[400px]">
-        <Text variant="heading-2" tone="default-inverse">
-          Cadastre-se
+    <div class="flex flex-col sm:grid sm:grid-cols-[45%_55%] items-center justify-between bg-white shadow-newsletter">
+      <div class="flex items-center justify-between gap-2 bg-newsletter pl-5 sm:pl-20 pr-10 py-[27px]">
+        <Text
+          variant="newsletter"
+          tone="default-inverse"
+          class="flex justify-between items-center gap-6"
+        >
+          <Icon
+            id="Mail"
+            size={46}
+          />
+          <div>
+            <p>Fique por dentro das</p>
+            <p>novidades e eventos da Vila!</p>
+          </div>
         </Text>
-        <Text variant="caption" tone="default-inverse">
-          Fique por dentro das novidades e ganhe 15% de desconto na primeira
-          compra. Para mais informações clique aqui.
-        </Text>
+
+        <Icon
+          id="DoubleRightArrow"
+          width={22}
+          height={25}
+        />
       </div>
-      <form class="flex flex-row items-center gap-2 font-body text-body w-full sm:w-[408px]">
+
+      <form
+        class="flex flex-row items-center justify-center font-body text-body w-full py-[27px]"
+        onSubmit={() => {
+          return false;
+        }}
+      >
         <input
-          class="py-2 px-3 flex-grow bg-footer rounded text-default border-1 border-default"
-          placeholder="Seu e-mail"
+          class="px-3 text-caption bg-white rounded text-black border-1 border-default mr-[25px] w-2/5 h-[35px]"
+          id="nome"
+          placeholder="Digite seu nome"
+        />
+
+        <input
+          class="px-3 text-caption bg-white rounded text-black border-1 border-default mr-[25px] w-2/5 h-[35px]"
+          id="mail"
+          placeholder="agora, seu email"
         />
         <button
-          class="py-2 px-3 bg-interactive-inverse rounded"
-          type="bgutton" // prevent form's default behavior
+          class="rounded bg-newsletter bg-interactive-inverse flex items-center justify-center w-[40px] h-[35px]"
+          type="button"
         >
-          Cadastrar
+          <Icon
+            id="RightArrow"
+            width={27}
+            height={27}
+          />
         </button>
       </form>
     </div>
