@@ -27,23 +27,32 @@ function Newsletter() {
         />
       </div>
 
-      <form class="flex flex-row items-center justify-center font-body text-body w-full py-[27px]">
+      <form
+        class="flex flex-row items-center justify-center font-body text-body w-full py-[27px]"
+        onSubmit={() => {
+          return false;
+        }}
+      >
         <input
-          class="px-3 bg-white rounded text-black border-1 border-default mr-[25px] w-2/5 h-[35px]"
+          class="px-3 text-caption bg-white rounded text-black border-1 border-default mr-[25px] w-2/5 h-[35px]"
           id="nome"
           placeholder="Digite seu nome"
         />
 
         <input
-          class="px-3 bg-white rounded text-black border-1 border-default mr-[25px] w-2/5 h-[35px]"
-          id="nome"
+          class="px-3 text-caption bg-white rounded text-black border-1 border-default mr-[25px] w-2/5 h-[35px]"
+          id="mail"
           placeholder="agora, seu email"
         />
         <button
-          class="py-2 px-3 bg-interactive-inverse rounded bg-newsletter w-[40px] h-[37px]"
-          type="bgutton" // prevent form's default behavior
+          class="rounded bg-newsletter bg-interactive-inverse flex items-center justify-center w-[40px] h-[35px]"
+          type="button"
         >
-          Cadastrar
+          <Icon
+            id="RightArrow"
+            width={27}
+            height={27}
+          />
         </button>
       </form>
     </div>

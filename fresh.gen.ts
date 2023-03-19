@@ -528,6 +528,10 @@ const manifest: DecoManifest = {
                       "type": "string",
                       "const": "DoubleRightArrow",
                     },
+                    {
+                      "type": "string",
+                      "const": "RightArrow",
+                    },
                   ],
                   "title": "Icon",
                   "description": "Image src",
@@ -742,6 +746,10 @@ const manifest: DecoManifest = {
                               {
                                 "type": "string",
                                 "const": "DoubleRightArrow",
+                              },
+                              {
+                                "type": "string",
+                                "const": "RightArrow",
                               },
                             ],
                             "title": "Icon",
