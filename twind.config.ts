@@ -65,6 +65,7 @@ const options: Omit<Options, "selfURL"> = {
         "focus": "#3379EF",
         "positive": "#1A7346",
         "critical": "#B44125",
+        "lightgray": "lightgray",
       },
       outline: {
         interactive: ["2px solid #3379EF", "2px"],
@@ -73,12 +74,15 @@ const options: Omit<Options, "selfURL"> = {
         "heading-1": ["56px", "67.2px"],
         "heading-2": ["24px", "28.8px"],
         "heading-3": ["20px", "24px"],
+        "heading-footer": ["14px", "18px"],
+        "text-footer": ["11px", "15px"],
         "menu": ["16px", "20px"],
         "button": ["14px", "18px"],
         "body": ["16px", "20px"],
         "caption": ["13px", "16px"],
         "list-price": ["10px", "20px"],
         "menu-desktop": ["15px", "15px"],
+        "newsletter": ["17px", "20px"],
       },
       fontWeight: {
         "heading-1": "700",
@@ -117,6 +121,7 @@ const options: Omit<Options, "selfURL"> = {
         notfound: "0px 3px 10px -5px rgb(0, 0, 0)",
         cookie: "0px 1px 5px 0px rgba(0, 0, 0, 0.7)",
         header: "rgb(183, 183, 183) 0px 6px 10px -5px",
+        newsletter: "rgba(0, 0, 0, 0.2) 0px 1px 3px 0px",
       },
     },
     fontFamily: {
@@ -139,6 +144,7 @@ const options: Omit<Options, "selfURL"> = {
       display: "flex",
       flexDirection: "column",
       minHeight: "100vh",
+      backgroundColor: "rgb(242, 242, 242)", // cor padrão do background do body
     },
     'section[data-manifest-key="./sections/Footer.tsx"]': {
       marginTop: "auto",
@@ -148,6 +154,10 @@ const options: Omit<Options, "selfURL"> = {
     "body[no-scroll]": {
       overflow: "hidden",
       height: "100vh",
+    },
+
+    ".footer-advanced-item a": {
+      color: "rgb(35, 69, 150)",
     },
   }),
   plugins: {

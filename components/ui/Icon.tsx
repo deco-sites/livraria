@@ -42,7 +42,11 @@ export type AvailableIcons =
   | "FacebookHeader"
   | "WhatsappHeader"
   | "MyStores"
-  | "Wishlist";
+  | "Wishlist"
+  | "HeartFooter"
+  | "PhoneFooter"
+  | "WhatsappFooter"
+  | "MailFooter";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**

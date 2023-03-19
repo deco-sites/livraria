@@ -10,7 +10,9 @@ type Props = JSX.IntrinsicElements["span"] & {
     | "price"
     | "section-title"
     | "positive"
-    | "critical";
+    | "critical"
+    | "black"
+    | "white";
   variant?:
     | "heading-1"
     | "heading-2"
@@ -19,7 +21,10 @@ type Props = JSX.IntrinsicElements["span"] & {
     | "button"
     | "body"
     | "caption"
-    | "list-price";
+    | "list-price"
+    | "heading-footer"
+    | "text-footer"
+    | "newsletter";
 };
 
 const Text = forwardRef<HTMLSpanElement, Props>((

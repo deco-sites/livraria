@@ -11,8 +11,6 @@ export interface Props {
 }
 
 function RichText({ text }: Props) {
-  console.log("🚀 ~ file: RichText.tsx:10 ~ RichText ~ text:", text);
-
   if (!text || !text?.length) {
     return <></>;
   }

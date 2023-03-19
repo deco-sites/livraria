@@ -1,9 +1,12 @@
 import Container from "$store/components/ui/Container.tsx";
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 import Text from "$store/components/ui/Text.tsx";
-
+import PaymentSystems from "$store/components/footer/PaymentSystems.tsx";
+import SecuritySystems from "$store/components/footer/SecuritySystems.tsx";
+import Newsletter from "$store/components/footer/Newsletter.tsx";
+import SocialNetworks from "$store/components/footer/SocialNetworks.tsx";
 import type { ComponentChildren } from "preact";
-import Newsletter from "./Newsletter.tsx";
+import type { HTML } from "deco-sites/std/components/types.ts";
 
 export type StringItem = {
   label?: string;
@@ -11,38 +14,72 @@ export type StringItem = {
 };
 
 export type IconItem = {
-  label?: string;
+  label?: HTML;
   href?: string;
   icon?: AvailableIcons;
 };
+export type AdvancedItem = {
+  text?: HTML;
+};
 
-export type Item = StringItem | IconItem;
+export type Item = StringItem | IconItem | AdvancedItem;
 
 export type Section = {
+  /**
+   * @title Título
+   */
   label?: string;
   children: Item[];
+  /**
+   * @title Mostrar formas de pagamento?
+   */
+  showPaymentSystems?: boolean;
+  /**
+   * @title Mostrar selos de segurança?
+   */
+  showSecuritySystems?: boolean;
+  /**
+   * @title Mostrar redes sociais?
+   */
+  showSocialNetworks?: boolean;
 };
 
 const isIcon = (item: Item): item is IconItem =>
   // deno-lint-ignore no-explicit-any
   typeof (item as any)?.icon === "string";
 
+const isAdvanced = (item: Item): item is AdvancedItem =>
+  // deno-lint-ignore no-explicit-any
+  typeof (item as any)?.text === "string";
+
 function SectionItem({ item }: { item: Item }) {
   return (
-    <Text variant="caption" tone="default-inverse">
-      {isIcon(item)
+    <Text variant="text-footer" tone="black">
+      {isAdvanced(item)
         ? (
-          <a href={item?.href}>
+          <>
+            <div
+              class="footer-advanced-item"
+              dangerouslySetInnerHTML={{ __html: item?.text || "" }}
+            />
+          </>
+        )
+        : isIcon(item)
+        ? (
+          <a
+            class="mb-[15px] flex items-start justify-start"
+            href={item?.href}
+          >
             <Icon
+              class="mt-1"
               id={item?.icon}
-              width={25}
-              height={20}
-              strokeWidth={0.01}
+              size={13}
             />
 
-            <span>
-              {item?.label}
-            </span>
+            <div
+              class="footer-icon-item ml-3 whitespace-pre transition-colors hover:text-badge"
+              dangerouslySetInnerHTML={{ __html: item?.label || "" }}
+            />
           </a>
         )
         : (
@@ -62,7 +99,7 @@ function FooterContainer(
 ) {
   return (
     <div
-      class={`flex justify-between w-full py-6 px-4 sm:py-12 sm:px-0 ${_class}`}
+      class={`max-w-[1300px] mx-auto flex justify-between w-full ${_class}`}
     >
       {children}
     </div>
@@ -78,93 +115,82 @@ function Footer({ sections = [] }: Props) {
     <footer class="w-full bg-footer flex flex-col">
       <Newsletter />
 
-      <FooterContainer>
+      <FooterContainer class="p-2.5">
         {/* Desktop view */}
-        <ul class="hidden sm:flex flex-row gap-20">
-          {sections.map((section) => (
-            <li>
-              <div>
-                <Text variant="heading-3" tone="default-inverse">
+        <ul class="hidden sm:flex flex-row gap-20 sm:grid grid-cols-[25%_25%_25%_25%] divide-x-1">
+          {sections.map((section, index) => (
+            <li
+              class={`pt-5 pb-10 flex flex-col justify-between h-full ${
+                index > 0 ? "pl-5" : "pl-5 sm:pl-0"
+              }`}
+            >
+              <>
+                <Text
+                  class="mb-[25px] font-semibold block"
+                  variant="heading-footer"
+                  tone="black"
+                >
                   {section.label}
                 </Text>
 
                 <ul
-                  class={`flex ${
-                    isIcon(section.children[0]) ? "flex-row" : "flex-col"
-                  } gap-2 pt-2`}
+                  class={`flex flex-grow flex-col`}
                 >
                   {section.children.map((item) => (
-                    <li>
+                    <li class="leading-none">
                       <SectionItem item={item} />
                     </li>
                   ))}
                 </ul>
-              </div>
+
+                {section?.showPaymentSystems && <PaymentSystems />}
+                {section?.showSecuritySystems && <SecuritySystems />}
+                {section?.showSocialNetworks && <SocialNetworks />}
+              </>
             </li>
           ))}
         </ul>
-        <ul class="hidden sm:flex items-center justify-center gap-2">
-          <li>
-            <a
-              href="https://www.facebook.com/livrariadavila/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook logo"
-            >
-              <Icon
-                id="Facebook"
-                size={18}
-              />
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://www.instagram.com/livrariadavila/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram logo"
-            >
-              <Icon
-                id="Instagram"
-                size={18}
-              />
-            </a>
-          </li>
-        </ul>
 
         {/* Mobile view */}
-        <ul class="flex flex-col sm:hidden sm:flex-row gap-4">
-          {sections.map((section) => (
-            <li>
-              <Text variant="body" tone="default-inverse">
-                <details>
-                  <summary>
-                    {section?.label}
-                  </summary>
+        <ul class="flex flex-col sm:items-center sm:hidden sm:flex-row gap-4">
+          {sections.map((section, index) => (
+            <li
+              class={`pt-5 pb-10 flex flex-col justify-between h-full ${
+                index > 0 ? "pl-5" : ""
+              }`}
+            >
+              <>
+                <Text
+                  class="mb-[25px] font-semibold block"
+                  variant="heading-footer"
+                  tone="black"
+                >
+                  {section.label}
+                </Text>
 
-                  <ul
-                    class={`flex ${
-                      isIcon(section.children[0]) ? "flex-row" : "flex-col"
-                    } gap-2 px-2 pt-2`}
-                  >
-                    {section.children.map((item) => (
-                      <li>
-                        <SectionItem item={item} />
-                      </li>
-                    ))}
-                  </ul>
-                </details>
-              </Text>
+                <ul
+                  class={`flex flex-grow flex-col`}
+                >
+                  {section.children.map((item) => (
+                    <li class="leading-none">
+                      <SectionItem item={item} />
+                    </li>
+                  ))}
+                </ul>
+
+                {section?.showPaymentSystems && <PaymentSystems />}
+                {section?.showSecuritySystems && <SecuritySystems />}
+                {section?.showSocialNetworks && <SocialNetworks />}
+              </>
             </li>
           ))}
         </ul>
       </FooterContainer>
 
-      <Container class="w-full">
-        <FooterContainer>
+      <div class="bg-white border-t-1 border-solid border-lightgray p-2.5">
+        <FooterContainer class="flex-col gap-4 sm:gap-0 sm:grid sm:grid-cols-[50%_50%]">
           <Text
-            class="flex items-center gap-1 text-xs text-copyright"
+            class="text-xs text-copyright"
             tone="default"
           >
             <p>
@@ -178,7 +204,10 @@ function Footer({ sections = [] }: Props) {
             variant="body"
             tone="default"
           >
-            Powered by{" "}
+            Developed with <Icon id="HeartFooter" width={11} height={10} /> by
+            {" "}
+            <b>Time 19</b>
+            and Powered by
             <a
               href="https://www.deco.cx"
               aria-label="powered by https://www.deco.cx"
@@ -187,7 +216,7 @@ function Footer({ sections = [] }: Props) {
             </a>
           </Text>
         </FooterContainer>
-      </Container>
+      </div>
     </footer>
   );
 }
