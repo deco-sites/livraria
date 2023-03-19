@@ -117,7 +117,42 @@ function Footer({ sections = [] }: Props) {
 
       <FooterContainer class="p-2.5">
         {/* Desktop view */}
-        <ul class="hidden sm:flex flex-row gap-20 grid grid-cols-[25%_25%_25%_25%] divide-x-1">
+        <ul class="hidden sm:flex flex-row gap-20 sm:grid grid-cols-[25%_25%_25%_25%] divide-x-1">
+          {sections.map((section, index) => (
+            <li
+              class={`pt-5 pb-10 flex flex-col justify-between h-full ${
+                index > 0 ? "pl-5" : "pl-5 sm:pl-0"
+              }`}
+            >
+              <>
+                <Text
+                  class="mb-[25px] font-semibold block"
+                  variant="heading-footer"
+                  tone="black"
+                >
+                  {section.label}
+                </Text>
+
+                <ul
+                  class={`flex flex-grow flex-col`}
+                >
+                  {section.children.map((item) => (
+                    <li class="leading-none">
+                      <SectionItem item={item} />
+                    </li>
+                  ))}
+                </ul>
+
+                {section?.showPaymentSystems && <PaymentSystems />}
+                {section?.showSecuritySystems && <SecuritySystems />}
+                {section?.showSocialNetworks && <SocialNetworks />}
+              </>
+            </li>
+          ))}
+        </ul>
+
+        {/* Mobile view */}
+        <ul class="flex flex-col sm:items-center sm:hidden sm:flex-row gap-4">
           {sections.map((section, index) => (
             <li
               class={`pt-5 pb-10 flex flex-col justify-between h-full ${
@@ -150,37 +185,10 @@ function Footer({ sections = [] }: Props) {
             </li>
           ))}
         </ul>
-
-        {/* Mobile view */}
-        <ul class="flex flex-col sm:hidden sm:flex-row gap-4">
-          {sections.map((section) => (
-            <li>
-              <Text variant="body" tone="default-inverse">
-                <details>
-                  <summary>
-                    {section?.label}
-                  </summary>
-
-                  <ul
-                    class={`flex ${
-                      isIcon(section.children[0]) ? "flex-row" : "flex-col"
-                    } gap-2 px-2 pt-2`}
-                  >
-                    {section.children.map((item) => (
-                      <li class="mb-[15px]">
-                        <SectionItem item={item} />
-                      </li>
-                    ))}
-                  </ul>
-                </details>
-              </Text>
-            </li>
-          ))}
-        </ul>
       </FooterContainer>
 
       <div class="bg-white border-t-1 border-solid border-lightgray p-2.5">
-        <FooterContainer class="grid grid-cols-[50%_50%]">
+        <FooterContainer class="flex-col gap-4 sm:gap-0 sm:grid sm:grid-cols-[50%_50%]">
           <Text
             class="text-xs text-copyright"
             tone="default"

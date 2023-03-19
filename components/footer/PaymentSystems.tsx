@@ -2,7 +2,7 @@ import Text from "$store/components/ui/Text.tsx";
 
 function PaymentSystems() {
   return (
-    <div class="flex flex-col items-start justify-center">
+    <div class="flex flex-col items-start justify-center pt-4 sm:pt-0">
       <Text
         class="mb-[25px] font-semibold block"
         variant="heading-footer"

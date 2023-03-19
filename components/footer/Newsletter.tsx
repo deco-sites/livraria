@@ -3,8 +3,8 @@ import Icon from "$store/components/ui/Icon.tsx";
 
 function Newsletter() {
   return (
-    <div class="grid grid-cols-[45%_55%] items-center justify-between bg-white shadow-newsletter">
-      <div class="flex items-center justify-between gap-2 bg-newsletter pl-20 pr-10 py-[27px]">
+    <div class="flex flex-col sm:grid sm:grid-cols-[45%_55%] items-center justify-between bg-white shadow-newsletter">
+      <div class="flex items-center justify-between gap-2 bg-newsletter pl-5 sm:pl-20 pr-10 py-[27px]">
         <Text
           variant="newsletter"
           tone="default-inverse"
