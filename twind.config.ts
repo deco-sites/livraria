@@ -116,6 +116,7 @@ const options: Omit<Options, "selfURL"> = {
         lg: "0px 4px 10px 0px #0000001F",
         notfound: "0px 3px 10px -5px rgb(0, 0, 0)",
         cookie: "0px 1px 5px 0px rgba(0, 0, 0, 0.7)",
+        header: "rgb(183, 183, 183) 0px 6px 10px -5px",
       },
     },
     fontFamily: {
