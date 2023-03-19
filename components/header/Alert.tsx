@@ -1,36 +1,44 @@
 import Text from "$store/components/ui/Text.tsx";
-import SliderControllerJS from "$store/islands/SliderJS.tsx";
-import Slider from "$store/components/ui/Slider.tsx";
-import { useId } from "preact/hooks";
+import Icon from "$store/components/ui/Icon.tsx";
+import Container from "../ui/Container.tsx";
 
-export interface Props {
-  alerts: string[];
-  /**
-   * @title Autoplay interval
-   * @description time (in seconds) to start the carousel autoplay
-   */
-  interval?: number;
+export interface IconLink {
+  icon?: "FacebookHeader" | "InstagramHeader" | "WhatsappHeader" | "MyStores";
+  link?: string;
 }
 
-function Alert({ alerts = [], interval = 5 }: Props) {
-  const id = useId();
+export interface AlertProps {
+  links?: IconLink[];
+  alert?: string;
+  storelink?: IconLink[];
+  alertStore?: string;
+}
 
+function Alert(
+  { alert = "", links = [], alertStore = "", storelink = [] }: AlertProps,
+) {
   return (
-    <div id={id}>
-      <Slider class="bg-badge gap-6 scrollbar-none">
-        {alerts.map((alert) => (
-          <Text
-            class="flex justify-center items-center w-screen h-[38px]"
-            variant="caption"
-            tone="default-inverse"
-          >
-            {alert}
-          </Text>
-        ))}
-      </Slider>
-
-      <SliderControllerJS rootId={id} interval={interval && interval * 1e3} />
-    </div>
+    <Container>
+      <div class="flex justify-between">
+        <div class="flex h-[26px] justify-center gap-2 items-center w-1/3">
+          <Text class="text-[11px] pr-2.5 ">{alert}</Text>
+          {links?.map(({ icon, link }) => (
+            <a href={link}>
+              <Icon id={icon} width={14} height={14} strokeWidth={0.1} />
+            </a>
+          ))}
+        </div>
+        <div class="w-1/3 flex"></div>
+        <div class="flex h-[26px] justify-center items-center w-1/3">
+          {storelink?.map(({ icon, link }) => (
+            <a href={link}>
+              <Icon id={icon} width={14} height={14} strokeWidth={0.1} />
+            </a>
+          ))}
+          <Text class="text-[11px] ">{alertStore}</Text>
+        </div>
+      </div>
+    </Container>
   );
 }
 
