@@ -825,10 +825,43 @@ const manifest: DecoManifest = {
                         },
                         "required": [],
                       },
+                      {
+                        "title": "AdvancedItem",
+                        "type": "object",
+                        "properties": {
+                          "text": {
+                            "format": "html",
+                            "type": "string",
+                            "title": "Text",
+                          },
+                        },
+                        "required": [],
+                      },
                     ],
                     "title": "Item",
                   },
                   "title": "Children",
+                },
+                "showPaymentSystems": {
+                  "type": [
+                    "boolean",
+                    "null",
+                  ],
+                  "title": "Show Payment Systems",
+                },
+                "showSecuritySystems": {
+                  "type": [
+                    "boolean",
+                    "null",
+                  ],
+                  "title": "Show Security Systems",
+                },
+                "showSocialNetworks": {
+                  "type": [
+                    "boolean",
+                    "null",
+                  ],
+                  "title": "Show Social Networks",
                 },
               },
               "required": [

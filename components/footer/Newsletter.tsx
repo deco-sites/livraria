@@ -4,11 +4,11 @@ import Icon from "$store/components/ui/Icon.tsx";
 function Newsletter() {
   return (
     <div class="grid grid-cols-[45%_55%] items-center justify-between bg-white shadow-newsletter">
-      <div class="flex items-center justify-between gap-6 bg-newsletter pl-20 pr-10 py-[27px]">
+      <div class="flex items-center justify-between gap-2 bg-newsletter pl-20 pr-10 py-[27px]">
         <Text
           variant="newsletter"
           tone="default-inverse"
-          class="flex justify-between items-center gap-2"
+          class="flex justify-between items-center gap-6"
         >
           <Icon
             id="Mail"

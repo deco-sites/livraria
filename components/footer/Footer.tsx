@@ -1,9 +1,12 @@
 import Container from "$store/components/ui/Container.tsx";
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 import Text from "$store/components/ui/Text.tsx";
-
+import PaymentSystems from "$store/components/footer/PaymentSystems.tsx";
+import SecuritySystems from "$store/components/footer/SecuritySystems.tsx";
+import Newsletter from "$store/components/footer/Newsletter.tsx";
+import SocialNetworks from "$store/components/footer/SocialNetworks.tsx";
 import type { ComponentChildren } from "preact";
-import Newsletter from "./Newsletter.tsx";
+import type { HTML } from "deco-sites/std/components/types.ts";
 
 export type StringItem = {
   label?: string;
@@ -15,22 +18,46 @@ export type IconItem = {
   href?: string;
   icon?: AvailableIcons;
 };
+export type AdvancedItem = {
+  text?: HTML;
+};
 
-export type Item = StringItem | IconItem;
+export type Item = StringItem | IconItem | AdvancedItem;
 
 export type Section = {
+  /**
+   * @title Título
+   */
   label?: string;
   children: Item[];
+  /**
+   * @title Mostrar formas de pagamento?
+   */
+  showPaymentSystems?: boolean;
+  /**
+   * @title Mostrar selos de segurança?
+   */
+  showSecuritySystems?: boolean;
+  /**
+   * @title Mostrar redes sociais?
+   */
+  showSocialNetworks?: boolean;
 };
 
 const isIcon = (item: Item): item is IconItem =>
   // deno-lint-ignore no-explicit-any
   typeof (item as any)?.icon === "string";
 
+const isAdvanced = (item: Item): item is AdvancedItem =>
+  // deno-lint-ignore no-explicit-any
+  typeof (item as any)?.text === "string";
+
 function SectionItem({ item }: { item: Item }) {
   return (
     <Text variant="text-footer" tone="black">
-      {isIcon(item)
+      {isAdvanced(item)
+        ? <>{item?.text}</>
+        : isIcon(item)
         ? (
           <a class="mb-[15px] block" href={item?.href}>
             <Icon
@@ -103,38 +130,13 @@ function Footer({ sections = [] }: Props) {
                     </li>
                   ))}
                 </ul>
+
+                {section?.showPaymentSystems && <PaymentSystems />}
+                {section?.showSecuritySystems && <SecuritySystems />}
+                {section?.showSocialNetworks && <SocialNetworks />}
               </div>
             </li>
           ))}
-        </ul>
-        <ul class="hidden sm:flex items-center justify-center gap-2">
-          <li>
-            <a
-              href="https://www.facebook.com/livrariadavila/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook logo"
-            >
-              <Icon
-                id="Facebook"
-                size={18}
-              />
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://www.instagram.com/livrariadavila/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram logo"
-            >
-              <Icon
-                id="Instagram"
-                size={18}
-              />
-            </a>
-          </li>
         </ul>
 
         {/* Mobile view */}
