@@ -29,10 +29,10 @@ const isIcon = (item: Item): item is IconItem =>
 
 function SectionItem({ item }: { item: Item }) {
   return (
-    <Text variant="caption" tone="default-inverse">
+    <Text variant="text-footer" tone="black">
       {isIcon(item)
         ? (
-          <a href={item?.href}>
+          <a class="mb-[15px] block" href={item?.href}>
             <Icon
               id={item?.icon}
               width={25}
@@ -62,7 +62,7 @@ function FooterContainer(
 ) {
   return (
     <div
-      class={`flex justify-between w-full py-6 px-4 sm:py-12 sm:px-0 ${_class}`}
+      class={`max-w-[1300px] mx-auto flex justify-between w-full ${_class}`}
     >
       {children}
     </div>
@@ -78,23 +78,27 @@ function Footer({ sections = [] }: Props) {
     <footer class="w-full bg-footer flex flex-col">
       <Newsletter />
 
-      <FooterContainer>
+      <FooterContainer class="p-2.5">
         {/* Desktop view */}
-        <ul class="hidden sm:flex flex-row gap-20">
+        <ul class="hidden sm:flex flex-row gap-20 grid grid-cols-[25%_25%_25%_25%] divide-x-1">
           {sections.map((section) => (
-            <li>
+            <li class="pt-5 pb-10">
               <div>
-                <Text variant="heading-3" tone="default-inverse">
+                <Text
+                  class="mb-[25px] font-semibold block"
+                  variant="heading-footer"
+                  tone="black"
+                >
                   {section.label}
                 </Text>
 
                 <ul
                   class={`flex ${
                     isIcon(section.children[0]) ? "flex-row" : "flex-col"
-                  } gap-2 pt-2`}
+                  }`}
                 >
                   {section.children.map((item) => (
-                    <li>
+                    <li class="leading-none">
                       <SectionItem item={item} />
                     </li>
                   ))}
@@ -149,7 +153,7 @@ function Footer({ sections = [] }: Props) {
                     } gap-2 px-2 pt-2`}
                   >
                     {section.children.map((item) => (
-                      <li>
+                      <li class="mb-[15px]">
                         <SectionItem item={item} />
                       </li>
                     ))}
@@ -161,10 +165,10 @@ function Footer({ sections = [] }: Props) {
         </ul>
       </FooterContainer>
 
-      <Container class="w-full">
-        <FooterContainer>
+      <div class="bg-white border-t-1 border-solid border-lightgray p-2.5">
+        <FooterContainer class="grid grid-cols-[50%_50%]">
           <Text
-            class="flex items-center gap-1 text-xs text-copyright"
+            class="text-xs text-copyright"
             tone="default"
           >
             <p>
@@ -178,7 +182,10 @@ function Footer({ sections = [] }: Props) {
             variant="body"
             tone="default"
           >
-            Powered by{" "}
+            Developed with <Icon id="HeartFooter" width={11} height={10} /> by
+            {" "}
+            <b>Time 19</b>
+            and Powered by
             <a
               href="https://www.deco.cx"
               aria-label="powered by https://www.deco.cx"
@@ -187,7 +194,7 @@ function Footer({ sections = [] }: Props) {
             </a>
           </Text>
         </FooterContainer>
-      </Container>
+      </div>
     </footer>
   );
 }

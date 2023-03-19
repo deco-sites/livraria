@@ -65,6 +65,7 @@ const options: Omit<Options, "selfURL"> = {
         "focus": "#3379EF",
         "positive": "#1A7346",
         "critical": "#B44125",
+        "lightgray": "lightgray",
       },
       outline: {
         interactive: ["2px solid #3379EF", "2px"],
@@ -73,12 +74,15 @@ const options: Omit<Options, "selfURL"> = {
         "heading-1": ["56px", "67.2px"],
         "heading-2": ["24px", "28.8px"],
         "heading-3": ["20px", "24px"],
+        "heading-footer": ["14px", "18px"],
+        "text-footer": ["11px", "15px"],
         "menu": ["16px", "20px"],
         "button": ["14px", "18px"],
         "body": ["16px", "20px"],
         "caption": ["13px", "16px"],
         "list-price": ["10px", "20px"],
         "menu-desktop": ["15px", "15px"],
+        "newsletter": ["17px", "20px"],
       },
       fontWeight: {
         "heading-1": "700",

@@ -552,6 +552,10 @@ const manifest: DecoManifest = {
                       "type": "string",
                       "const": "Wishlist",
                     },
+                    {
+                      "type": "string",
+                      "const": "HeartFooter",
+                    },
                   ],
                   "title": "Icon",
                   "description": "Image src",
@@ -810,6 +814,10 @@ const manifest: DecoManifest = {
                               {
                                 "type": "string",
                                 "const": "Wishlist",
+                              },
+                              {
+                                "type": "string",
+                                "const": "HeartFooter",
                               },
                             ],
                             "title": "Icon",
