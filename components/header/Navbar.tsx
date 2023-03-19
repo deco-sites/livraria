@@ -1,13 +1,13 @@
 import HeaderButton from "$store/islands/HeaderButton.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import Button from "$store/components/ui/Button.tsx";
-
+import Text from "$store/components/ui/Text.tsx";
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
 import type { INavItem } from "./NavItem.tsx";
 import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
-import HeaderSearchMenu from "$store/islands/HeaderSearchMenu.tsx";
 import Searchbar from "../search/Searchbar.tsx";
+import Container from "../ui/Container.tsx";
 
 function Navbar({ items, searchbar }: {
   items: INavItem[];
@@ -36,13 +36,13 @@ function Navbar({ items, searchbar }: {
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden md:flex flex-row justify-center items-center border-b-1 border-default w-full pl-2 pr-3">
-        <div class="md:flex flex-row w-[1380px] items-center justify-between">
-          <div class="flex-none w-[373px]">
+      <div class="hidden md:flex flex-row justify-center items-center border-b-1 border-default w-full pl-2 pr-3 bg-white">
+        <div class="md:flex flex-row w-[1380px] items-center justify-between py-[10px] px[5px]">
+          <div class="flex justify-center w-[452px]">
             <a
               href="/"
               aria-label="Store logo"
-              class="block w-[373px] cursor-pointer"
+              class="flex justify-center w-[452px] cursor-pointer"
             >
               <Icon id="Logo" width={373} height={23} />
             </a>
@@ -50,25 +50,39 @@ function Navbar({ items, searchbar }: {
           <div class="flex-auto flex justify-center">
             <Searchbar />
           </div>
-          <div class="flex-none w-44 flex items-center justify-end gap-2">
-            <HeaderButton variant="search" />
-            <HeaderSearchMenu searchbar={searchbar} />
+          <div class="flex-none flex items-center justify-end gap-2">
             <Button
               as="a"
               variant="icon"
               href="/login"
               aria-label="Log in"
+              class="w-[123px]"
             >
-              <Icon id="User" width={20} height={20} strokeWidth={0.4} />
+              <Icon id="User" width={22} height={19} strokeWidth={0.4} />
+              <Text class="text-[12px] ml-1">Login</Text>
             </Button>
-            <HeaderButton variant="cart" />
+            <Button
+              as="a"
+              variant="icon"
+              href="/wishlist"
+              aria-label="wishlist"
+              class="w-[123px]"
+            >
+              <Icon id="Wishlist" width={22} height={19} strokeWidth={0.4} />
+              <Text class="text-[12px] ml-1">Favoritos</Text>
+            </Button>
+            <div class="w-[110px]">
+              <HeaderButton variant="cart" />
+            </div>
           </div>
         </div>
       </div>
-      <div class="flex-auto flex justify-center">
-        <div class="md: w-[1380px] flex justify-between">
-          {items.map((item) => <NavItem item={item} />)}
-        </div>
+      <div class="flex-auto flex justify-center bg-white">
+        <Container class="w-full ">
+          <div class="md: grid grid-flow-col">
+            {items.map((item) => <NavItem item={item} />)}
+          </div>
+        </Container>
       </div>
     </>
   );
