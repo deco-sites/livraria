@@ -3,7 +3,7 @@ import Icon from "$store/components/ui/Icon.tsx";
 
 function SocialNetworks() {
   return (
-    <div class="flex flex-col items-start justify-center pt-4">
+    <div class="flex flex-col items-start justify-center">
       <Text
         class="mb-[25px] font-semibold block"
         variant="heading-footer"
@@ -12,7 +12,7 @@ function SocialNetworks() {
         Redes Sociais
       </Text>
 
-      <ul class="hidden sm:flex items-center justify-center gap-2">
+      <ul class="hidden sm:flex items-center justify-center gap-4 min-h-[44px]">
         <li>
           <a
             href="https://www.facebook.com/livrariadavila/"

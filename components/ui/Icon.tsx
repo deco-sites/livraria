@@ -43,7 +43,10 @@ export type AvailableIcons =
   | "WhatsappHeader"
   | "MyStores"
   | "Wishlist"
-  | "HeartFooter";
+  | "HeartFooter"
+  | "PhoneFooter"
+  | "WhatsappFooter"
+  | "MailFooter";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**

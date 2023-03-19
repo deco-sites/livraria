@@ -556,6 +556,18 @@ const manifest: DecoManifest = {
                       "type": "string",
                       "const": "HeartFooter",
                     },
+                    {
+                      "type": "string",
+                      "const": "PhoneFooter",
+                    },
+                    {
+                      "type": "string",
+                      "const": "WhatsappFooter",
+                    },
+                    {
+                      "type": "string",
+                      "const": "MailFooter",
+                    },
                   ],
                   "title": "Icon",
                   "description": "Image src",
@@ -635,10 +647,8 @@ const manifest: DecoManifest = {
                         "type": "object",
                         "properties": {
                           "label": {
-                            "type": [
-                              "string",
-                              "null",
-                            ],
+                            "format": "html",
+                            "type": "string",
                             "title": "Label",
                           },
                           "href": {
@@ -818,6 +828,18 @@ const manifest: DecoManifest = {
                               {
                                 "type": "string",
                                 "const": "HeartFooter",
+                              },
+                              {
+                                "type": "string",
+                                "const": "PhoneFooter",
+                              },
+                              {
+                                "type": "string",
+                                "const": "WhatsappFooter",
+                              },
+                              {
+                                "type": "string",
+                                "const": "MailFooter",
                               },
                             ],
                             "title": "Icon",

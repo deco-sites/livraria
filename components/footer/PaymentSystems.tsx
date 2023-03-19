@@ -2,7 +2,7 @@ import Text from "$store/components/ui/Text.tsx";
 
 function PaymentSystems() {
   return (
-    <div class="flex flex-col items-start justify-center pt-4">
+    <div class="flex flex-col items-start justify-center">
       <Text
         class="mb-[25px] font-semibold block"
         variant="heading-footer"
@@ -11,7 +11,7 @@ function PaymentSystems() {
         Formas de Pagamento
       </Text>
 
-      <div class="flex items-center justify-center gap-4">
+      <div class="flex items-center justify-center gap-4 min-h-[44px]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="44.242"

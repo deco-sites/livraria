@@ -3,7 +3,7 @@ import Text from "$store/components/ui/Text.tsx";
 
 function SecuritySystems() {
   return (
-    <div class="flex flex-col items-start justify-center pt-4">
+    <div class="flex flex-col items-start justify-center">
       <Text
         class="mb-[25px] font-semibold block"
         variant="heading-footer"
@@ -12,7 +12,7 @@ function SecuritySystems() {
         Selos de Segurança
       </Text>
 
-      <div class="flex items-center justify-center gap-4">
+      <div class="flex items-center justify-center gap-4  min-h-[44px]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="55.84"
@@ -79,6 +79,7 @@ function SecuritySystems() {
         />
 
         <img
+          class="max-w-[40px]"
           src={asset("/assets/reclameaqui.png")}
         />
       </div>

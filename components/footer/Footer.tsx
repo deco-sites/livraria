@@ -14,7 +14,7 @@ export type StringItem = {
 };
 
 export type IconItem = {
-  label?: string;
+  label?: HTML;
   href?: string;
   icon?: AvailableIcons;
 };
@@ -66,17 +66,20 @@ function SectionItem({ item }: { item: Item }) {
         )
         : isIcon(item)
         ? (
-          <a class="mb-[15px] block" href={item?.href}>
+          <a
+            class="mb-[15px] flex items-start justify-start"
+            href={item?.href}
+          >
             <Icon
+              class="mt-1"
               id={item?.icon}
-              width={25}
-              height={20}
-              strokeWidth={0.01}
+              size={13}
             />
 
-            <span>
-              {item?.label}
-            </span>
+            <div
+              class="footer-icon-item ml-3 whitespace-pre transition-colors hover:text-badge"
+              dangerouslySetInnerHTML={{ __html: item?.label || "" }}
+            />
           </a>
         )
         : (
@@ -115,8 +118,12 @@ function Footer({ sections = [] }: Props) {
       <FooterContainer class="p-2.5">
         {/* Desktop view */}
         <ul class="hidden sm:flex flex-row gap-20 grid grid-cols-[25%_25%_25%_25%] divide-x-1">
-          {sections.map((section) => (
-            <li class="pt-5 pb-10 flex flex-col justify-between h-full">
+          {sections.map((section, index) => (
+            <li
+              class={`pt-5 pb-10 flex flex-col justify-between h-full ${
+                index > 0 ? "pl-5" : ""
+              }`}
+            >
               <>
                 <Text
                   class="mb-[25px] font-semibold block"
@@ -127,9 +134,7 @@ function Footer({ sections = [] }: Props) {
                 </Text>
 
                 <ul
-                  class={`flex flex-grow ${
-                    isIcon(section.children[0]) ? "flex-row" : "flex-col"
-                  }`}
+                  class={`flex flex-grow flex-col`}
                 >
                   {section.children.map((item) => (
                     <li class="leading-none">
