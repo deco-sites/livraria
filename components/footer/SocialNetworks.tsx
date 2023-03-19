@@ -3,7 +3,7 @@ import Icon from "$store/components/ui/Icon.tsx";
 
 function SocialNetworks() {
   return (
-    <div class="flex flex-col items-start justify-center pt-2">
+    <div class="flex flex-col items-start justify-center pt-4">
       <Text
         class="mb-[25px] font-semibold block"
         variant="heading-footer"

@@ -56,7 +56,14 @@ function SectionItem({ item }: { item: Item }) {
   return (
     <Text variant="text-footer" tone="black">
       {isAdvanced(item)
-        ? <>{item?.text}</>
+        ? (
+          <>
+            <div
+              class="footer-advanced-item"
+              dangerouslySetInnerHTML={{ __html: item?.text || "" }}
+            />
+          </>
+        )
         : isIcon(item)
         ? (
           <a class="mb-[15px] block" href={item?.href}>
@@ -109,8 +116,8 @@ function Footer({ sections = [] }: Props) {
         {/* Desktop view */}
         <ul class="hidden sm:flex flex-row gap-20 grid grid-cols-[25%_25%_25%_25%] divide-x-1">
           {sections.map((section) => (
-            <li class="pt-5 pb-10">
-              <div>
+            <li class="pt-5 pb-10 flex flex-col justify-between h-full">
+              <>
                 <Text
                   class="mb-[25px] font-semibold block"
                   variant="heading-footer"
@@ -120,7 +127,7 @@ function Footer({ sections = [] }: Props) {
                 </Text>
 
                 <ul
-                  class={`flex ${
+                  class={`flex flex-grow ${
                     isIcon(section.children[0]) ? "flex-row" : "flex-col"
                   }`}
                 >
@@ -134,7 +141,7 @@ function Footer({ sections = [] }: Props) {
                 {section?.showPaymentSystems && <PaymentSystems />}
                 {section?.showSecuritySystems && <SecuritySystems />}
                 {section?.showSocialNetworks && <SocialNetworks />}
-              </div>
+              </>
             </li>
           ))}
         </ul>

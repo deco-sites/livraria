@@ -155,6 +155,10 @@ const options: Omit<Options, "selfURL"> = {
       overflow: "hidden",
       height: "100vh",
     },
+
+    ".footer-advanced-item a": {
+      color: "rgb(35, 69, 150)",
+    },
   }),
   plugins: {
     backdrop: {
