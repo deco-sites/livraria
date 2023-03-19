@@ -117,6 +117,7 @@ const options: Omit<Options, "selfURL"> = {
         notfound: "0px 3px 10px -5px rgb(0, 0, 0)",
         cookie: "0px 1px 5px 0px rgba(0, 0, 0, 0.7)",
         header: "rgb(183, 183, 183) 0px 6px 10px -5px",
+        newsletter: "rgba(0, 0, 0, 0.2) 0px 1px 3px 0px",
       },
     },
     fontFamily: {
@@ -139,6 +140,7 @@ const options: Omit<Options, "selfURL"> = {
       display: "flex",
       flexDirection: "column",
       minHeight: "100vh",
+      backgroundColor: "rgb(242, 242, 242)", // cor padrão do background do body
     },
     'section[data-manifest-key="./sections/Footer.tsx"]': {
       marginTop: "auto",

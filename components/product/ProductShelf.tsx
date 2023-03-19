@@ -47,7 +47,7 @@ function ProductShelf({ title, products, viewMoreLink, viewMoreText }: Props) {
         "@graph": productList,
       };
 
-      console.log("shelfJsonLd", shelfJsonLd);
+      // console.log("shelfJsonLd", shelfJsonLd);
 
       setJsonLd(JSON.stringify(shelfJsonLd));
     }

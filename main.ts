@@ -13,7 +13,9 @@ import partytownPlugin from "partytown/mod.ts";
 await start(manifest, {
   plugins: [
     partytownPlugin(),
-    prefetchPlugin(),
+    prefetchPlugin({
+      strategy: "opt-in",
+    }),
     twindPlugin({
       ...twindConfig,
       selfURL: new URL("./twind.config.ts", import.meta.url).href,

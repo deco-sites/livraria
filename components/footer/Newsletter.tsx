@@ -3,7 +3,7 @@ import Icon from "$store/components/ui/Icon.tsx";
 
 function Newsletter() {
   return (
-    <div class="grid grid-cols-[45%_55%] items-center justify-between">
+    <div class="grid grid-cols-[45%_55%] items-center justify-between bg-white shadow-newsletter">
       <div class="flex items-center justify-between gap-2 bg-newsletter pl-20 pr-10 py-[27px]">
         <Text
           variant="heading-2"

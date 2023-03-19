@@ -11,7 +11,7 @@ function SpecTable({ page }: { page: ProductDetailsPage }) {
     product,
   } = page;
   const specifications = useAdditionalProperties(product);
-  console.log("specifications", specifications);
+  // console.log("specifications", specifications);
 
   return (
     <Container class="py-0 sm:py-10">
