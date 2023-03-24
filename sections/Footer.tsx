@@ -7,5 +7,11 @@ export type {
   Section,
   StringItem,
 } from "$store/components/footer/Footer.tsx";
-export type { AvailableIcons } from "$store/components/ui/Icon.tsx";
+export type {
+  PaymentSystemProps,
+} from "$store/components/footer/PaymentSystems.tsx";
+export type {
+  AvailableIcons,
+  PaymentSystemsIcons,
+} from "$store/components/ui/Icon.tsx";
 export type { HTML } from "deco-sites/std/components/types.ts";

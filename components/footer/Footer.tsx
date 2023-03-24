@@ -4,6 +4,7 @@ import SecuritySystems from "$store/components/footer/SecuritySystems.tsx";
 import SocialNetworks from "$store/components/footer/SocialNetworks.tsx";
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 import Text from "$store/components/ui/Text.tsx";
+import type { PaymentSystemProps } from "$store/components/footer/PaymentSystems.tsx";
 import type { HTML } from "deco-sites/std/components/types.ts";
 import type { ComponentChildren } from "preact";
 
@@ -23,7 +24,7 @@ export type AdvancedItem = {
 
 export type Item = StringItem | IconItem | AdvancedItem;
 
-export type Section = {
+export interface Section {
   /**
    * @title Título
    */
@@ -41,7 +42,7 @@ export type Section = {
    * @title Mostrar redes sociais?
    */
   showSocialNetworks?: boolean;
-};
+}
 
 const isIcon = (item: Item): item is IconItem =>
   // deno-lint-ignore no-explicit-any
@@ -106,10 +107,13 @@ function FooterContainer(
 }
 
 export interface Props {
+  /**  @title Formas de Pagamento */
+  paymentSystem?: PaymentSystemProps;
+  /**  @title Seções */
   sections?: Section[];
 }
 
-function Footer({ sections = [] }: Props) {
+function Footer({ paymentSystem, sections = [] }: Props) {
   return (
     <footer class="w-full bg-footer flex flex-col">
       <Newsletter />
@@ -142,7 +146,9 @@ function Footer({ sections = [] }: Props) {
                   ))}
                 </ul>
 
-                {section?.showPaymentSystems && <PaymentSystems />}
+                {section?.showPaymentSystems && (
+                  <PaymentSystems {...paymentSystem} />
+                )}
                 {section?.showSecuritySystems && <SecuritySystems />}
                 {section?.showSocialNetworks && <SocialNetworks />}
               </>
@@ -177,7 +183,9 @@ function Footer({ sections = [] }: Props) {
                   ))}
                 </ul>
 
-                {section?.showPaymentSystems && <PaymentSystems />}
+                {section?.showPaymentSystems && (
+                  <PaymentSystems {...paymentSystem} />
+                )}
                 {section?.showSecuritySystems && <SecuritySystems />}
                 {section?.showSocialNetworks && <SocialNetworks />}
               </>

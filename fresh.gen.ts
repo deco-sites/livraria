@@ -452,22 +452,6 @@ const manifest: DecoManifest = {
                     },
                     {
                       "type": "string",
-                      "const": "Elo",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Mastercard",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Visa",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Pix",
-                    },
-                    {
-                      "type": "string",
                       "const": "Logo",
                     },
                     {
@@ -570,6 +554,30 @@ const manifest: DecoManifest = {
                       "type": "string",
                       "const": "MailFooter",
                     },
+                    {
+                      "type": "string",
+                      "const": "Pix",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Visa",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Mastercard",
+                    },
+                    {
+                      "type": "string",
+                      "const": "DinersClub",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Elo",
+                    },
+                    {
+                      "type": "string",
+                      "const": "AmericanExpress",
+                    },
                   ],
                   "title": "Icon",
                   "description": "Image src",
@@ -605,6 +613,51 @@ const manifest: DecoManifest = {
         "title": " Footer",
         "type": "object",
         "properties": {
+          "paymentSystem": {
+            "title": "Formas de Pagamento",
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Título",
+                "default": "Formas de Pagamento",
+              },
+              "icons": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "Visa",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Mastercard",
+                    },
+                    {
+                      "type": "string",
+                      "const": "DinersClub",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Elo",
+                    },
+                    {
+                      "type": "string",
+                      "const": "AmericanExpress",
+                    },
+                  ],
+                  "title": "PaymentSystemsIcons",
+                },
+                "title": "Ícones",
+              },
+            },
+            "required": [],
+          },
           "sections": {
             "type": "array",
             "items": {
@@ -616,7 +669,7 @@ const manifest: DecoManifest = {
                     "string",
                     "null",
                   ],
-                  "title": "Label",
+                  "title": "Título",
                 },
                 "children": {
                   "type": "array",
@@ -725,22 +778,6 @@ const manifest: DecoManifest = {
                               },
                               {
                                 "type": "string",
-                                "const": "Elo",
-                              },
-                              {
-                                "type": "string",
-                                "const": "Mastercard",
-                              },
-                              {
-                                "type": "string",
-                                "const": "Visa",
-                              },
-                              {
-                                "type": "string",
-                                "const": "Pix",
-                              },
-                              {
-                                "type": "string",
                                 "const": "Logo",
                               },
                               {
@@ -843,6 +880,30 @@ const manifest: DecoManifest = {
                                 "type": "string",
                                 "const": "MailFooter",
                               },
+                              {
+                                "type": "string",
+                                "const": "Pix",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Visa",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Mastercard",
+                              },
+                              {
+                                "type": "string",
+                                "const": "DinersClub",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Elo",
+                              },
+                              {
+                                "type": "string",
+                                "const": "AmericanExpress",
+                              },
                             ],
                             "title": "Icon",
                           },
@@ -871,28 +932,28 @@ const manifest: DecoManifest = {
                     "boolean",
                     "null",
                   ],
-                  "title": "Show Payment Systems",
+                  "title": "Mostrar formas de pagamento?",
                 },
                 "showSecuritySystems": {
                   "type": [
                     "boolean",
                     "null",
                   ],
-                  "title": "Show Security Systems",
+                  "title": "Mostrar selos de segurança?",
                 },
                 "showSocialNetworks": {
                   "type": [
                     "boolean",
                     "null",
                   ],
-                  "title": "Show Social Networks",
+                  "title": "Mostrar redes sociais?",
                 },
               },
               "required": [
                 "children",
               ],
             },
-            "title": "Sections",
+            "title": "Seções",
           },
         },
         "required": [],

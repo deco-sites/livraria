@@ -12,7 +12,6 @@ const callback = () => {
   
   if (consent !== ACCEPTED) {
     elem.querySelector('[data-button-cc-accept]').addEventListener('click', function () {
-      console.log("clicou")
       localStorage.setItem(KEY, ACCEPTED);
       elem.classList.add(HIDDEN);
     });

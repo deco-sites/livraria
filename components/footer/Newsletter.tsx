@@ -46,6 +46,7 @@ function Newsletter() {
         />
         <button
           class="rounded bg-newsletter bg-interactive-inverse flex items-center justify-center w-[40px] h-[35px]"
+          aria-label="Enviar"
           type="button"
         >
           <Icon
