@@ -16,8 +16,13 @@ export type {
   SecuritySystemsProps,
 } from "$store/components/footer/SecuritySystems.tsx";
 export type {
+  SocialNetworkIconProps,
+  SocialNetworkProps,
+} from "$store/components/footer/SocialNetworks.tsx";
+export type {
   AvailableIcons,
   PaymentSystemsIcons,
+  SocialNetworkIcons,
 } from "$store/components/ui/Icon.tsx";
 export type { HTML } from "deco-sites/std/components/types.ts";
 export type { Image as LiveImage } from "deco-sites/std/components/types.ts";

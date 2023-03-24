@@ -57,6 +57,10 @@ export type PaymentSystemsIcons =
   | "Elo"
   | "AmericanExpress";
 
+export type SocialNetworkIcons =
+  | "Facebook"
+  | "Instagram";
+
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**
    * Symbol id from element to render. Take a look at `/static/icons.svg`.

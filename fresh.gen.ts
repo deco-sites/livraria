@@ -733,6 +733,60 @@ const manifest: DecoManifest = {
             },
             "required": [],
           },
+          "socialNetwork": {
+            "title": "Redes Sociais",
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Título",
+                "default": "Redes Sociais",
+              },
+              "icons": {
+                "type": "array",
+                "items": {
+                  "title": "SocialNetworkIconProps",
+                  "type": "object",
+                  "properties": {
+                    "icon": {
+                      "type": "string",
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "const": "Facebook",
+                        },
+                        {
+                          "type": "string",
+                          "const": "Instagram",
+                        },
+                      ],
+                      "title": "Ícone da Rede Social",
+                    },
+                    "href": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "URLda Rede Social",
+                    },
+                    "alt": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": 'Propriedade "alt" da imagem',
+                    },
+                  },
+                  "required": [],
+                },
+                "title": "Ícones",
+              },
+            },
+            "required": [],
+          },
           "sections": {
             "type": "array",
             "items": {

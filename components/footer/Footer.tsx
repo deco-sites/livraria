@@ -3,7 +3,9 @@ import PaymentSystems from "$store/components/footer/PaymentSystems.tsx";
 import SecuritySystems, {
   SecuritySystemsProps,
 } from "$store/components/footer/SecuritySystems.tsx";
-import SocialNetworks from "$store/components/footer/SocialNetworks.tsx";
+import SocialNetworks, {
+  SocialNetworkProps,
+} from "$store/components/footer/SocialNetworks.tsx";
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import type { PaymentSystemProps } from "$store/components/footer/PaymentSystems.tsx";
@@ -113,11 +115,15 @@ export interface Props {
   paymentSystem?: PaymentSystemProps;
   /**  @title Selos de Segurança */
   securitySystem?: SecuritySystemsProps;
+  /**  @title Redes Sociais */
+  socialNetwork?: SocialNetworkProps;
   /**  @title Seções */
   sections?: Section[];
 }
 
-function Footer({ paymentSystem, securitySystem, sections = [] }: Props) {
+function Footer(
+  { paymentSystem, securitySystem, socialNetwork, sections = [] }: Props,
+) {
   return (
     <footer class="w-full bg-footer flex flex-col">
       <Newsletter />
@@ -156,7 +162,9 @@ function Footer({ paymentSystem, securitySystem, sections = [] }: Props) {
                 {section?.showSecuritySystems && (
                   <SecuritySystems {...securitySystem} />
                 )}
-                {section?.showSocialNetworks && <SocialNetworks />}
+                {section?.showSocialNetworks && (
+                  <SocialNetworks {...socialNetwork} />
+                )}
               </>
             </li>
           ))}
@@ -195,7 +203,9 @@ function Footer({ paymentSystem, securitySystem, sections = [] }: Props) {
                 {section?.showSecuritySystems && (
                   <SecuritySystems {...securitySystem} />
                 )}
-                {section?.showSocialNetworks && <SocialNetworks />}
+                {section?.showSocialNetworks && (
+                  <SocialNetworks {...socialNetwork} />
+                )}
               </>
             </li>
           ))}
