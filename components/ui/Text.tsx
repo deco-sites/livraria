@@ -9,6 +9,7 @@ type Props = JSX.IntrinsicElements["span"] & {
     | "subdued-inverse"
     | "price"
     | "section-title"
+    | "strong-title"
     | "positive"
     | "critical"
     | "black"

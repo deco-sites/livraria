@@ -1,4 +1,4 @@
-import Newsletter from "$store/components/footer/Newsletter.tsx";
+import Newsletter from "$store/islands/Newsletter.tsx";
 import PaymentSystems from "$store/components/footer/PaymentSystems.tsx";
 import SecuritySystems, {
   SecuritySystemsProps,

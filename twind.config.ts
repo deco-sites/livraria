@@ -54,7 +54,7 @@ const options: Omit<Options, "selfURL"> = {
         "section-title": "#858585",
         "positive": "#1A7346",
         "critical": "#B44125",
-        "notfound-title": "#AF0100",
+        "strong-title": "#AF0100",
         "whatsapp": "#25D366",
         "copyright": "#797676",
       },
