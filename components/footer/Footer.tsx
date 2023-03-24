@@ -128,7 +128,7 @@ function Footer(
     <footer class="w-full bg-footer flex flex-col">
       <Newsletter />
 
-      <FooterContainer class="p-2.5">
+      <FooterContainer class="sm:p-2.5">
         {/* Desktop view */}
         <ul class="hidden sm:flex flex-row gap-20 sm:grid grid-cols-[1fr_1fr_1fr_1fr] divide-x-1">
           {sections.map((section, index) => (
