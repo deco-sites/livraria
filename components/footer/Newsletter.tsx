@@ -9,12 +9,6 @@ function Newsletter() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  console.log("🚀 ~ file: Newsletter.tsx:9 ~ Newsletter ~ loading:", loading);
-  console.log(
-    "🚀 ~ file: Newsletter.tsx:9 ~ Newsletter ~ submitted:",
-    submitted,
-  );
-
   const handleSubmit = (e: TargetedEvent<HTMLFormElement, Event>) => {
     e.preventDefault();
     setLoading(true);
