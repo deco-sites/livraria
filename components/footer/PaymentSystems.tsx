@@ -1,6 +1,20 @@
 import Text from "$store/components/ui/Text.tsx";
 import Icon, { PaymentSystemsIcons } from "$store/components/ui/Icon.tsx";
 
+export interface PaymentSystemsIconProps {
+  /**
+   * @title Ícone
+   */
+  icon?: PaymentSystemsIcons;
+  /**
+   * @title Largura
+   */
+  width?: string;
+  /**
+   * @title Altura
+   */
+  height?: string;
+}
 export interface PaymentSystemProps {
   /**
    * @title Título
@@ -10,7 +24,7 @@ export interface PaymentSystemProps {
   /**
    * @title Ícones
    */
-  icons?: PaymentSystemsIcons[];
+  icons?: PaymentSystemsIconProps[];
 }
 
 function PaymentSystems(
@@ -26,10 +40,15 @@ function PaymentSystems(
         {label}
       </Text>
 
-      <div class="flex items-center justify-center gap-4 min-h-[44px]">
+      <div class="flex items-center justify-center gap-2.5 min-h-[44px]">
         {icons && icons?.length &&
-          icons?.map((icon) => (
-            <Icon id={icon} width={44} height={26} strokeWidth={0.1} />
+          icons?.map(({ icon, width = 44, height = 26 }) => (
+            <Icon
+              id={icon}
+              width={width}
+              height={height}
+              strokeWidth={0.1}
+            />
           ))}
       </div>
     </div>

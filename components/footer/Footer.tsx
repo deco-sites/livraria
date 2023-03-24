@@ -1,6 +1,8 @@
 import Newsletter from "$store/components/footer/Newsletter.tsx";
 import PaymentSystems from "$store/components/footer/PaymentSystems.tsx";
-import SecuritySystems from "$store/components/footer/SecuritySystems.tsx";
+import SecuritySystems, {
+  SecuritySystemsProps,
+} from "$store/components/footer/SecuritySystems.tsx";
 import SocialNetworks from "$store/components/footer/SocialNetworks.tsx";
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 import Text from "$store/components/ui/Text.tsx";
@@ -109,11 +111,13 @@ function FooterContainer(
 export interface Props {
   /**  @title Formas de Pagamento */
   paymentSystem?: PaymentSystemProps;
+  /**  @title Selos de Segurança */
+  securitySystem?: SecuritySystemsProps;
   /**  @title Seções */
   sections?: Section[];
 }
 
-function Footer({ paymentSystem, sections = [] }: Props) {
+function Footer({ paymentSystem, securitySystem, sections = [] }: Props) {
   return (
     <footer class="w-full bg-footer flex flex-col">
       <Newsletter />
@@ -149,7 +153,9 @@ function Footer({ paymentSystem, sections = [] }: Props) {
                 {section?.showPaymentSystems && (
                   <PaymentSystems {...paymentSystem} />
                 )}
-                {section?.showSecuritySystems && <SecuritySystems />}
+                {section?.showSecuritySystems && (
+                  <SecuritySystems {...securitySystem} />
+                )}
                 {section?.showSocialNetworks && <SocialNetworks />}
               </>
             </li>
@@ -186,7 +192,9 @@ function Footer({ paymentSystem, sections = [] }: Props) {
                 {section?.showPaymentSystems && (
                   <PaymentSystems {...paymentSystem} />
                 )}
-                {section?.showSecuritySystems && <SecuritySystems />}
+                {section?.showSecuritySystems && (
+                  <SecuritySystems {...securitySystem} />
+                )}
                 {section?.showSocialNetworks && <SocialNetworks />}
               </>
             </li>
@@ -197,6 +205,7 @@ function Footer({ paymentSystem, sections = [] }: Props) {
       <div class="bg-white border-t-1 border-solid border-lightgray p-2.5">
         <FooterContainer class="flex-col gap-4 sm:gap-0 sm:grid sm:grid-cols-[50%_50%]">
           <Text
+            variant="regular"
             class="text-xs text-copyright"
             tone="default"
           >
@@ -207,8 +216,8 @@ function Footer({ paymentSystem, sections = [] }: Props) {
           </Text>
 
           <Text
+            variant="regular"
             class="flex items-center gap-1 text-xs text-copyright"
-            variant="body"
             tone="default"
           >
             Developed with <Icon id="HeartFooter" width={11} height={10} /> by

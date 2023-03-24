@@ -90,6 +90,7 @@ const options: Omit<Options, "selfURL"> = {
         "heading-3": "700",
         "menu": "500",
         "button": "700",
+        "regular": "400",
         "body": "500",
         "caption": "500",
         "list-price": "400",

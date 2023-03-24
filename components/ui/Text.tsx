@@ -19,6 +19,7 @@ type Props = JSX.IntrinsicElements["span"] & {
     | "heading-3"
     | "menu"
     | "button"
+    | "regular"
     | "body"
     | "caption"
     | "list-price"

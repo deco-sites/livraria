@@ -628,32 +628,107 @@ const manifest: DecoManifest = {
               "icons": {
                 "type": "array",
                 "items": {
-                  "type": "string",
-                  "anyOf": [
-                    {
+                  "title": "PaymentSystemsIconProps",
+                  "type": "object",
+                  "properties": {
+                    "icon": {
                       "type": "string",
-                      "const": "Visa",
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "const": "Visa",
+                        },
+                        {
+                          "type": "string",
+                          "const": "Mastercard",
+                        },
+                        {
+                          "type": "string",
+                          "const": "DinersClub",
+                        },
+                        {
+                          "type": "string",
+                          "const": "Elo",
+                        },
+                        {
+                          "type": "string",
+                          "const": "AmericanExpress",
+                        },
+                      ],
+                      "title": "Ícone",
                     },
-                    {
-                      "type": "string",
-                      "const": "Mastercard",
+                    "width": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Largura",
                     },
-                    {
-                      "type": "string",
-                      "const": "DinersClub",
+                    "height": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Altura",
                     },
-                    {
-                      "type": "string",
-                      "const": "Elo",
-                    },
-                    {
-                      "type": "string",
-                      "const": "AmericanExpress",
-                    },
-                  ],
-                  "title": "PaymentSystemsIcons",
+                  },
+                  "required": [],
                 },
                 "title": "Ícones",
+              },
+            },
+            "required": [],
+          },
+          "securitySystem": {
+            "title": "Selos de Segurança",
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Título",
+                "default": "Selos de Segurança",
+              },
+              "images": {
+                "type": "array",
+                "items": {
+                  "title": "SecuritySystemImage",
+                  "type": "object",
+                  "properties": {
+                    "src": {
+                      "format": "image-uri",
+                      "type": "string",
+                      "title": "Imagem",
+                    },
+                    "href": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "URL do link da imagem",
+                    },
+                    "alt": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": 'Propriedade "alt" da imagem',
+                    },
+                    "maxWidth": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Largura máxima da imagem",
+                    },
+                  },
+                  "required": [
+                    "src",
+                  ],
+                },
+                "title": "Imagens",
               },
             },
             "required": [],
