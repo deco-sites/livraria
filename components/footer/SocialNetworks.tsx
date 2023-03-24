@@ -34,7 +34,7 @@ function SocialNetworks(
   return (
     <div class="flex flex-col items-start justify-center pt-4 sm:pt-0">
       <Text
-        class="mb-[25px] font-semibold block"
+        class="mb-[15px] sm:mb-[25px] font-semibold block"
         variant="heading-footer"
         tone="black"
       >

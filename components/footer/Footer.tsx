@@ -139,7 +139,7 @@ function Footer(
             >
               <>
                 <Text
-                  class="mb-[25px] font-semibold block"
+                  class="mb-[15px] sm:mb-[25px] font-semibold block"
                   variant="heading-footer"
                   tone="black"
                 >
@@ -171,16 +171,14 @@ function Footer(
         </ul>
 
         {/* Mobile view */}
-        <ul class="flex flex-col sm:items-center sm:hidden sm:flex-row gap-4">
+        <ul class="px-[30px] py-2.5 flex flex-col sm:items-center sm:hidden sm:flex-row sm:gap-4">
           {sections.map((section, index) => (
             <li
-              class={`pt-5 pb-10 flex flex-col justify-between h-full ${
-                index > 0 ? "pl-5" : ""
-              }`}
+              class={`pt-5 flex flex-col justify-between h-full`}
             >
               <>
                 <Text
-                  class="mb-[25px] font-semibold block"
+                  class="mb-[15px] sm:mb-[25px] font-semibold block"
                   variant="heading-footer"
                   tone="black"
                 >

@@ -29,7 +29,7 @@ function Newsletter() {
 
   return (
     <div class="flex flex-col sm:grid sm:grid-cols-[45%_55%] items-center justify-between bg-white shadow-newsletter">
-      <div class="flex items-center justify-between gap-2 bg-newsletter pl-5 sm:pl-20 pr-10 py-[27px]">
+      <div class="flex items-center justify-between gap-2 bg-newsletter pl-2.5 sm:pl-20 pr-10 py-[27px] w-full sm:w-auto">
         <Text
           variant="newsletter"
           tone="default-inverse"
@@ -53,7 +53,7 @@ function Newsletter() {
       </div>
 
       <form
-        class="flex flex-row items-center justify-center font-body text-body w-full py-[27px]"
+        class="flex flex-row items-center justify-center font-body text-body w-full py-[27px] px-4 sm:px-0"
         onSubmit={handleSubmit}
       >
         {submitted
@@ -72,20 +72,20 @@ function Newsletter() {
           : (
             <>
               <input
-                class="px-3 text-caption bg-white rounded text-black border-1 border-default mr-[25px] w-2/5 h-[35px]"
+                class="px-3 text-caption bg-white rounded text-black border-1 border-default mr-[5px] sm:mr-[25px] w-2/5 h-[35px] w-full"
                 id="nome"
                 placeholder="Digite seu nome"
                 required
               />
 
               <input
-                class="px-3 text-caption bg-white rounded text-black border-1 border-default mr-[25px] w-2/5 h-[35px]"
+                class="px-3 text-caption bg-white rounded text-black border-1 border-default mr-[5px] w-2/5 h-[35px] w-full"
                 id="mail"
                 placeholder="agora, seu email"
                 required
               />
               <button
-                class="rounded bg-newsletter bg-interactive-inverse flex items-center justify-center w-[40px] h-[35px]"
+                class="rounded-tr-[9px] rounded-br-[9px] bg-newsletter bg-interactive-inverse flex items-center justify-center w-[40px] h-[35px] min-w-[40px] sm:min-w-[40px]"
                 aria-label="Enviar"
                 type="submit"
               >
