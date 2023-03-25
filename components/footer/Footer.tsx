@@ -133,7 +133,7 @@ function Footer(
 
       <FooterContainer class="sm:p-2.5">
         {/* Desktop view */}
-        <ul class="hidden sm:flex flex-row gap-20 sm:grid grid-cols-[1fr_1fr_1fr_1fr] divide-x-1">
+        <ul class="hidden sm:flex flex-row gap-20 sm:grid grid-cols-[1fr_0.9fr_0.9fr_1.2fr] divide-x-1">
           {sections.map((section, index) => (
             <li
               class={`pt-5 pb-10 flex flex-col justify-between h-full ${
