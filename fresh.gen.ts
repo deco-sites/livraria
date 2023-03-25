@@ -789,6 +789,11 @@ const manifest: DecoManifest = {
             },
             "required": [],
           },
+          "copyright": {
+            "format": "html",
+            "type": "string",
+            "title": "Copyright",
+          },
           "sections": {
             "type": "array",
             "items": {

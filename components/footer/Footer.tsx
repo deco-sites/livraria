@@ -117,12 +117,15 @@ export interface Props {
   securitySystem?: SecuritySystemsProps;
   /**  @title Redes Sociais */
   socialNetwork?: SocialNetworkProps;
+  /**  @title Copyright */
+  copyright?: HTML;
   /**  @title Seções */
   sections?: Section[];
 }
 
 function Footer(
-  { paymentSystem, securitySystem, socialNetwork, sections = [] }: Props,
+  { paymentSystem, securitySystem, socialNetwork, copyright, sections = [] }:
+    Props,
 ) {
   return (
     <footer class="w-full bg-footer flex flex-col">
@@ -212,16 +215,11 @@ function Footer(
 
       <div class="bg-white border-t-1 border-solid border-lightgray p-2.5">
         <FooterContainer class="flex-col gap-4 sm:gap-0 sm:grid sm:grid-cols-[50%_50%]">
-          <Text
-            variant="regular"
-            class="text-xs text-copyright"
-            tone="default"
+          <div
+            class="font-regular text-default text-xs text-copyright"
+            dangerouslySetInnerHTML={{ __html: copyright || "" }}
           >
-            <p>
-              Copyright 2021 | Todos os direitos Reservados a Livraria da Vila.
-            </p>
-            <p>CNPJ sob o n° 54.430.962/0006-14</p>
-          </Text>
+          </div>
 
           <Text
             variant="regular"
