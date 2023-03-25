@@ -112,12 +112,12 @@ function Searchbar({
         <form
           id="searchbar"
           action={action}
-          class="flex-grow flex gap-3 border border-default bg-white md: max-w-[480px] h-[30px] rounded"
+          class="flex-grow h-[25px] flex gap-3 border border-default bg-white md: max-w-[480px] rounded md:h-[30px]"
         >
           <input
             ref={searchInputRef}
             id="search-input"
-            class="flex-grow outline-none placeholder-shown:sibling:hidden pl-3 rounded"
+            class="text-sm flex-grow outline-none placeholder-shown:sibling:hidden pl-3 rounded md:text-base"
             name={name}
             defaultValue={query}
             onInput={(e) => {
@@ -152,7 +152,7 @@ function Searchbar({
             aria-label="Search"
             htmlFor="searchbar"
             tabIndex={-1}
-            class="h-[30px]"
+            class="h-[25px] md:h-[30px]"
           >
             <Icon
               class="text-subdued"

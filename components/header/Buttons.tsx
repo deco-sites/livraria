@@ -59,8 +59,38 @@ function CartButton() {
     </Button>
   );
 }
+function WishlistButton() {
+  return (
+    <Button
+      variant="icon"
+      class="relative"
+      aria-label="open wishlist"
+      onClick={() => {
+        window.location.href = "/wishlist";
+      }}
+    >
+      <Icon id="Wishlist" width={23} height={19} strokeWidth={2} />
+    </Button>
+  );
+}
+function UserButton() {
+  return (
+    <Button
+      variant="icon"
+      class="relative"
+      aria-label="open login"
+      onClick={() => {
+        window.location.href = "/login";
+      }}
+    >
+      <Icon id="User" width={22} height={19} strokeWidth={2} />
+    </Button>
+  );
+}
 
-function HeaderButton({ variant }: { variant: "cart" | "search" | "menu" }) {
+function HeaderButton(
+  { variant }: { variant: "cart" | "search" | "menu" | "wishlist" | "user" },
+) {
   if (variant === "cart") {
     return <CartButton />;
   }
@@ -71,6 +101,12 @@ function HeaderButton({ variant }: { variant: "cart" | "search" | "menu" }) {
 
   if (variant === "menu") {
     return <MenuButton />;
+  }
+  if (variant === "wishlist") {
+    return <WishlistButton />;
+  }
+  if (variant === "user") {
+    return <UserButton />;
   }
 
   return null;

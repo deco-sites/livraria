@@ -68,7 +68,7 @@ function Header(
 ) {
   const searchbar = { ..._searchbar, products, suggestions, configVTEX };
   return (
-    <header class={`h-[${headerHeight}]`}>
+    <header class={`md:h-[${headerHeight}]`}>
       <div class="bg-default fixed w-full z-50">
         <Alert
           alert={alert?.alert}
