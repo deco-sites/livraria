@@ -744,6 +744,20 @@ const manifest: DecoManifest = {
                       ],
                       "title": "Largura máxima da imagem",
                     },
+                    "width": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Largura da imagem",
+                    },
+                    "height": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Altura da imagem",
+                    },
                   },
                   "required": [
                     "src",
