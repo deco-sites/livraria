@@ -1,7 +1,7 @@
 import type { LoaderReturnType } from "$live/types.ts";
 import ProductCard from "$store/components/product/ProductCard.tsx";
 import Arrows from "$store/components/ui/Arrows.tsx";
-import Container from "$store/components/ui/Container.tsx";
+import ShelfContainer from "$store/components/ui/ShelfContainer.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import SliderControllerJS from "$store/islands/SliderJS.tsx";
@@ -54,9 +54,9 @@ function ProductShelf({ title, products, viewMoreLink, viewMoreText }: Props) {
   }, [products]);
 
   return (
-    <Container
+    <ShelfContainer
       id={id}
-      class="py-10 px-0 sm:mb-10 sm:px-5 bg-white rounded-[0.25rem] p-8 shadow-section relative"
+      class="py-10 px-0 sm:mb-10 sm:px-5 bg-white rounded-[1rem] p-8 shadow-section relative"
     >
       {title && (
         <h2 class="text-center row-start-1 col-span-full">
@@ -65,10 +65,12 @@ function ProductShelf({ title, products, viewMoreLink, viewMoreText }: Props) {
       )}
       {viewMoreLink && (
         <a
-          class="block row-start-1 col-span-full text-center"
+          class="block row-start-1 col-span-full text-center font-medium pb-4"
           href={viewMoreLink}
         >
-          <Text variant="heading-3">{viewMoreText ? viewMoreText : null}</Text>
+          <Text variant="heading-3" class="font-medium">
+            {viewMoreText ? viewMoreText : null}
+          </Text>
         </a>
       )}
 
@@ -77,8 +79,15 @@ function ProductShelf({ title, products, viewMoreLink, viewMoreText }: Props) {
         snap="snap-center sm:snap-start block first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0"
       >
         {products?.map((product) => (
-          <div class="min-w-[270px] max-w-[270px] sm:min-w-[292px] sm:max-w-[292px]">
-            <ProductCard product={product} />
+          <div
+            key={product.productID}
+            class="min-w-[232px] max-w-[232px] sm:min-w-[232px] sm:max-w-[232px]"
+          >
+            <ProductCard
+              product={product}
+              preload={false}
+              key={product.productID}
+            />
           </div>
         ))}
       </Slider>
@@ -91,7 +100,7 @@ function ProductShelf({ title, products, viewMoreLink, viewMoreText }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLd }}
       />
-    </Container>
+    </ShelfContainer>
   );
 }
 
