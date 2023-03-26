@@ -42,6 +42,7 @@ const options: Omit<Options, "selfURL"> = {
         "cookie": "#90052c",
         "interactive": "#858585",
         "interactive-inverse": "#FFFFFF",
+        "primary": "#AF0100",
         "hover": "rgba(0, 0, 0, 0.04)",
         "hover-inverse": "rgba(255, 255, 255, 0.4)",
       },

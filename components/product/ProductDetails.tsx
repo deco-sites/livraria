@@ -13,6 +13,7 @@ import Image from "deco-sites/std/components/Image.tsx";
 import NotFound from "../search/NotFound.tsx";
 import ContainerFull from "../ui/ContainerFull.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
+import ShippingSimulation from "$store/islands/ShippingSimulation.tsx";
 
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
@@ -30,7 +31,6 @@ function Details({ page }: { page: ProductDetailsPage }) {
     brand,
     name,
   } = product;
-  console.log("🚀 ~ file: ProductDetails.tsx:32 ~ Details ~ product:", product);
   const { price, listPrice, seller, installments } = useOffer(offers);
   const [front, back] = images ?? [];
 
@@ -106,10 +106,16 @@ function Details({ page }: { page: ProductDetailsPage }) {
                   sellerId={seller}
                 />
               )}
-              <Button variant="secondary">
-                <Icon id="Heart" width={20} height={20} strokeWidth={2} />{" "}
-                Favoritar
-              </Button>
+            </div>
+            {/* Shipping Simulation */}
+            <div class="mt-8">
+              <ShippingSimulation
+                items={[{
+                  id: Number(product.sku),
+                  quantity: 1,
+                  seller: seller ?? "1",
+                }]}
+              />
             </div>
           </div>
         </div>

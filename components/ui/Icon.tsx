@@ -22,6 +22,7 @@ export type AvailableIcons =
   | "Instagram"
   | "Tiktok"
   | "Truck"
+  | "TruckPDP"
   | "Discount"
   | "Return"
   | "CreditCard"

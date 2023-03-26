@@ -19,7 +19,8 @@ import * as $$3 from "./islands/HeaderSearchMenu.tsx";
 import * as $$4 from "./islands/Newsletter.tsx";
 import * as $$5 from "./islands/ProductShelf.tsx";
 import * as $$6 from "./islands/SearchControls.tsx";
-import * as $$7 from "./islands/SliderJS.tsx";
+import * as $$7 from "./islands/ShippingSimulation.tsx";
+import * as $$8 from "./islands/SliderJS.tsx";
 import * as $$$0 from "./sections/BannerGrid.tsx";
 import * as $$$1 from "./sections/Carousel.tsx";
 import * as $$$2 from "./sections/CookieConsent.tsx";
@@ -81,7 +82,8 @@ const manifest: DecoManifest = {
     "./islands/Newsletter.tsx": $$4,
     "./islands/ProductShelf.tsx": $$5,
     "./islands/SearchControls.tsx": $$6,
-    "./islands/SliderJS.tsx": $$7,
+    "./islands/ShippingSimulation.tsx": $$7,
+    "./islands/SliderJS.tsx": $$8,
   },
   sections: {
     "./sections/BannerGrid.tsx": $$$0,
@@ -473,6 +475,10 @@ const manifest: DecoManifest = {
                     {
                       "type": "string",
                       "const": "Truck",
+                    },
+                    {
+                      "type": "string",
+                      "const": "TruckPDP",
                     },
                     {
                       "type": "string",
@@ -933,6 +939,10 @@ const manifest: DecoManifest = {
                               {
                                 "type": "string",
                                 "const": "Truck",
+                              },
+                              {
+                                "type": "string",
+                                "const": "TruckPDP",
                               },
                               {
                                 "type": "string",
