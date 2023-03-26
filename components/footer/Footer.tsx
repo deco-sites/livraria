@@ -46,6 +46,10 @@ export interface Section {
    * @title Mostrar redes sociais?
    */
   showSocialNetworks?: boolean;
+  /**
+   * @title Mostrar o menu em 2 colunas?
+   */
+  showGrid?: boolean;
 }
 
 const isIcon = (item: Item): item is IconItem =>
@@ -81,7 +85,7 @@ function SectionItem({ item }: { item: Item }) {
             />
 
             <div
-              class="footer-icon-item ml-3 whitespace-pre transition-colors hover:text-badge"
+              class="footer-icon-item ml-3 whitespace-break-spaces sm:whitespace-pre transition-colors hover:text-badge"
               dangerouslySetInnerHTML={{ __html: item?.label || "" }}
             />
           </a>
@@ -189,7 +193,9 @@ function Footer(
                 </Text>
 
                 <ul
-                  class={`flex flex-grow flex-col`}
+                  class={`flex flex-grow flex-col ${
+                    section?.showGrid ? "grid grid-cols-[1fr_1fr] sm:flex" : ""
+                  }`}
                 >
                   {section.children.map((item) => (
                     <li class="leading-none">

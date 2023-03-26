@@ -1096,6 +1096,13 @@ const manifest: DecoManifest = {
                   ],
                   "title": "Mostrar redes sociais?",
                 },
+                "showGrid": {
+                  "type": [
+                    "boolean",
+                    "null",
+                  ],
+                  "title": "Mostrar o menu em 2 colunas?",
+                },
               },
               "required": [
                 "children",
