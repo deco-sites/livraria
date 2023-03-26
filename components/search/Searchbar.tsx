@@ -20,20 +20,20 @@ import ProductCard from "$store/components/product/ProductCard.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import useAutocomplete from "deco-sites/std/commerce/vtex/hooks/useAutocomplete.ts";
 import SearchTermList from "./SearchTermList.tsx";
-import { useUI } from "$store/sdk/useUI.ts";
+// import { useUI } from "$store/sdk/useUI.ts";
 
-function CloseButton() {
-  const { displaySearchbar } = useUI();
+// function CloseButton() {
+//   const { displaySearchbar } = useUI();
 
-  return (
-    <Button
-      variant="icon"
-      onClick={() => (displaySearchbar.value = false)}
-    >
-      <Icon id="XMark" width={20} height={20} strokeWidth={2} />
-    </Button>
-  );
-}
+//   return (
+//     <Button
+//       variant="icon"
+//       onClick={() => (displaySearchbar.value = false)}
+//     >
+//       <Icon id="XMark" width={20} height={20} strokeWidth={2} />
+//     </Button>
+//   );
+// }
 
 // Editable props
 export interface EditableProps {
@@ -112,11 +112,12 @@ function Searchbar({
         <form
           id="searchbar"
           action={action}
-          class="flex-grow h-[25px] flex gap-3 border border-default bg-white md: max-w-[480px] rounded md:h-[30px]"
+          role="search"
+          class="flex-grow h-[25px] flex gap-3 border border-default bg-white md:max-w-[480px] rounded md:h-[30px]"
         >
           <input
             ref={searchInputRef}
-            id="search-input"
+            id={`search-input-${variant}`}
             class="text-sm flex-grow outline-none placeholder-shown:sibling:hidden pl-3 rounded md:text-base"
             name={name}
             defaultValue={query}
@@ -126,8 +127,13 @@ function Searchbar({
               setSearch(value);
             }}
             placeholder={placeholder}
-            role="combobox"
-            aria-controls="search-suggestion"
+            role={(hasSuggestions && !emptySuggestions)
+              ? "combobox"
+              : "searchbox"}
+            aria-label="Search"
+            aria-controls={(hasSuggestions && !emptySuggestions)
+              ? "search-suggestion"
+              : null}
             autocomplete="off"
           />
 
@@ -163,7 +169,7 @@ function Searchbar({
             />
           </Button>
         </form>
-        {variant === "desktop" && <CloseButton />}
+        {/* {variant === "desktop" && <CloseButton />} */}
       </div>
       <div class="flex flex-col gap-6 divide-y divide-default mt-6 empty:mt-0 md:(flex-row divide-y-0)">
         {searches && searches.length > 0 && !hasSuggestions && (

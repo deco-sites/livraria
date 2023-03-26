@@ -42,9 +42,9 @@ function Navbar({ items, searchbar }: {
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden lg: block">
+      <div class="hidden md:block">
         <div class="hidden md:flex flex-row justify-center items-center border-b-1 border-default w-full pl-2 pr-3 bg-white">
-          <div class="md:flex flex-row w-[1380px] items-center justify-between py-[10px] px[5px]">
+          <div class="md:flex flex-row w-[1380px] items-center justify-between py-[10px] px-[5px]">
             <div class="flex justify-center w-[452px]">
               <a
                 href="/"
@@ -55,7 +55,7 @@ function Navbar({ items, searchbar }: {
               </a>
             </div>
             <div class="flex-auto flex justify-center">
-              <Searchbar />
+              <Searchbar variant="desktop" />
             </div>
             <div class="flex-none flex items-center justify-end gap-2">
               <Button
@@ -84,9 +84,9 @@ function Navbar({ items, searchbar }: {
             </div>
           </div>
         </div>
-        <div class="lg: flex flex-auto flex justify-center bg-white">
+        <div class="md:flex flex-auto flex justify-center bg-white">
           <Container class="w-full ">
-            <div class="md: grid grid-flow-col">
+            <div class="md:grid md:grid-flow-col">
               {items.map((item) => <NavItem item={item} />)}
             </div>
           </Container>
