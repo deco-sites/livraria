@@ -60,6 +60,8 @@ function SecuritySystems(
                       class={`w-full ${maxWidth ? `max-w-[${maxWidth}]` : ""}`}
                       src={src}
                       alt={alt}
+                      width="100%"
+                      height="100%"
                     />
                   </a>
                 )
@@ -68,6 +70,8 @@ function SecuritySystems(
                     class={`w-full ${maxWidth ? `max-w-[${maxWidth}]` : ""}`}
                     src={src}
                     alt={alt}
+                    width="100%"
+                    height="100%"
                   />
                 )}
             </>
