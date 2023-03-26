@@ -11,6 +11,7 @@ import {
   AggregateOffer,
   AggregateRating,
   BreadcrumbList,
+  Filter,
   ProductGroup,
   PropertyValue,
   Review,
@@ -100,4 +101,15 @@ export type LegacyProductVTEX = IProduct & {
 export interface ProductDetailsPage {
   breadcrumbList: BreadcrumbList;
   product: Product;
+}
+
+export interface ProductListingPage {
+  breadcrumb: BreadcrumbList;
+  filters: Filter[];
+  products: Product[];
+  pageInfo: {
+    currentPage: number;
+    nextPage: string | undefined;
+    previousPage: string | undefined;
+  };
 }

@@ -6,6 +6,8 @@ import Text from "$store/components/ui/Text.tsx";
 import { formatPrice } from "$store/sdk/format.ts";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
+import ProductShelfSpecification from "$store/components/product/ProductShelfSpecification.tsx";
+import ProductShelfBrand from "$store/components/product/ProductShelfBrand.tsx";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 import Image from "deco-sites/std/components/Image.tsx";
 /* import { LoaderReturnType } from "https://denopkg.com/deco-cx/live@0.10.3/types.ts"; */
@@ -76,6 +78,7 @@ function ProductCard({ product, preload /* , page */ }: Props) {
             loading={preload ? "eager" : "lazy"}
             /* sizes="(max-width: 640px) 50vw, 20vw" */
           />
+
           <Image
             src={back?.url ?? front.url!}
             alt={back?.alternateName ?? front.alternateName}
@@ -84,6 +87,7 @@ function ProductCard({ product, preload /* , page */ }: Props) {
             class="w-full hidden group-hover:block"
             /* sizes="(max-width: 640px) 50vw, 20vw" */
           />
+
           {seller && (
             <div
               class="absolute bottom-0 hidden sm:group-hover:flex flex-col gap-2 w-full p-2"
@@ -93,7 +97,6 @@ function ProductCard({ product, preload /* , page */ }: Props) {
             >
               <Sizes {...product} />
               <Button
-                as="a"
                 href={product.url}
                 class="bg-primary text-default-inverse font-normal"
               >
@@ -110,15 +113,14 @@ function ProductCard({ product, preload /* , page */ }: Props) {
           >
             {name}
           </Text>
-          {
-            /* <ProductSpecification specificationName="Autor" page={page} />
-          <Text
-            class="overflow-hidden overflow-ellipsis whitespace-nowrap"
-            variant="caption"
-          >
-            <ProductSpecification specificationName="Editora" page={page} />
-          </Text> */
-          }
+
+          <ProductShelfSpecification
+            specificationName="Autor"
+            product={product}
+          />
+
+          <ProductShelfBrand product={product} />
+
           <div class="flex items-center gap-2">
             <Text
               class="line-through"
@@ -127,6 +129,7 @@ function ProductCard({ product, preload /* , page */ }: Props) {
             >
               {formatPrice(listPrice, offers!.priceCurrency!)}
             </Text>
+
             <Text variant="caption" tone="price">
               {formatPrice(price, offers!.priceCurrency!)}
             </Text>

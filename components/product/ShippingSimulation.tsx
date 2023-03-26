@@ -27,10 +27,7 @@ function ShippingContentError() {
 
 function ShippingContent({ simulation }: { simulation: SimulationOrderForm }) {
   const { cart } = useCart();
-  console.log(
-    "🚀 ~ file: ShippingSimulation.tsx:29 ~ ShippingContent ~ cart:",
-    cart,
-  );
+
   const locale = cart.value?.clientPreferencesData.locale;
   const currencyCode = cart.value?.storePreferencesData.currencyCode;
 

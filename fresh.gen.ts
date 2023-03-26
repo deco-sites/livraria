@@ -45,24 +45,26 @@ import * as $$$20 from "deco-sites/std/sections/configOCC.global.tsx";
 import * as $$$21 from "deco-sites/std/sections/configShopify.global.tsx";
 import * as $$$22 from "deco-sites/std/sections/configVTEX.global.tsx";
 import * as $$$$0 from "./functions/mzVtexLegacyProductDetailsPage.ts";
-import * as $$$$1 from "$live/functions/EffectSelectPage.ts";
-import * as $$$$2 from "$live/functions/MatchDate.ts";
-import * as $$$$3 from "$live/functions/MatchEnvironment.ts";
-import * as $$$$4 from "$live/functions/MatchRandom.ts";
-import * as $$$$5 from "$live/functions/MatchSite.ts";
-import * as $$$$6 from "$live/functions/MatchUserAgent.ts";
-import * as $$$$7 from "deco-sites/std/functions/occProductDetailsPage.ts";
-import * as $$$$8 from "deco-sites/std/functions/shopifyProductDetailsPage.ts";
-import * as $$$$9 from "deco-sites/std/functions/shopifyProductList.ts";
-import * as $$$$10 from "deco-sites/std/functions/shopifyProductListingPage.ts";
-import * as $$$$11 from "deco-sites/std/functions/vtexConfig.ts";
-import * as $$$$12 from "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts";
-import * as $$$$13 from "deco-sites/std/functions/vtexLegacyProductList.ts";
-import * as $$$$14 from "deco-sites/std/functions/vtexLegacyProductListingPage.ts";
-import * as $$$$15 from "deco-sites/std/functions/vtexProductDetailsPage.ts";
-import * as $$$$16 from "deco-sites/std/functions/vtexProductList.ts";
-import * as $$$$17 from "deco-sites/std/functions/vtexProductListingPage.ts";
-import * as $$$$18 from "deco-sites/std/functions/vtexSuggestions.ts";
+import * as $$$$1 from "./functions/mzVtexLegacyProductList.ts";
+import * as $$$$2 from "./functions/mzVtexLegacyProductListingPage.ts";
+import * as $$$$3 from "$live/functions/EffectSelectPage.ts";
+import * as $$$$4 from "$live/functions/MatchDate.ts";
+import * as $$$$5 from "$live/functions/MatchEnvironment.ts";
+import * as $$$$6 from "$live/functions/MatchRandom.ts";
+import * as $$$$7 from "$live/functions/MatchSite.ts";
+import * as $$$$8 from "$live/functions/MatchUserAgent.ts";
+import * as $$$$9 from "deco-sites/std/functions/occProductDetailsPage.ts";
+import * as $$$$10 from "deco-sites/std/functions/shopifyProductDetailsPage.ts";
+import * as $$$$11 from "deco-sites/std/functions/shopifyProductList.ts";
+import * as $$$$12 from "deco-sites/std/functions/shopifyProductListingPage.ts";
+import * as $$$$13 from "deco-sites/std/functions/vtexConfig.ts";
+import * as $$$$14 from "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts";
+import * as $$$$15 from "deco-sites/std/functions/vtexLegacyProductList.ts";
+import * as $$$$16 from "deco-sites/std/functions/vtexLegacyProductListingPage.ts";
+import * as $$$$17 from "deco-sites/std/functions/vtexProductDetailsPage.ts";
+import * as $$$$18 from "deco-sites/std/functions/vtexProductList.ts";
+import * as $$$$19 from "deco-sites/std/functions/vtexProductListingPage.ts";
+import * as $$$$20 from "deco-sites/std/functions/vtexSuggestions.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -112,24 +114,26 @@ const manifest: DecoManifest = {
   },
   functions: {
     "./functions/mzVtexLegacyProductDetailsPage.ts": $$$$0,
-    "$live/functions/EffectSelectPage.ts": $$$$1,
-    "$live/functions/MatchDate.ts": $$$$2,
-    "$live/functions/MatchEnvironment.ts": $$$$3,
-    "$live/functions/MatchRandom.ts": $$$$4,
-    "$live/functions/MatchSite.ts": $$$$5,
-    "$live/functions/MatchUserAgent.ts": $$$$6,
-    "deco-sites/std/functions/occProductDetailsPage.ts": $$$$7,
-    "deco-sites/std/functions/shopifyProductDetailsPage.ts": $$$$8,
-    "deco-sites/std/functions/shopifyProductList.ts": $$$$9,
-    "deco-sites/std/functions/shopifyProductListingPage.ts": $$$$10,
-    "deco-sites/std/functions/vtexConfig.ts": $$$$11,
-    "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts": $$$$12,
-    "deco-sites/std/functions/vtexLegacyProductList.ts": $$$$13,
-    "deco-sites/std/functions/vtexLegacyProductListingPage.ts": $$$$14,
-    "deco-sites/std/functions/vtexProductDetailsPage.ts": $$$$15,
-    "deco-sites/std/functions/vtexProductList.ts": $$$$16,
-    "deco-sites/std/functions/vtexProductListingPage.ts": $$$$17,
-    "deco-sites/std/functions/vtexSuggestions.ts": $$$$18,
+    "./functions/mzVtexLegacyProductList.ts": $$$$1,
+    "./functions/mzVtexLegacyProductListingPage.ts": $$$$2,
+    "$live/functions/EffectSelectPage.ts": $$$$3,
+    "$live/functions/MatchDate.ts": $$$$4,
+    "$live/functions/MatchEnvironment.ts": $$$$5,
+    "$live/functions/MatchRandom.ts": $$$$6,
+    "$live/functions/MatchSite.ts": $$$$7,
+    "$live/functions/MatchUserAgent.ts": $$$$8,
+    "deco-sites/std/functions/occProductDetailsPage.ts": $$$$9,
+    "deco-sites/std/functions/shopifyProductDetailsPage.ts": $$$$10,
+    "deco-sites/std/functions/shopifyProductList.ts": $$$$11,
+    "deco-sites/std/functions/shopifyProductListingPage.ts": $$$$12,
+    "deco-sites/std/functions/vtexConfig.ts": $$$$13,
+    "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts": $$$$14,
+    "deco-sites/std/functions/vtexLegacyProductList.ts": $$$$15,
+    "deco-sites/std/functions/vtexLegacyProductListingPage.ts": $$$$16,
+    "deco-sites/std/functions/vtexProductDetailsPage.ts": $$$$17,
+    "deco-sites/std/functions/vtexProductList.ts": $$$$18,
+    "deco-sites/std/functions/vtexProductListingPage.ts": $$$$19,
+    "deco-sites/std/functions/vtexSuggestions.ts": $$$$20,
   },
   schemas: {
     "./sections/BannerGrid.tsx": {
@@ -1502,7 +1506,7 @@ const manifest: DecoManifest = {
             "title": "Title",
           },
           "products": {
-            "$id": "1f15a836acd2ecbefef6eaf34ebcff98e39811f3",
+            "$id": "21e924ba7ad9b59dcefae01b9b38a3fb983875f0",
             "format": "live-function",
             "type": "string",
             "title": "Products",
@@ -1662,6 +1666,142 @@ const manifest: DecoManifest = {
         "properties": {
           "data": {
             "$id": "78c64adae4b16df19c6019918cf3380bc0a3ea85",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "./functions/mzVtexLegacyProductList.ts": {
+      "inputSchema": {
+        "title": "Mz Vtex Legacy Product List",
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "title": "Query",
+            "description": "query to use on search",
+          },
+          "count": {
+            "type": "number",
+            "title": "Count",
+            "description": "total number of items to display",
+          },
+          "sort": {
+            "type": "string",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "",
+              },
+              {
+                "type": "string",
+                "const": "price:desc",
+              },
+              {
+                "type": "string",
+                "const": "price:asc",
+              },
+              {
+                "type": "string",
+                "const": "orders:desc",
+              },
+              {
+                "type": "string",
+                "const": "name:desc",
+              },
+              {
+                "type": "string",
+                "const": "name:asc",
+              },
+              {
+                "type": "string",
+                "const": "release:desc",
+              },
+              {
+                "type": "string",
+                "const": "discount:desc",
+              },
+            ],
+            "title": "Sort",
+            "description": "search sort parameter",
+          },
+          "collection": {
+            "type": "array",
+            "items": {
+              "type": "string",
+            },
+            "title": "Collection",
+            "description":
+              "Collection ID or (Product Cluster id). For more info: https://developers.vtex.com/docs/api-reference/search-api#get-/api/catalog_system/pub/products/search .",
+            "pattern": "\\d*",
+          },
+        },
+        "required": [
+          "query",
+          "count",
+        ],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "21e924ba7ad9b59dcefae01b9b38a3fb983875f0",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "./functions/mzVtexLegacyProductListingPage.ts": {
+      "inputSchema": {
+        "title": "Mz Vtex Legacy Product Listing Page",
+        "type": "object",
+        "properties": {
+          "term": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Term",
+            "description": "overides the query term",
+          },
+          "count": {
+            "type": "number",
+            "title": "Items per page",
+            "description": "number of products per page to display",
+          },
+          "ft": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Ft",
+            "description": "FullText term",
+          },
+          "fq": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Fq",
+          },
+          "map": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Map",
+            "description": "map param",
+          },
+        },
+        "required": [
+          "count",
+        ],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "9ba29fcac079080c6f7cf16f40f91cf15a25d53f",
           },
         },
         "additionalProperties": true,

@@ -6,8 +6,9 @@ import Icon from "$store/components/ui/Icon.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import Filters from "$store/components/search/Filters.tsx";
 import NotFound from "$store/components/search/NotFound.tsx";
+import Sort from "$store/components/search/Sort.tsx";
 import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
-import Sort from "../search/Sort.tsx";
+import type { ProductListingPage as MZProductListingPage } from "$store/commerce/vtex/types.ts";
 
 export interface Props {
   page: LoaderReturnType<ProductListingPage | null>;
@@ -20,7 +21,7 @@ export interface Props {
 
 function Gallery(
   { page, showFilters = true }: {
-    page: ProductListingPage;
+    page: MZProductListingPage;
     showFilters?: boolean;
   },
 ) {
@@ -51,8 +52,12 @@ function Gallery(
 
           <div class="relative grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-10 items-center">
             {page.products?.map((product, index) => (
-              <div class="w-full list-none">
-                <ProductCard product={product} preload={index === 0} />
+              <div class="w-full list-none" key={product.productID}>
+                <ProductCard
+                  product={product}
+                  preload={index === 0}
+                  key={product.productID}
+                />
               </div>
             ))}
           </div>
