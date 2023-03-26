@@ -17,10 +17,6 @@ export type AvailableIcons =
   | "Minus"
   | "MapPin"
   | "Phone"
-  | "Elo"
-  | "Mastercard"
-  | "Visa"
-  | "Pix"
   | "Logo"
   | "Facebook"
   | "Instagram"
@@ -46,7 +42,24 @@ export type AvailableIcons =
   | "HeartFooter"
   | "PhoneFooter"
   | "WhatsappFooter"
-  | "MailFooter";
+  | "MailFooter"
+  | "Pix"
+  | "Visa"
+  | "Mastercard"
+  | "DinersClub"
+  | "Elo"
+  | "AmericanExpress";
+
+export type PaymentSystemsIcons =
+  | "Visa"
+  | "Mastercard"
+  | "DinersClub"
+  | "Elo"
+  | "AmericanExpress";
+
+export type SocialNetworkIcons =
+  | "Facebook"
+  | "Instagram";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**

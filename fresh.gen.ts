@@ -16,8 +16,8 @@ import * as $$0 from "./islands/AddToCartButton.tsx";
 import * as $$1 from "./islands/HeaderButton.tsx";
 import * as $$2 from "./islands/HeaderModals.tsx";
 import * as $$3 from "./islands/HeaderSearchMenu.tsx";
-import * as $$4 from "./islands/ProductShelf.tsx";
-import * as $$5 from "./islands/ProductSpecTable.tsx";
+import * as $$4 from "./islands/Newsletter.tsx";
+import * as $$5 from "./islands/ProductShelf.tsx";
 import * as $$6 from "./islands/SearchControls.tsx";
 import * as $$7 from "./islands/SliderJS.tsx";
 import * as $$$0 from "./sections/BannerGrid.tsx";
@@ -33,33 +33,35 @@ import * as $$$9 from "./sections/ProductDetails.tsx";
 import * as $$$10 from "./sections/ProductGallery.tsx";
 import * as $$$11 from "./sections/ProductShelf.tsx";
 import * as $$$12 from "./sections/ProductSpecTable.tsx";
-import * as $$$13 from "./sections/RichText.tsx";
-import * as $$$14 from "./sections/SearchControls.tsx";
-import * as $$$15 from "./sections/WhatsApp.tsx";
-import * as $$$16 from "deco-sites/std/sections/SEO.tsx";
-import * as $$$17 from "deco-sites/std/sections/SEOPDP.tsx";
-import * as $$$18 from "deco-sites/std/sections/SEOPLP.tsx";
-import * as $$$19 from "deco-sites/std/sections/configOCC.global.tsx";
-import * as $$$20 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as $$$21 from "deco-sites/std/sections/configVTEX.global.tsx";
-import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
-import * as $$$$1 from "$live/functions/MatchDate.ts";
-import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
-import * as $$$$3 from "$live/functions/MatchRandom.ts";
-import * as $$$$4 from "$live/functions/MatchSite.ts";
-import * as $$$$5 from "$live/functions/MatchUserAgent.ts";
-import * as $$$$6 from "deco-sites/std/functions/occProductDetailsPage.ts";
-import * as $$$$7 from "deco-sites/std/functions/shopifyProductDetailsPage.ts";
-import * as $$$$8 from "deco-sites/std/functions/shopifyProductList.ts";
-import * as $$$$9 from "deco-sites/std/functions/shopifyProductListingPage.ts";
-import * as $$$$10 from "deco-sites/std/functions/vtexConfig.ts";
-import * as $$$$11 from "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts";
-import * as $$$$12 from "deco-sites/std/functions/vtexLegacyProductList.ts";
-import * as $$$$13 from "deco-sites/std/functions/vtexLegacyProductListingPage.ts";
-import * as $$$$14 from "deco-sites/std/functions/vtexProductDetailsPage.ts";
-import * as $$$$15 from "deco-sites/std/functions/vtexProductList.ts";
-import * as $$$$16 from "deco-sites/std/functions/vtexProductListingPage.ts";
-import * as $$$$17 from "deco-sites/std/functions/vtexSuggestions.ts";
+import * as $$$13 from "./sections/ProductSpecification.tsx";
+import * as $$$14 from "./sections/RichText.tsx";
+import * as $$$15 from "./sections/SearchControls.tsx";
+import * as $$$16 from "./sections/WhatsApp.tsx";
+import * as $$$17 from "deco-sites/std/sections/SEO.tsx";
+import * as $$$18 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as $$$19 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as $$$20 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as $$$21 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as $$$22 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$$0 from "./functions/mzVtexLegacyProductDetailsPage.ts";
+import * as $$$$1 from "$live/functions/EffectSelectPage.ts";
+import * as $$$$2 from "$live/functions/MatchDate.ts";
+import * as $$$$3 from "$live/functions/MatchEnvironment.ts";
+import * as $$$$4 from "$live/functions/MatchRandom.ts";
+import * as $$$$5 from "$live/functions/MatchSite.ts";
+import * as $$$$6 from "$live/functions/MatchUserAgent.ts";
+import * as $$$$7 from "deco-sites/std/functions/occProductDetailsPage.ts";
+import * as $$$$8 from "deco-sites/std/functions/shopifyProductDetailsPage.ts";
+import * as $$$$9 from "deco-sites/std/functions/shopifyProductList.ts";
+import * as $$$$10 from "deco-sites/std/functions/shopifyProductListingPage.ts";
+import * as $$$$11 from "deco-sites/std/functions/vtexConfig.ts";
+import * as $$$$12 from "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts";
+import * as $$$$13 from "deco-sites/std/functions/vtexLegacyProductList.ts";
+import * as $$$$14 from "deco-sites/std/functions/vtexLegacyProductListingPage.ts";
+import * as $$$$15 from "deco-sites/std/functions/vtexProductDetailsPage.ts";
+import * as $$$$16 from "deco-sites/std/functions/vtexProductList.ts";
+import * as $$$$17 from "deco-sites/std/functions/vtexProductListingPage.ts";
+import * as $$$$18 from "deco-sites/std/functions/vtexSuggestions.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -76,8 +78,8 @@ const manifest: DecoManifest = {
     "./islands/HeaderButton.tsx": $$1,
     "./islands/HeaderModals.tsx": $$2,
     "./islands/HeaderSearchMenu.tsx": $$3,
-    "./islands/ProductShelf.tsx": $$4,
-    "./islands/ProductSpecTable.tsx": $$5,
+    "./islands/Newsletter.tsx": $$4,
+    "./islands/ProductShelf.tsx": $$5,
     "./islands/SearchControls.tsx": $$6,
     "./islands/SliderJS.tsx": $$7,
   },
@@ -95,35 +97,37 @@ const manifest: DecoManifest = {
     "./sections/ProductGallery.tsx": $$$10,
     "./sections/ProductShelf.tsx": $$$11,
     "./sections/ProductSpecTable.tsx": $$$12,
-    "./sections/RichText.tsx": $$$13,
-    "./sections/SearchControls.tsx": $$$14,
-    "./sections/WhatsApp.tsx": $$$15,
-    "deco-sites/std/sections/SEO.tsx": $$$16,
-    "deco-sites/std/sections/SEOPDP.tsx": $$$17,
-    "deco-sites/std/sections/SEOPLP.tsx": $$$18,
-    "deco-sites/std/sections/configOCC.global.tsx": $$$19,
-    "deco-sites/std/sections/configShopify.global.tsx": $$$20,
-    "deco-sites/std/sections/configVTEX.global.tsx": $$$21,
+    "./sections/ProductSpecification.tsx": $$$13,
+    "./sections/RichText.tsx": $$$14,
+    "./sections/SearchControls.tsx": $$$15,
+    "./sections/WhatsApp.tsx": $$$16,
+    "deco-sites/std/sections/SEO.tsx": $$$17,
+    "deco-sites/std/sections/SEOPDP.tsx": $$$18,
+    "deco-sites/std/sections/SEOPLP.tsx": $$$19,
+    "deco-sites/std/sections/configOCC.global.tsx": $$$20,
+    "deco-sites/std/sections/configShopify.global.tsx": $$$21,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$22,
   },
   functions: {
-    "$live/functions/EffectSelectPage.ts": $$$$0,
-    "$live/functions/MatchDate.ts": $$$$1,
-    "$live/functions/MatchEnvironment.ts": $$$$2,
-    "$live/functions/MatchRandom.ts": $$$$3,
-    "$live/functions/MatchSite.ts": $$$$4,
-    "$live/functions/MatchUserAgent.ts": $$$$5,
-    "deco-sites/std/functions/occProductDetailsPage.ts": $$$$6,
-    "deco-sites/std/functions/shopifyProductDetailsPage.ts": $$$$7,
-    "deco-sites/std/functions/shopifyProductList.ts": $$$$8,
-    "deco-sites/std/functions/shopifyProductListingPage.ts": $$$$9,
-    "deco-sites/std/functions/vtexConfig.ts": $$$$10,
-    "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts": $$$$11,
-    "deco-sites/std/functions/vtexLegacyProductList.ts": $$$$12,
-    "deco-sites/std/functions/vtexLegacyProductListingPage.ts": $$$$13,
-    "deco-sites/std/functions/vtexProductDetailsPage.ts": $$$$14,
-    "deco-sites/std/functions/vtexProductList.ts": $$$$15,
-    "deco-sites/std/functions/vtexProductListingPage.ts": $$$$16,
-    "deco-sites/std/functions/vtexSuggestions.ts": $$$$17,
+    "./functions/mzVtexLegacyProductDetailsPage.ts": $$$$0,
+    "$live/functions/EffectSelectPage.ts": $$$$1,
+    "$live/functions/MatchDate.ts": $$$$2,
+    "$live/functions/MatchEnvironment.ts": $$$$3,
+    "$live/functions/MatchRandom.ts": $$$$4,
+    "$live/functions/MatchSite.ts": $$$$5,
+    "$live/functions/MatchUserAgent.ts": $$$$6,
+    "deco-sites/std/functions/occProductDetailsPage.ts": $$$$7,
+    "deco-sites/std/functions/shopifyProductDetailsPage.ts": $$$$8,
+    "deco-sites/std/functions/shopifyProductList.ts": $$$$9,
+    "deco-sites/std/functions/shopifyProductListingPage.ts": $$$$10,
+    "deco-sites/std/functions/vtexConfig.ts": $$$$11,
+    "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts": $$$$12,
+    "deco-sites/std/functions/vtexLegacyProductList.ts": $$$$13,
+    "deco-sites/std/functions/vtexLegacyProductListingPage.ts": $$$$14,
+    "deco-sites/std/functions/vtexProductDetailsPage.ts": $$$$15,
+    "deco-sites/std/functions/vtexProductList.ts": $$$$16,
+    "deco-sites/std/functions/vtexProductListingPage.ts": $$$$17,
+    "deco-sites/std/functions/vtexSuggestions.ts": $$$$18,
   },
   schemas: {
     "./sections/BannerGrid.tsx": {
@@ -452,22 +456,6 @@ const manifest: DecoManifest = {
                     },
                     {
                       "type": "string",
-                      "const": "Elo",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Mastercard",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Visa",
-                    },
-                    {
-                      "type": "string",
-                      "const": "Pix",
-                    },
-                    {
-                      "type": "string",
                       "const": "Logo",
                     },
                     {
@@ -570,6 +558,30 @@ const manifest: DecoManifest = {
                       "type": "string",
                       "const": "MailFooter",
                     },
+                    {
+                      "type": "string",
+                      "const": "Pix",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Visa",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Mastercard",
+                    },
+                    {
+                      "type": "string",
+                      "const": "DinersClub",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Elo",
+                    },
+                    {
+                      "type": "string",
+                      "const": "AmericanExpress",
+                    },
                   ],
                   "title": "Icon",
                   "description": "Image src",
@@ -605,6 +617,185 @@ const manifest: DecoManifest = {
         "title": " Footer",
         "type": "object",
         "properties": {
+          "paymentSystem": {
+            "title": "Formas de Pagamento",
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Título",
+                "default": "Formas de Pagamento",
+              },
+              "icons": {
+                "type": "array",
+                "items": {
+                  "title": "PaymentSystemsIconProps",
+                  "type": "object",
+                  "properties": {
+                    "icon": {
+                      "type": "string",
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "const": "Visa",
+                        },
+                        {
+                          "type": "string",
+                          "const": "Mastercard",
+                        },
+                        {
+                          "type": "string",
+                          "const": "DinersClub",
+                        },
+                        {
+                          "type": "string",
+                          "const": "Elo",
+                        },
+                        {
+                          "type": "string",
+                          "const": "AmericanExpress",
+                        },
+                      ],
+                      "title": "Ícone",
+                    },
+                    "width": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Largura",
+                    },
+                    "height": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Altura",
+                    },
+                  },
+                  "required": [],
+                },
+                "title": "Ícones",
+              },
+            },
+            "required": [],
+          },
+          "securitySystem": {
+            "title": "Selos de Segurança",
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Título",
+                "default": "Selos de Segurança",
+              },
+              "images": {
+                "type": "array",
+                "items": {
+                  "title": "SecuritySystemImage",
+                  "type": "object",
+                  "properties": {
+                    "src": {
+                      "format": "image-uri",
+                      "type": "string",
+                      "title": "Imagem",
+                    },
+                    "href": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "URL do link da imagem",
+                    },
+                    "alt": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": 'Propriedade "alt" da imagem',
+                    },
+                    "maxWidth": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Largura máxima da imagem",
+                    },
+                  },
+                  "required": [
+                    "src",
+                  ],
+                },
+                "title": "Imagens",
+              },
+            },
+            "required": [],
+          },
+          "socialNetwork": {
+            "title": "Redes Sociais",
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Título",
+                "default": "Redes Sociais",
+              },
+              "icons": {
+                "type": "array",
+                "items": {
+                  "title": "SocialNetworkIconProps",
+                  "type": "object",
+                  "properties": {
+                    "icon": {
+                      "type": "string",
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "const": "Facebook",
+                        },
+                        {
+                          "type": "string",
+                          "const": "Instagram",
+                        },
+                      ],
+                      "title": "Ícone da Rede Social",
+                    },
+                    "href": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "URLda Rede Social",
+                    },
+                    "alt": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": 'Propriedade "alt" da imagem',
+                    },
+                  },
+                  "required": [],
+                },
+                "title": "Ícones",
+              },
+            },
+            "required": [],
+          },
+          "copyright": {
+            "format": "html",
+            "type": "string",
+            "title": "Copyright",
+          },
           "sections": {
             "type": "array",
             "items": {
@@ -616,7 +807,7 @@ const manifest: DecoManifest = {
                     "string",
                     "null",
                   ],
-                  "title": "Label",
+                  "title": "Título",
                 },
                 "children": {
                   "type": "array",
@@ -725,22 +916,6 @@ const manifest: DecoManifest = {
                               },
                               {
                                 "type": "string",
-                                "const": "Elo",
-                              },
-                              {
-                                "type": "string",
-                                "const": "Mastercard",
-                              },
-                              {
-                                "type": "string",
-                                "const": "Visa",
-                              },
-                              {
-                                "type": "string",
-                                "const": "Pix",
-                              },
-                              {
-                                "type": "string",
                                 "const": "Logo",
                               },
                               {
@@ -843,6 +1018,30 @@ const manifest: DecoManifest = {
                                 "type": "string",
                                 "const": "MailFooter",
                               },
+                              {
+                                "type": "string",
+                                "const": "Pix",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Visa",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Mastercard",
+                              },
+                              {
+                                "type": "string",
+                                "const": "DinersClub",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Elo",
+                              },
+                              {
+                                "type": "string",
+                                "const": "AmericanExpress",
+                              },
                             ],
                             "title": "Icon",
                           },
@@ -871,28 +1070,28 @@ const manifest: DecoManifest = {
                     "boolean",
                     "null",
                   ],
-                  "title": "Show Payment Systems",
+                  "title": "Mostrar formas de pagamento?",
                 },
                 "showSecuritySystems": {
                   "type": [
                     "boolean",
                     "null",
                   ],
-                  "title": "Show Security Systems",
+                  "title": "Mostrar selos de segurança?",
                 },
                 "showSocialNetworks": {
                   "type": [
                     "boolean",
                     "null",
                   ],
-                  "title": "Show Social Networks",
+                  "title": "Mostrar redes sociais?",
                 },
               },
               "required": [
                 "children",
               ],
             },
-            "title": "Sections",
+            "title": "Seções",
           },
         },
         "required": [],
@@ -1306,8 +1505,40 @@ const manifest: DecoManifest = {
         "title": " Product Spec Table",
         "type": "object",
         "properties": {
+          "title": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Título",
+          },
           "page": {
-            "$id": "78c64adae4b16df19c6019918cf3380bc0a3ea85",
+            "$id": "95c02abbc301c683f9e56bd33bd10585c59d4245",
+            "format": "live-function",
+            "type": "string",
+            "title": "Page",
+          },
+        },
+        "required": [
+          "page",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/ProductSpecification.tsx": {
+      "inputSchema": {
+        "title": " Product Specification",
+        "type": "object",
+        "properties": {
+          "specificationName": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Nome da Especificação",
+          },
+          "page": {
+            "$id": "95c02abbc301c683f9e56bd33bd10585c59d4245",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -1372,6 +1603,21 @@ const manifest: DecoManifest = {
         "required": [],
       },
       "outputSchema": null,
+    },
+    "./functions/mzVtexLegacyProductDetailsPage.ts": {
+      "inputSchema": {
+        "type": "null",
+        "title": "Mz Vtex Legacy Product Details Page",
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "78c64adae4b16df19c6019918cf3380bc0a3ea85",
+          },
+        },
+        "additionalProperties": true,
+      },
     },
     "$live/functions/EffectSelectPage.ts": {
       "inputSchema": {

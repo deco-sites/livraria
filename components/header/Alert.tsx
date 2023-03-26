@@ -18,8 +18,8 @@ function Alert(
   { alert = "", links = [], alertStore = "", storelink = [] }: AlertProps,
 ) {
   return (
-    <Container>
-      <div class="flex justify-between">
+    <Container class="hidden md:flex">
+      <div class="w-full flex justify-between">
         <div class="flex h-[26px] justify-center gap-2 items-center w-1/3">
           <Text class="text-[11px] pr-2.5 ">{alert}</Text>
           {links?.map(({ icon, link }) => (

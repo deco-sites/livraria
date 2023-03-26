@@ -34,15 +34,127 @@ function GlobalTags() {
          * domain since DNS resolution times can really affect performance.
          */
       }
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossOrigin="true"
-      />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="stylesheet"
+
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+          @font-face {
+            font-family: 'Open Sans';
+            src: url(${asset("/fonts/OpenSans-Bold.woff2")}) format('woff2');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+          }
+          
+          @font-face {
+              font-family: 'Open Sans';
+              src: url(${
+            asset("/fonts/OpenSans-Regular.woff2")
+          }) format('woff2');
+              font-weight: normal;
+              font-style: normal;
+              font-display: swap;
+          }
+          
+          @font-face {
+              font-family: 'Open Sans';
+              src: url(${
+            asset("/fonts/OpenSans-SemiBold.woff2")
+          }) format('woff2');
+              font-weight: 600;
+              font-style: normal;
+              font-display: swap;
+          }
+          
+          @font-face {
+              font-family: 'Open Sans';
+              src: url(${asset("/fonts/OpenSans-Light.woff2")}) format('woff2');
+              font-weight: 300;
+              font-style: normal;
+              font-display: swap;
+          }
+          
+          @font-face {
+              font-family: 'Open Sans';
+              src: url(${
+            asset("/fonts/OpenSans-ExtraBoldItalic.woff2")
+          }) format('woff2');
+              font-weight: bold;
+              font-style: italic;
+              font-display: swap;
+          }
+          
+          @font-face {
+              font-family: 'Open Sans';
+              src: url(${
+            asset("/fonts/OpenSans-BoldItalic.woff2")
+          }) format('woff2');
+              font-weight: bold;
+              font-style: italic;
+              font-display: swap;
+          }
+          
+          @font-face {
+              font-family: 'Open Sans';
+              src: url(${
+            asset("/fonts/OpenSans-MediumItalic.woff2")
+          }) format('woff2');
+              font-weight: 500;
+              font-style: italic;
+              font-display: swap;
+          }
+          
+          @font-face {
+              font-family: 'Open Sans';
+              src: url(${
+            asset("/fonts/OpenSans-SemiBoldItalic.woff2")
+          }) format('woff2');
+              font-weight: 600;
+              font-style: italic;
+              font-display: swap;
+          }
+          
+          @font-face {
+              font-family: 'Open Sans';
+              src: url(${
+            asset("/fonts/OpenSans-LightItalic.woff2")
+          }) format('woff2');
+              font-weight: 300;
+              font-style: italic;
+              font-display: swap;
+          }
+          
+          @font-face {
+              font-family: 'Open Sans';
+              src: url(${
+            asset("/fonts/OpenSans-Medium.woff2")
+          }) format('woff2');
+              font-weight: 500;
+              font-style: normal;
+              font-display: swap;
+          }
+          
+          @font-face {
+              font-family: 'Open Sans';
+              src: url(${
+            asset("/fonts/OpenSans-Italic.woff2")
+          }) format('woff2');
+              font-weight: normal;
+              font-style: italic;
+              font-display: swap;
+          }
+          
+          @font-face {
+              font-family: 'Open Sans';
+              src: url(${
+            asset("/fonts/OpenSans-ExtraBold.woff2")
+          }) format('woff2');
+              font-weight: bold;
+              font-style: normal;
+              font-display: swap;
+          }
+      `,
+        }}
       />
     </Head>
   );

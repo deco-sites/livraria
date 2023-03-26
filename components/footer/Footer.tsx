@@ -1,9 +1,14 @@
-import Newsletter from "$store/components/footer/Newsletter.tsx";
+import Newsletter from "$store/islands/Newsletter.tsx";
 import PaymentSystems from "$store/components/footer/PaymentSystems.tsx";
-import SecuritySystems from "$store/components/footer/SecuritySystems.tsx";
-import SocialNetworks from "$store/components/footer/SocialNetworks.tsx";
+import SecuritySystems, {
+  SecuritySystemsProps,
+} from "$store/components/footer/SecuritySystems.tsx";
+import SocialNetworks, {
+  SocialNetworkProps,
+} from "$store/components/footer/SocialNetworks.tsx";
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 import Text from "$store/components/ui/Text.tsx";
+import type { PaymentSystemProps } from "$store/components/footer/PaymentSystems.tsx";
 import type { HTML } from "deco-sites/std/components/types.ts";
 import type { ComponentChildren } from "preact";
 
@@ -23,7 +28,7 @@ export type AdvancedItem = {
 
 export type Item = StringItem | IconItem | AdvancedItem;
 
-export type Section = {
+export interface Section {
   /**
    * @title Título
    */
@@ -41,7 +46,7 @@ export type Section = {
    * @title Mostrar redes sociais?
    */
   showSocialNetworks?: boolean;
-};
+}
 
 const isIcon = (item: Item): item is IconItem =>
   // deno-lint-ignore no-explicit-any
@@ -106,17 +111,29 @@ function FooterContainer(
 }
 
 export interface Props {
+  /**  @title Formas de Pagamento */
+  paymentSystem?: PaymentSystemProps;
+  /**  @title Selos de Segurança */
+  securitySystem?: SecuritySystemsProps;
+  /**  @title Redes Sociais */
+  socialNetwork?: SocialNetworkProps;
+  /**  @title Copyright */
+  copyright?: HTML;
+  /**  @title Seções */
   sections?: Section[];
 }
 
-function Footer({ sections = [] }: Props) {
+function Footer(
+  { paymentSystem, securitySystem, socialNetwork, copyright, sections = [] }:
+    Props,
+) {
   return (
     <footer class="w-full bg-footer flex flex-col">
       <Newsletter />
 
-      <FooterContainer class="p-2.5">
+      <FooterContainer class="sm:p-2.5">
         {/* Desktop view */}
-        <ul class="hidden sm:flex flex-row gap-20 sm:grid grid-cols-[1fr_1fr_1fr_1fr] divide-x-1">
+        <ul class="hidden sm:flex flex-row gap-20 sm:grid grid-cols-[1fr_0.9fr_0.9fr_1.2fr] divide-x-1">
           {sections.map((section, index) => (
             <li
               class={`pt-5 pb-10 flex flex-col justify-between h-full ${
@@ -125,7 +142,7 @@ function Footer({ sections = [] }: Props) {
             >
               <>
                 <Text
-                  class="mb-[25px] font-semibold block"
+                  class="mb-[15px] sm:mb-[25px] font-semibold block"
                   variant="heading-footer"
                   tone="black"
                 >
@@ -142,25 +159,29 @@ function Footer({ sections = [] }: Props) {
                   ))}
                 </ul>
 
-                {section?.showPaymentSystems && <PaymentSystems />}
-                {section?.showSecuritySystems && <SecuritySystems />}
-                {section?.showSocialNetworks && <SocialNetworks />}
+                {section?.showPaymentSystems && (
+                  <PaymentSystems {...paymentSystem} />
+                )}
+                {section?.showSecuritySystems && (
+                  <SecuritySystems {...securitySystem} />
+                )}
+                {section?.showSocialNetworks && (
+                  <SocialNetworks {...socialNetwork} />
+                )}
               </>
             </li>
           ))}
         </ul>
 
         {/* Mobile view */}
-        <ul class="flex flex-col sm:items-center sm:hidden sm:flex-row gap-4">
+        <ul class="px-[30px] py-2.5 flex flex-col sm:items-center sm:hidden sm:flex-row sm:gap-4">
           {sections.map((section, index) => (
             <li
-              class={`pt-5 pb-10 flex flex-col justify-between h-full ${
-                index > 0 ? "pl-5" : ""
-              }`}
+              class={`pt-5 flex flex-col justify-between h-full`}
             >
               <>
                 <Text
-                  class="mb-[25px] font-semibold block"
+                  class="mb-[15px] sm:mb-[25px] font-semibold block"
                   variant="heading-footer"
                   tone="black"
                 >
@@ -177,9 +198,15 @@ function Footer({ sections = [] }: Props) {
                   ))}
                 </ul>
 
-                {section?.showPaymentSystems && <PaymentSystems />}
-                {section?.showSecuritySystems && <SecuritySystems />}
-                {section?.showSocialNetworks && <SocialNetworks />}
+                {section?.showPaymentSystems && (
+                  <PaymentSystems {...paymentSystem} />
+                )}
+                {section?.showSecuritySystems && (
+                  <SecuritySystems {...securitySystem} />
+                )}
+                {section?.showSocialNetworks && (
+                  <SocialNetworks {...socialNetwork} />
+                )}
               </>
             </li>
           ))}
@@ -188,19 +215,15 @@ function Footer({ sections = [] }: Props) {
 
       <div class="bg-white border-t-1 border-solid border-lightgray p-2.5">
         <FooterContainer class="flex-col gap-4 sm:gap-0 sm:grid sm:grid-cols-[50%_50%]">
-          <Text
-            class="text-xs text-copyright"
-            tone="default"
+          <div
+            class="font-regular text-default text-xs text-copyright"
+            dangerouslySetInnerHTML={{ __html: copyright || "" }}
           >
-            <p>
-              Copyright 2021 | Todos os direitos Reservados a Livraria da Vila.
-            </p>
-            <p>CNPJ sob o n° 54.430.962/0006-14</p>
-          </Text>
+          </div>
 
           <Text
+            variant="regular"
             class="flex items-center gap-1 text-xs text-copyright"
-            variant="body"
             tone="default"
           >
             Developed with <Icon id="HeartFooter" width={11} height={10} /> by
