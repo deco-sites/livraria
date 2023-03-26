@@ -14,7 +14,7 @@ export type Props =
 
 const variants = {
   primary:
-    "h-[36px] px-3 rounded bg-interactive font-button text-button text-default-inverse border-transparent hover:bg-default hover:text-default hover:border-interactive active:bg-interactive active:text-default-inverse active:border-transparent disabled:border-default disabled:text-subdued disabled:bg-interactive-inverse focus:outline-none ",
+    "h-[36px] px-3 rounded bg-interactive font-button text-button text-default-inverse border-transparent hover:bg-primary hover:text-default-inverse hover:border-primary active:bg-primary active:text-default-inverse active:border-transparent disabled:border-default disabled:text-subdued disabled:bg-interactive-inverse focus:outline-none ",
   secondary:
     "h-[36px] px-3 rounded bg-interactive-inverse font-button text-button border-default hover:bg-hover active:bg-interactive active:text-interactive-inverse disabled:border-default disabled:text-subdued disabled:bg-interactive-inverse focus:outline-none",
   tertiary:
@@ -49,7 +49,7 @@ const Button = forwardRef<HTMLButtonElement, Props>(({
       ref={ref}
       aria-busy={loading}
       aria-disabled={disabled}
-      aria-label={props["aria-label"] || children}
+      aria-label={type || children}
     >
       {loading === true ? <Spinner size={24} /> : children}
     </Component>

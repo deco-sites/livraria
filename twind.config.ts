@@ -62,6 +62,7 @@ const options: Omit<Options, "selfURL"> = {
         "copyright": "#797676",
       },
       borderColor: {
+        "primary": "#AF0100",
         "default": "#D4DBD7",
         "default-inverse": "#FFFFFF",
         "interactive": "#858585",
@@ -202,6 +203,9 @@ const options: Omit<Options, "selfURL"> = {
       "&::-webkit-scrollbar": {
         display: "none",
       },
+    },
+    "no-action-button": {
+      display: "none",
     },
   },
 };
