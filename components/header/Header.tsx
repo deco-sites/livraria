@@ -7,7 +7,7 @@ import type { ClientConfigVTEX } from "deco-sites/std/functions/vtexConfig.ts";
 
 import Alert, { AlertProps } from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
-import { headerHeight } from "./constants.ts";
+import { headerHeight, headerMobileHeight } from "./constants.ts";
 
 export interface NavItem {
   label: string;
@@ -68,7 +68,7 @@ function Header(
 ) {
   const searchbar = { ..._searchbar, products, suggestions, configVTEX };
   return (
-    <header class={`md:h-[${headerHeight}]`}>
+    <header class={`h-[${headerMobileHeight}] sm:h-[${headerHeight}]`}>
       <div class="bg-default fixed w-full z-50">
         <Alert
           alert={alert?.alert}
