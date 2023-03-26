@@ -1,7 +1,8 @@
 import Container from "$store/components/ui/Container.tsx";
-import { LoaderReturnType } from "$live/types.ts";
+import { LoaderReturnType } from "https://denopkg.com/deco-cx/live@0.10.3/types.ts";
 import Text from "$store/components/ui/Text.tsx";
-import { ProductDetailsPage } from "$store/commerce/vtex/types.ts";
+import { ProductDetailsPage } from "https://denopkg.com/deco-sites/std@0.1.4/commerce/types.ts";
+import { ProductDetailsPage as MZProductDetailsPage } from "$store/commerce/vtex/types.ts";
 
 export interface Props {
   /**
@@ -12,7 +13,7 @@ export interface Props {
 }
 export interface SpecTableProps {
   title?: string;
-  page: ProductDetailsPage;
+  page: MZProductDetailsPage;
 }
 
 function SpecTable({ title, page }: SpecTableProps) {

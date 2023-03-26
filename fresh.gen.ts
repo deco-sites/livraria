@@ -1483,19 +1483,23 @@ const manifest: DecoManifest = {
             "title": "Products",
           },
           "viewMoreLink": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "View More Link",
           },
           "viewMoreText": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "View More Text",
           },
         },
         "required": [
           "title",
           "products",
-          "viewMoreLink",
-          "viewMoreText",
         ],
       },
       "outputSchema": null,
@@ -1513,7 +1517,7 @@ const manifest: DecoManifest = {
             "title": "Título",
           },
           "page": {
-            "$id": "95c02abbc301c683f9e56bd33bd10585c59d4245",
+            "$id": "78c64adae4b16df19c6019918cf3380bc0a3ea85",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -1538,7 +1542,7 @@ const manifest: DecoManifest = {
             "title": "Nome da Especificação",
           },
           "page": {
-            "$id": "95c02abbc301c683f9e56bd33bd10585c59d4245",
+            "$id": "78c64adae4b16df19c6019918cf3380bc0a3ea85",
             "format": "live-function",
             "type": "string",
             "title": "Page",

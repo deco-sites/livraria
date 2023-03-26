@@ -27,9 +27,10 @@ function Details({ page }: { page: ProductDetailsPage }) {
     productID,
     offers,
     image: images,
+    brand,
     name,
-    gtin,
   } = product;
+  console.log("🚀 ~ file: ProductDetails.tsx:32 ~ Details ~ product:", product);
   const { price, listPrice, seller, installments } = useOffer(offers);
   const [front, back] = images ?? [];
 
@@ -62,15 +63,18 @@ function Details({ page }: { page: ProductDetailsPage }) {
           </div>
           {/* Product Info */}
           <div class="flex-auto px-4 sm:px-0">
-            <div class="mt-4 sm:mt-8">
-              <div>
-                <Text tone="subdued" variant="caption">
-                  Cod. {gtin}
-                </Text>
-              </div>
+            <div class="flex flex-col mt-4 sm:mt-8">
               <h1>
                 <Text variant="heading-3">{name}</Text>
               </h1>
+
+              <Text tone="subdued" variant="caption">
+                Autor: <a href={`/s?q=Kiko Zampieri`}>Kiko Zampieri</a>
+              </Text>
+
+              <Text tone="subdued" variant="caption">
+                Editora: <a href={`/s?q=${brand}`}>{brand}</a>
+              </Text>
             </div>
             {/* Prices */}
             <div class="mt-4">

@@ -11,8 +11,8 @@ import { useEffect, useId, useState } from "preact/hooks";
 export interface Props {
   title: string;
   products: LoaderReturnType<Product[]>;
-  viewMoreLink: string;
-  viewMoreText: string;
+  viewMoreLink?: string;
+  viewMoreText?: string;
 }
 
 function ProductShelf({ title, products, viewMoreLink, viewMoreText }: Props) {
