@@ -56,6 +56,7 @@ const options: Omit<Options, "selfURL"> = {
         "section-title": "#858585",
         "strong-title": "#AF0100",
         "product-title": "#615D56",
+        "product-text": "#787878",
         "whatsapp": "#25D366",
         "copyright": "#797676",
       },

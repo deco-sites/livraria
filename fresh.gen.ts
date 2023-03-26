@@ -33,15 +33,16 @@ import * as $$$9 from "./sections/ProductDetails.tsx";
 import * as $$$10 from "./sections/ProductGallery.tsx";
 import * as $$$11 from "./sections/ProductShelf.tsx";
 import * as $$$12 from "./sections/ProductSpecTable.tsx";
-import * as $$$13 from "./sections/RichText.tsx";
-import * as $$$14 from "./sections/SearchControls.tsx";
-import * as $$$15 from "./sections/WhatsApp.tsx";
-import * as $$$16 from "deco-sites/std/sections/SEO.tsx";
-import * as $$$17 from "deco-sites/std/sections/SEOPDP.tsx";
-import * as $$$18 from "deco-sites/std/sections/SEOPLP.tsx";
-import * as $$$19 from "deco-sites/std/sections/configOCC.global.tsx";
-import * as $$$20 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as $$$21 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$13 from "./sections/ProductSpecification.tsx";
+import * as $$$14 from "./sections/RichText.tsx";
+import * as $$$15 from "./sections/SearchControls.tsx";
+import * as $$$16 from "./sections/WhatsApp.tsx";
+import * as $$$17 from "deco-sites/std/sections/SEO.tsx";
+import * as $$$18 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as $$$19 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as $$$20 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as $$$21 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as $$$22 from "deco-sites/std/sections/configVTEX.global.tsx";
 import * as $$$$0 from "./functions/mzVtexLegacyProductDetailsPage.ts";
 import * as $$$$1 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$2 from "$live/functions/MatchDate.ts";
@@ -96,15 +97,16 @@ const manifest: DecoManifest = {
     "./sections/ProductGallery.tsx": $$$10,
     "./sections/ProductShelf.tsx": $$$11,
     "./sections/ProductSpecTable.tsx": $$$12,
-    "./sections/RichText.tsx": $$$13,
-    "./sections/SearchControls.tsx": $$$14,
-    "./sections/WhatsApp.tsx": $$$15,
-    "deco-sites/std/sections/SEO.tsx": $$$16,
-    "deco-sites/std/sections/SEOPDP.tsx": $$$17,
-    "deco-sites/std/sections/SEOPLP.tsx": $$$18,
-    "deco-sites/std/sections/configOCC.global.tsx": $$$19,
-    "deco-sites/std/sections/configShopify.global.tsx": $$$20,
-    "deco-sites/std/sections/configVTEX.global.tsx": $$$21,
+    "./sections/ProductSpecification.tsx": $$$13,
+    "./sections/RichText.tsx": $$$14,
+    "./sections/SearchControls.tsx": $$$15,
+    "./sections/WhatsApp.tsx": $$$16,
+    "deco-sites/std/sections/SEO.tsx": $$$17,
+    "deco-sites/std/sections/SEOPDP.tsx": $$$18,
+    "deco-sites/std/sections/SEOPLP.tsx": $$$19,
+    "deco-sites/std/sections/configOCC.global.tsx": $$$20,
+    "deco-sites/std/sections/configShopify.global.tsx": $$$21,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$22,
   },
   functions: {
     "./functions/mzVtexLegacyProductDetailsPage.ts": $$$$0,
@@ -1509,6 +1511,31 @@ const manifest: DecoManifest = {
               "null",
             ],
             "title": "Título",
+          },
+          "page": {
+            "$id": "95c02abbc301c683f9e56bd33bd10585c59d4245",
+            "format": "live-function",
+            "type": "string",
+            "title": "Page",
+          },
+        },
+        "required": [
+          "page",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/ProductSpecification.tsx": {
+      "inputSchema": {
+        "title": " Product Specification",
+        "type": "object",
+        "properties": {
+          "specificationName": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Nome da Especificação",
           },
           "page": {
             "$id": "95c02abbc301c683f9e56bd33bd10585c59d4245",

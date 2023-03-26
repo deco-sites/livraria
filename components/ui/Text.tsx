@@ -11,6 +11,7 @@ type Props = JSX.IntrinsicElements["span"] & {
     | "section-title"
     | "strong-title"
     | "product-title"
+    | "product-text"
     | "positive"
     | "critical"
     | "black"

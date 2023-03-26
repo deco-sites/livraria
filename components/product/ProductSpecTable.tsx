@@ -40,10 +40,10 @@ function SpecTable({ title, page }: SpecTableProps) {
             specifications.map(({ name, value }) => {
               return (
                 <tr class="even:bg-interactive-inverse odd:bg-gray-100 border-0">
-                  <td class="px-2 py-2">
+                  <td class="px-2 py-2 text-product-text">
                     {name}
                   </td>
-                  <td class="px-2 py-2">
+                  <td class="px-2 py-2 text-product-text">
                     {value}
                   </td>
                 </tr>
