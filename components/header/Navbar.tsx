@@ -86,9 +86,9 @@ function Navbar({ items, searchbar }: {
         </div>
         <div class="md:flex flex-auto flex justify-center bg-white">
           <Container class="w-full ">
-            <div class="md:grid md:grid-flow-col">
+            <ul class="md:grid md:grid-flow-col">
               {items.map((item) => <NavItem item={item} />)}
-            </div>
+            </ul>
           </Container>
         </div>
       </div>

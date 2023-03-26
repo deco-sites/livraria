@@ -269,28 +269,35 @@ const manifest: DecoManifest = {
                   "type": "object",
                   "properties": {
                     "href": {
-                      "type": "string",
+                      "type": [
+                        "string",
+                        "null",
+                      ],
                       "title": "Href",
                     },
                     "title": {
-                      "type": "string",
+                      "type": [
+                        "string",
+                        "null",
+                      ],
                       "title": "Title",
                     },
                     "subTitle": {
-                      "type": "string",
+                      "type": [
+                        "string",
+                        "null",
+                      ],
                       "title": "Sub Title",
                     },
                     "label": {
-                      "type": "string",
+                      "type": [
+                        "string",
+                        "null",
+                      ],
                       "title": "Label",
                     },
                   },
-                  "required": [
-                    "href",
-                    "title",
-                    "subTitle",
-                    "label",
-                  ],
+                  "required": [],
                 },
               },
               "required": [
@@ -736,6 +743,20 @@ const manifest: DecoManifest = {
                         "null",
                       ],
                       "title": "Largura máxima da imagem",
+                    },
+                    "width": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Largura da imagem",
+                    },
+                    "height": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Altura da imagem",
                     },
                   },
                   "required": [
@@ -1346,6 +1367,20 @@ const manifest: DecoManifest = {
                         "null",
                       ],
                       "title": "Alt",
+                    },
+                    "width": {
+                      "type": [
+                        "number",
+                        "null",
+                      ],
+                      "title": "Width",
+                    },
+                    "height": {
+                      "type": [
+                        "number",
+                        "null",
+                      ],
+                      "title": "Height",
                     },
                   },
                   "required": [],

@@ -7,7 +7,7 @@ export interface INavItem {
   href: string;
   highlight?: boolean;
   children?: INavItem[];
-  image?: { src?: string; alt?: string };
+  image?: { src?: string; alt?: string; width?: number; height?: number };
 }
 
 function NavItem({ item }: { item: INavItem }) {
@@ -39,14 +39,17 @@ function NavItem({ item }: { item: INavItem }) {
               <ul class="grid grid-cols-4 items-start justify-center gap-6 flex-grow">
                 {children.map((node) => (
                   <li class="p-6">
-                    <a class="hover:underline" href={node.href}>
+                    <a class="hover:underline" href={node?.href?.trim() || "/"}>
                       <Text variant="menu">{node.label}</Text>
                     </a>
 
                     <ul class="flex flex-col gap-1 mt-4">
                       {node.children?.map((leaf) => (
                         <li>
-                          <a class="hover:underline" href={leaf.href}>
+                          <a
+                            class="hover:underline"
+                            href={leaf?.href?.trim() || "/"}
+                          >
                             <Text variant="caption">{leaf.label}</Text>
                           </a>
                         </li>
@@ -57,11 +60,11 @@ function NavItem({ item }: { item: INavItem }) {
               </ul>
               {image?.src && (
                 <Image
-                  class="p-6 w-auto h-auto max-w-md"
+                  class="p-6"
                   src={image.src}
                   alt={image.alt}
-                  width={100}
-                  height={100}
+                  width={image?.width ?? 100}
+                  height={image?.height ?? 100}
                   loading="lazy"
                 />
               )}

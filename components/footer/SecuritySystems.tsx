@@ -18,6 +18,14 @@ export interface SecuritySystemImage {
    * @title Largura máxima da imagem
    */
   maxWidth?: string;
+  /**
+   * @title Largura da imagem
+   */
+  width?: string;
+  /**
+   * @title Altura da imagem
+   */
+  height?: string;
 }
 
 export interface SecuritySystemsProps {
@@ -47,21 +55,23 @@ function SecuritySystems(
 
       <div class="flex items-center justify-center gap-2.5 min-h-[44px]">
         {images && images?.length &&
-          images?.map(({ src, href, alt, maxWidth }) => (
+          images?.map(({ src, href, alt, maxWidth, width, height }) => (
             <>
               {href
                 ? (
                   <a
-                    href={href}
+                    href={href ?? "/"}
                     class="flex justify-center items-center"
                     target="_blank"
+                    title={alt}
+                    aria-label={alt}
                   >
                     <img
                       class={`w-full ${maxWidth ? `max-w-[${maxWidth}]` : ""}`}
                       src={src}
                       alt={alt}
-                      width="100%"
-                      height="100%"
+                      width={width ?? "100%"}
+                      height={height ?? "100%"}
                     />
                   </a>
                 )
@@ -70,8 +80,8 @@ function SecuritySystems(
                     class={`w-full ${maxWidth ? `max-w-[${maxWidth}]` : ""}`}
                     src={src}
                     alt={alt}
-                    width="100%"
-                    height="100%"
+                    width={width ?? "100%"}
+                    height={height ?? "100%"}
                   />
                 )}
             </>

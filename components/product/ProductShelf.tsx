@@ -66,7 +66,7 @@ function ProductShelf({ title, products, viewMoreLink, viewMoreText }: Props) {
       {viewMoreLink && (
         <a
           class="block row-start-1 col-span-full text-center font-medium pb-4"
-          href={viewMoreLink}
+          href={viewMoreLink ?? "/"}
         >
           <Text variant="heading-3" class="font-medium">
             {viewMoreText ? viewMoreText : null}
@@ -85,7 +85,7 @@ function ProductShelf({ title, products, viewMoreLink, viewMoreText }: Props) {
           >
             <ProductCard
               product={product}
-              preload={false}
+              preload={true}
               key={product.productID}
             />
           </div>

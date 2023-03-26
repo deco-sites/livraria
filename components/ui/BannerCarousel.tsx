@@ -17,13 +17,13 @@ export interface Banner {
   alt: string;
   action?: {
     /** @description when user clicks on the image, go to this link */
-    href: string;
+    href?: string;
     /** @description Image text title */
-    title: string;
+    title?: string;
     /** @description Image text subtitle */
-    subTitle: string;
+    subTitle?: string;
     /** @description Button label */
-    label: string;
+    label?: string;
   };
 }
 
@@ -55,8 +55,11 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
   } = image;
 
   return (
-    <div class="relative h-[255px] min-w-[100vw] overflow-y-hidden">
-      <a href={action?.href ?? "#"} aria-label={action?.label}>
+    <div class="relative h-auto sm:max-h-[255px] min-w-[100vw] overflow-y-hidden">
+      <a
+        href={action?.href ?? "/"}
+        aria-label={alt?.trim() ?? action?.label?.trim() ?? ""}
+      >
         <Picture class="w-full" preload={lcp}>
           <Source
             media="(max-width: 767px)"
