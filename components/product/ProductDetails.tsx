@@ -14,6 +14,8 @@ import NotFound from "../search/NotFound.tsx";
 import ContainerFull from "../ui/ContainerFull.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 import ShippingSimulation from "$store/islands/ShippingSimulation.tsx";
+import ProductDetailsBrand from "./ProductDetailsBrand.tsx";
+import ProductDetailsSpecification from "./ProductDetailsSpecification.tsx";
 
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
@@ -32,7 +34,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
     name,
   } = product;
   const { price, listPrice, seller, installments } = useOffer(offers);
-  const [front, back] = images ?? [];
+  const [front] = images ?? [];
 
   return (
     <ContainerFull class="p-0 m-0 ml-auto mr-auto">
@@ -46,7 +48,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
         <div class="flex flex-col gap-4 sm:flex-row sm:gap-10 bg-white rounded-[0.25rem] p-8 shadow-section">
           {/* Image Gallery */}
           <div class="flex flex-row overflow-auto snap-x snap-mandatory scroll-smooth sm:gap-2">
-            {[front, back ?? front].map((img, index) => (
+            {[front].map((img, index) => (
               <Image
                 style={{ aspectRatio: "290 / 420" }}
                 class="snap-center min-w-[100vw] sm:min-w-0 sm:w-auto sm:h-[420px]"
@@ -60,6 +62,22 @@ function Details({ page }: { page: ProductDetailsPage }) {
                 loading={index === 0 ? "eager" : "lazy"}
               />
             ))}
+            {
+              /* {[front, back ?? front].map((img, index) => (
+              <Image
+                style={{ aspectRatio: "290 / 420" }}
+                class="snap-center min-w-[100vw] sm:min-w-0 sm:w-auto sm:h-[420px]"
+                sizes="(max-width: 640px) 100vw, 30vw"
+                src={img.url!}
+                alt={img.alternateName}
+                width={290}
+                height={420}
+                // Preload LCP image for better web vitals
+                preload={index === 0}
+                loading={index === 0 ? "eager" : "lazy"}
+              />
+            ))} */
+            }
           </div>
           {/* Product Info */}
           <div class="flex-auto px-4 sm:px-0">
@@ -68,13 +86,12 @@ function Details({ page }: { page: ProductDetailsPage }) {
                 <Text variant="heading-3">{name}</Text>
               </h1>
 
-              <Text tone="subdued" variant="caption">
-                Autor: <a href={`/s?q=Kiko Zampieri`}>Kiko Zampieri</a>
-              </Text>
+              <ProductDetailsSpecification
+                specificationName="Autor"
+                product={product}
+              />
 
-              <Text tone="subdued" variant="caption">
-                Editora: <a href={`/s?q=${brand}`}>{brand}</a>
-              </Text>
+              <ProductDetailsBrand product={product} />
             </div>
             {/* Prices */}
             <div class="mt-4">

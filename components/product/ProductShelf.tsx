@@ -5,7 +5,7 @@ import ShelfContainer from "$store/components/ui/ShelfContainer.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import SliderControllerJS from "$store/islands/SliderJS.tsx";
-import type { Product } from "deco-sites/std/commerce/types.ts";
+import type { Product } from "$store/commerce/vtex/types.ts";
 import { useEffect, useId, useState } from "preact/hooks";
 
 export interface Props {

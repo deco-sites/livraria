@@ -23,7 +23,7 @@ function Alert(
         <div class="flex h-[26px] justify-center gap-2 items-center w-1/3">
           <Text class="text-[11px] pr-2.5 ">{alert}</Text>
           {links?.map(({ icon, link }) => (
-            <a href={link}>
+            <a href={link || "/"} title={icon} aria-label={icon}>
               <Icon id={icon} width={14} height={14} strokeWidth={0.1} />
             </a>
           ))}
@@ -31,7 +31,7 @@ function Alert(
         <div class="w-1/3 flex"></div>
         <div class="flex h-[26px] justify-center items-center w-1/3">
           {storelink?.map(({ icon, link }) => (
-            <a href={link}>
+            <a href={link || "/"} title={icon} aria-label={icon}>
               <Icon id={icon} width={14} height={14} strokeWidth={0.1} />
             </a>
           ))}
