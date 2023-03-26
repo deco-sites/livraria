@@ -1477,6 +1477,14 @@ const manifest: DecoManifest = {
             "type": "string",
             "title": "Page",
           },
+          "showFilters": {
+            "type": [
+              "boolean",
+              "null",
+            ],
+            "title": "Mostrar a barra lateral de filtros?",
+            "default": "true",
+          },
         },
         "required": [
           "page",
@@ -1494,7 +1502,7 @@ const manifest: DecoManifest = {
             "title": "Title",
           },
           "products": {
-            "$id": "4745e1202484ea61e4cdd1a83ec4c56d9e4dce67",
+            "$id": "1f15a836acd2ecbefef6eaf34ebcff98e39811f3",
             "format": "live-function",
             "type": "string",
             "title": "Products",
@@ -1600,6 +1608,25 @@ const manifest: DecoManifest = {
             "format": "live-function",
             "type": "string",
             "title": "Page",
+          },
+          "layout": {
+            "type": "string",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "responsive",
+              },
+              {
+                "type": "string",
+                "const": "desktop",
+              },
+              {
+                "type": "string",
+                "const": "mobile",
+              },
+            ],
+            "title": "Layout",
+            "default": "responsive",
           },
         },
         "required": [

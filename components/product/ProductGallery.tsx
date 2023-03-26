@@ -4,23 +4,59 @@ import Button from "$store/components/ui/Button.tsx";
 import Container from "$store/components/ui/Container.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import Text from "$store/components/ui/Text.tsx";
+import Filters from "$store/components/search/Filters.tsx";
+import NotFound from "$store/components/search/NotFound.tsx";
 import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
-
-import NotFound from "../search/NotFound.tsx";
+import Sort from "../search/Sort.tsx";
 
 export interface Props {
   page: LoaderReturnType<ProductListingPage | null>;
+  /**
+   * @title Mostrar a barra lateral de filtros?
+   * @default true
+   */
+  showFilters?: boolean;
 }
 
-function Gallery({ page }: { page: ProductListingPage }) {
+function Gallery(
+  { page, showFilters = true }: {
+    page: ProductListingPage;
+    showFilters?: boolean;
+  },
+) {
+  const filters = page?.filters;
+  const totalProducts = page?.products?.length;
+
   return (
     <Container class="px-4 sm:py-10 sm:mb-10">
-      <div class="relative grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-10 items-center">
-        {page.products?.map((product, index) => (
-          <div class="w-full list-none">
-            <ProductCard product={product} preload={index === 0} />
+      <div
+        class={`flex justify-between items-start ${
+          showFilters ? "sm:grid grid-cols-[18%_82%]" : ""
+        }`}
+      >
+        {showFilters &&
+          (
+            <aside class="hidden sm:flex flex-col items-center">
+              <Filters filters={filters} />
+            </aside>
+          )}
+
+        <div class="flex flex-col">
+          <div class="hidden sm:flex flex-row justify-between items-center sm:p-0 mb-2">
+            <Text>Foram encontrados {totalProducts}</Text>
+            <div>
+              Ordenar por: <Sort />
+            </div>
           </div>
-        ))}
+
+          <div class="relative grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-10 items-center">
+            {page.products?.map((product, index) => (
+              <div class="w-full list-none">
+                <ProductCard product={product} preload={index === 0} />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       <div class="flex flex-row items-center justify-center gap-2 my-4">

@@ -11,13 +11,23 @@ import type { LoaderReturnType } from "$live/types.ts";
 
 export interface Props {
   page: LoaderReturnType<ProductListingPage | null>;
+  /**
+   * @title Layout
+   * @default responsive
+   */
+  layout?: "responsive" | "desktop" | "mobile";
 }
 
 function NotFound() {
   return <div />;
 }
 
-function Controls({ page }: { page: ProductListingPage }) {
+function Controls(
+  { page, layout = "mobile" }: {
+    page: ProductListingPage;
+    layout?: "responsive" | "desktop" | "mobile";
+  },
+) {
   const open = useSignal(false);
   const filters = page?.filters;
   const breadcrumb = page?.breadcrumb;
@@ -27,29 +37,66 @@ function Controls({ page }: { page: ProductListingPage }) {
       <div class="flex flex-row items-center sm:p-0 mb-2">
         <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
       </div>
-      <div class="flex flex-row sm:gap-4 items-center justify-between border-b-1 border-default md:border-none">
-        <Button
-          variant="tertiary"
-          onClick={() => {
-            open.value = true;
-          }}
-        >
-          Filtrar
-          <Icon id="FilterList" width={16} height={16} />
-        </Button>
-        <Sort />
-      </div>
 
-      <Modal
-        title="Filtrar"
-        mode="sidebar-right"
-        open={open.value}
-        onClose={() => {
-          open.value = false;
-        }}
-      >
-        <Filters filters={filters} />
-      </Modal>
+      {/* Desktop view */}
+      {(layout === "responsive" || layout === "desktop") &&
+        (
+          <>
+            <div class="hidden sm:flex flex-row sm:gap-4 items-center justify-between border-b-1 border-default md:border-none">
+              <Button
+                variant="tertiary"
+                onClick={() => {
+                  open.value = true;
+                }}
+              >
+                Filtrar
+                <Icon id="FilterList" width={16} height={16} />
+              </Button>
+              <Sort />
+            </div>
+
+            <Modal
+              title="Filtrar"
+              mode="sidebar-right"
+              open={open.value}
+              onClose={() => {
+                open.value = false;
+              }}
+            >
+              <Filters filters={filters} />
+            </Modal>
+          </>
+        )}
+
+      {/* Mobile view */}
+      {(layout === "responsive" || layout === "mobile") &&
+        (
+          <>
+            <div class="flex sm:hidden flex-row sm:gap-4 items-center justify-between border-b-1 border-default md:border-none">
+              <Button
+                variant="tertiary"
+                onClick={() => {
+                  open.value = true;
+                }}
+              >
+                Filtrar
+                <Icon id="FilterList" width={16} height={16} />
+              </Button>
+              <Sort />
+            </div>
+
+            <Modal
+              title="Filtrar"
+              mode="sidebar-right"
+              open={open.value}
+              onClose={() => {
+                open.value = false;
+              }}
+            >
+              <Filters filters={filters} />
+            </Modal>
+          </>
+        )}
     </Container>
   );
 }

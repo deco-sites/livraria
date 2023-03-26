@@ -10,7 +10,7 @@ import { useEffect, useId, useState } from "preact/hooks";
 
 export interface Props {
   title: string;
-  products: LoaderReturnType<Product[]>;
+  products: LoaderReturnType<Product[] | null>;
   viewMoreLink?: string;
   viewMoreText?: string;
 }
