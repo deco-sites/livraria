@@ -85,7 +85,7 @@ function ProductShelf({ title, products, viewMoreLink, viewMoreText }: Props) {
           >
             <ProductCard
               product={product}
-              preload={false}
+              preload={true}
               key={product.productID}
             />
           </div>
