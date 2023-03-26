@@ -7,7 +7,7 @@ export interface INavItem {
   href: string;
   highlight?: boolean;
   children?: INavItem[];
-  image?: { src?: string; alt?: string };
+  image?: { src?: string; alt?: string; width?: number; height?: number };
 }
 
 function NavItem({ item }: { item: INavItem }) {
@@ -60,11 +60,11 @@ function NavItem({ item }: { item: INavItem }) {
               </ul>
               {image?.src && (
                 <Image
-                  class="p-6 w-auto h-auto max-w-md"
+                  class="p-6"
                   src={image.src}
                   alt={image.alt}
-                  width={100}
-                  height={100}
+                  width={image?.width ?? 100}
+                  height={image?.height ?? 100}
                   loading="lazy"
                 />
               )}

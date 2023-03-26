@@ -24,6 +24,8 @@ export interface NavItem {
   image?: {
     src?: Image;
     alt?: string;
+    width?: number;
+    height?: number;
   };
 }
 

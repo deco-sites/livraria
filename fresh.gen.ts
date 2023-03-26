@@ -1368,6 +1368,20 @@ const manifest: DecoManifest = {
                       ],
                       "title": "Alt",
                     },
+                    "width": {
+                      "type": [
+                        "number",
+                        "null",
+                      ],
+                      "title": "Width",
+                    },
+                    "height": {
+                      "type": [
+                        "number",
+                        "null",
+                      ],
+                      "title": "Height",
+                    },
                   },
                   "required": [],
                 },
