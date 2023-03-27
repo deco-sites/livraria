@@ -121,6 +121,7 @@ function ProgressiveDots({ images, interval = 0 }: Props) {
         {images?.map((_, index) => (
           <li class="h-full">
             <button
+              type="button"
               data-dot={index}
               aria-label={`go to slider item ${index}`}
               class="h-full rounded focus:outline-none group"
@@ -155,10 +156,11 @@ function ProgressiveDots({ images, interval = 0 }: Props) {
 function Dots({ images }: Props) {
   return (
     <>
-      <ol class="flex items-center justify-center col-span-full gap-2.5 z-10 row-start-4">
+      <ol class="flex items-center justify-center col-span-full gap-2.5 z-10 row-start-4 absolute bottom-2.5 left-0 right-0 w-max mx-auto">
         {images?.map((_, index) => (
-          <li class="h-auto">
+          <li class="h-auto leading-none">
             <button
+              type="button"
               data-dot={index}
               aria-label={`go to slider item ${index}`}
               class="w-2.5 h-2.5 border-black border-1 border-solid rounded-[20px] focus:outline-none group bg-white opacity-25 disabled:opacity-75 transition-opacity"
@@ -196,7 +198,7 @@ function BannerCarousel(
   return (
     <div
       id={id}
-      class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_48px]"
+      class="flex flex-col relative"
     >
       <Slider class="col-span-full row-span-full scrollbar-none gap-6">
         {images?.map((image, index) => (
