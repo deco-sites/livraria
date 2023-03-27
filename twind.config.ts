@@ -105,6 +105,8 @@ const options: Omit<Options, "selfURL"> = {
         "slide-left": "slide-left-frame 0.4s ease normal",
         "slide-right": "slide-right-frame 0.4s ease normal",
         "slide-bottom": "slide-bottom-frame 0.4s ease normal",
+        "fade-in": "fade-in-frame 0.4s ease normal",
+        "fade-out": "fade-out-frame 0.4s ease normal",
       },
       keyframes: {
         "slide-left-frame": {
@@ -118,6 +120,14 @@ const options: Omit<Options, "selfURL"> = {
         "slide-bottom-frame": {
           from: { transform: "translateY(100%)" },
           to: { transform: "translateY(0)" },
+        },
+        "fade-in-frame": {
+          from: { opacity: 0, visibility: "hidden" },
+          to: { opacity: 1, visibility: "visible" },
+        },
+        "fade-out-frame": {
+          from: { opacity: 1, visibility: "visible" },
+          to: { opacity: 0, visibility: "hidden" },
         },
       },
       boxShadow: {

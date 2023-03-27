@@ -9,8 +9,9 @@ import type { Props as SearchbarProps } from "$store/components/search/Searchbar
 import Searchbar from "../search/Searchbar.tsx";
 import Container from "../ui/Container.tsx";
 
-function Navbar({ items, searchbar }: {
+function Navbar({ items, preload = false, searchbar }: {
   items: INavItem[];
+  preload?: boolean;
   searchbar: SearchbarProps;
 }) {
   return (
@@ -87,7 +88,7 @@ function Navbar({ items, searchbar }: {
         <div class="md:flex flex-auto flex justify-center bg-white">
           <Container class="w-full ">
             <ul class="md:grid md:grid-flow-col">
-              {items.map((item) => <NavItem item={item} />)}
+              {items.map((item) => <NavItem item={item} preload={preload} />)}
             </ul>
           </Container>
         </div>

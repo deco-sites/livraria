@@ -5,8 +5,8 @@ import type { LoaderReturnType } from "$live/types.ts";
 import type { Product, Suggestion } from "deco-sites/std/commerce/types.ts";
 import type { ClientConfigVTEX } from "deco-sites/std/functions/vtexConfig.ts";
 
-import Alert, { AlertProps } from "./Alert.tsx";
-import Navbar from "./Navbar.tsx";
+import Alert, { AlertProps } from "$store/components/header/Alert.tsx";
+import Navbar from "$store/islands/Navbar.tsx";
 import { headerHeight, headerMobileHeight } from "./constants.ts";
 
 export interface NavItem {
@@ -45,27 +45,34 @@ export interface Props {
    * @title Product suggestions
    * @description Product suggestions displayed on search
    */
-  products?: LoaderReturnType<Product[] | null>;
+  productsIS?: LoaderReturnType<Product[] | null>;
 
   /**
    * @title Enable Top Search terms
    */
-  suggestions?: LoaderReturnType<Suggestion | null>;
+  suggestionsIS?: LoaderReturnType<Suggestion | null>;
 
   /**
    * @description vtex config used for search autocompletion;
    */
-  configVTEX?: LoaderReturnType<ClientConfigVTEX>;
+  configVTEXIS?: LoaderReturnType<ClientConfigVTEX>;
+
+  /**
+   * @title Preload submenu items?
+   * @default false
+   */
+  preloadSubmenu?: boolean;
 }
 
 function Header(
   {
     alert,
     searchbar: _searchbar,
-    products,
+    productsIS: products,
     navItems = [],
-    suggestions,
-    configVTEX,
+    suggestionsIS: suggestions,
+    configVTEXIS: configVTEX,
+    preloadSubmenu = false,
   }: Props,
 ) {
   const searchbar = { ..._searchbar, products, suggestions, configVTEX };
@@ -78,7 +85,11 @@ function Header(
           alertStore={alert?.alertStore}
           storelink={alert?.storelink}
         />
-        <Navbar items={navItems} searchbar={searchbar} />
+        <Navbar
+          items={navItems}
+          searchbar={searchbar}
+          preload={preloadSubmenu}
+        />
       </div>
 
       <Modals
