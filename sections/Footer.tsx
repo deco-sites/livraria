@@ -24,5 +24,7 @@ export type {
   PaymentSystemsIcons,
   SocialNetworkIcons,
 } from "$store/components/ui/Icon.tsx";
-export type { HTML } from "deco-sites/std/components/types.ts";
-export type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+export type {
+  HTML,
+  Image as LiveImage,
+} from "deco-sites/std/components/types.ts";

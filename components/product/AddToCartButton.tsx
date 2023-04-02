@@ -15,7 +15,7 @@ function AddToCartButton({ skuId, sellerId }: Props) {
   return (
     <Button
       {...props}
-      class="w-auto bg-primary hover:bg-primary text-white font-regular"
+      class="w-full h-full bg-primary hover:bg-primary text-white font-regular"
     >
       Comprar
     </Button>

@@ -1,4 +1,4 @@
-import Newsletter from "$store/islands/Newsletter.tsx";
+import type { PaymentSystemProps } from "$store/components/footer/PaymentSystems.tsx";
 import PaymentSystems from "$store/components/footer/PaymentSystems.tsx";
 import SecuritySystems, {
   SecuritySystemsProps,
@@ -8,7 +8,7 @@ import SocialNetworks, {
 } from "$store/components/footer/SocialNetworks.tsx";
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 import Text from "$store/components/ui/Text.tsx";
-import type { PaymentSystemProps } from "$store/components/footer/PaymentSystems.tsx";
+import Newsletter from "$store/islands/Newsletter.tsx";
 import type { HTML } from "deco-sites/std/components/types.ts";
 import type { ComponentChildren } from "preact";
 
