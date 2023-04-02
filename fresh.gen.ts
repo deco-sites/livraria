@@ -18,10 +18,11 @@ import * as $$2 from "./islands/HeaderModals.tsx";
 import * as $$3 from "./islands/HeaderSearchMenu.tsx";
 import * as $$4 from "./islands/Navbar.tsx";
 import * as $$5 from "./islands/Newsletter.tsx";
-import * as $$6 from "./islands/ProductShelf.tsx";
-import * as $$7 from "./islands/SearchControls.tsx";
-import * as $$8 from "./islands/ShippingSimulation.tsx";
-import * as $$9 from "./islands/SliderJS.tsx";
+import * as $$6 from "./islands/ProductDetails.tsx";
+import * as $$7 from "./islands/ProductShelf.tsx";
+import * as $$8 from "./islands/SearchControls.tsx";
+import * as $$9 from "./islands/ShippingSimulation.tsx";
+import * as $$10 from "./islands/SliderJS.tsx";
 import * as $$$0 from "./sections/BannerGrid.tsx";
 import * as $$$1 from "./sections/Carousel.tsx";
 import * as $$$2 from "./sections/CookieConsent.tsx";
@@ -86,10 +87,11 @@ const manifest: DecoManifest = {
     "./islands/HeaderSearchMenu.tsx": $$3,
     "./islands/Navbar.tsx": $$4,
     "./islands/Newsletter.tsx": $$5,
-    "./islands/ProductShelf.tsx": $$6,
-    "./islands/SearchControls.tsx": $$7,
-    "./islands/ShippingSimulation.tsx": $$8,
-    "./islands/SliderJS.tsx": $$9,
+    "./islands/ProductDetails.tsx": $$6,
+    "./islands/ProductShelf.tsx": $$7,
+    "./islands/SearchControls.tsx": $$8,
+    "./islands/ShippingSimulation.tsx": $$9,
+    "./islands/SliderJS.tsx": $$10,
   },
   sections: {
     "./sections/BannerGrid.tsx": $$$0,
