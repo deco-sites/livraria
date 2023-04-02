@@ -1,4 +1,4 @@
-# Fashion starter by deco.cx
+# Livraria da Vila using Fashio Starter by deco.cx
 
 A fully featured starter to help you customize and deploy an ecommerce website
 in minutes
@@ -9,7 +9,6 @@ in minutes
 </div>
 
 ## Features
-
 
 This starter brings:
 
