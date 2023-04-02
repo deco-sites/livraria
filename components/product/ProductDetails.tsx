@@ -1,3 +1,4 @@
+import { useState } from "preact/hooks";
 import type { LoaderReturnType } from "$live/types.ts";
 import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
 import Container from "$store/components/ui/Container.tsx";
@@ -8,14 +9,12 @@ import { formatPrice } from "$store/sdk/format.ts";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 import Image from "deco-sites/std/components/Image.tsx";
-
 import ShippingSimulation from "$store/islands/ShippingSimulation.tsx";
-import { useState } from "preact/hooks";
-import NotFound from "../search/NotFound.tsx";
-import ContainerFull from "../ui/ContainerFull.tsx";
-import ProductDetailsBrand from "./ProductDetailsBrand.tsx";
-import ProductDetailsSpecification from "./ProductDetailsSpecification.tsx";
-import ProductSelector from "./ProductVariantSelector.tsx";
+import NotFound from "$store/components/search/NotFound.tsx";
+import ContainerFull from "$store/components/ui/ContainerFull.tsx";
+import ProductDetailsBrand from "$store/components/product/ProductDetailsBrand.tsx";
+import ProductDetailsSpecification from "$store/components/product/ProductDetailsSpecification.tsx";
+import ProductSelector from "$store/components/product/ProductVariantSelector.tsx";
 
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
@@ -33,15 +32,14 @@ function Details({ page }: { page: ProductDetailsPage }) {
     brand,
     name,
   } = product;
+
   const { price, listPrice, seller, installments } = useOffer(offers);
   const [front] = images ?? [];
 
   const [quantity, setQuantity] = useState(1);
 
   const handleQuantityChange = (newQuantity: number) => {
-    console.log("newQuantity", newQuantity);
     setQuantity(newQuantity);
-    console.log("quantity", quantity);
   };
 
   return (
@@ -139,6 +137,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
                     <AddToCartButton
                       skuId={productID}
                       sellerId={seller}
+                      quantity={quantity}
                     />
                   </div>
                 </div>
